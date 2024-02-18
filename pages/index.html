@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/js/index.js"></script>
     <script src="/js/slideshow.js"></script>
@@ -25,14 +25,27 @@
                 </div>
                 <ul>
                     <li><a href="#">Kezdőlap</a></li>
-                    <li><a href="#">Akcióink</a></li>
+                    <li><a href="#">Ajánlataink</a></li>
                     <li class="dropdown">
                         <a href="#">Termékek</a>
                         <i class="fa-solid fa-chevron-down"></i>
                         <ul class="sub-menu">
-                            <li><a href="#"><span>Számítógépek</span></a></li>
-                            <li><a href="#"><span>Laptopok</span></a></li>
-                            <li><a href="#"><span>Monitorok</span></a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>Számítógépek</span></a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="sub-menu sub-menu-right">
+                                    <li><a href="#"><span>Prebuilt</span></a></li>
+                                    <li><a href="#"><span>PC Builder</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#"><span>Laptopok</span></a>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="sub-menu sub-menu-right">
+                                    <li><a href="#"><span>Gamer</span></a></li>
+                                    <li><a href="#"><span>Irodai</span></a></li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#"><span>Fejhallgatók</span></a>
                                 <i class="fa-solid fa-chevron-down"></i>
@@ -46,13 +59,19 @@
                                     <li><a href="#"><span>Gaming</span></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Márkák</a></li>
-                            <li class="dropdown">
-                                <a href="#">Kiegészítők</a>
-                            </li>
-                            <li><a href="#">Fórum</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">Márkák</a></li>
+                    <li class="dropdown">
+                        <a href="#">Kiegészítők</a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="#"><span>Egerek</span></a></li>
+                            <li><a href="#"><span>Billenytűzetek</span></a></li>
+                            <li><a href="#"><span>Monitorok</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Fórum</a></li>
                 </ul>
             </nav>
             <div class="header-right">
@@ -69,19 +88,19 @@
     <div class="slideshow" id="topgin">
         <div class="S">
             <a href="/products/towers.html">
-                <img class="" src="" alt="">
+                <img class="" src="" alt="Számítógépek">
             </a>
             <div class="subt title">Számítógépek</div>
         </div>
         <div class="S">
             <a href="/products/notebooks.html">
-                <img class="" src="" alt="">
+                <img class="" src="" alt="Laptopok">
             </a>
             <div class="subt title">Laptopok</div>
         </div>
         <div class="S">
             <a href="/products/headphones.html">
-                <img class="" src="" alt="">
+                <img class="" src="" alt="Fejhallgatók">
             </a>
             <div class="subt title">Fejhallgatók</div>
         </div>
@@ -90,18 +109,16 @@
     </div>
     <br>
     <div style="text-align:center">
-        <span class="dind active" onclick="NowShow(1)"></span>
+        <span class="dind activus" onclick="NowShow(1)"></span>
         <span class="dind" onclick="NowShow(2)"></span>
         <span class="dind" onclick="NowShow(3)"></span>
     </div>
-
-
-    <footer>
+    <footer id="topgin">
         <div class="row footer">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
                 <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
-                <input type="text" name="email" value="email" placeholder="E-Mail cím" required>
+                <input type="text" name="email" placeholder="E-Mail cím" required>
             </div>
             <div class="col-lg-2 col-md-6 col-sm-12">
                 <h1 class="footer-title">Irányelveink</h1>
@@ -130,7 +147,7 @@
                     <a href="/policies/terms-of-service.html">Szolgáltatási feltételek</a>
                 </li>
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <h1 class="footer-title">Személyes átvétel</h1>
                 <ul class="f-ul">
                     <li>
@@ -151,7 +168,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-2 col-md-6 col-sm-12">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <p>Az alábbi linkeken megteheted:</p>
                 <div class="social-links">

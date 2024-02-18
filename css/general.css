@@ -253,6 +253,75 @@ body {
   }
 }
 
+.header .menu i {
+  height: 34px;
+  width: 34px;
+  border: 1px solid hsla(0, 0%, 0%, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  top: 7px;
+}
+
+.header .menu .sub-menu {
+  position: static;
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  padding: 0;
+  transition: none;
+  box-shadow: none;
+  width: 100%;
+  display: none;
+}
+
+.header .menu .sub-menu li:last-child {
+  border: none;
+}
+
+.header .menu .sub-menu a {
+  padding: 12px 0 12px 15px;
+}
+
+.header .menu .sub-menu span {
+  background-image: none;
+}
+
+.header .menu .sub-menu i {
+  transform: none;
+  right: 0;
+}
+
+.header-right .open-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 44px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.header-right .open-menu-btn .line {
+  height: 2px;
+  width: 30px;
+  background-color: hsl(0, 0%, 0%);
+  position: absolute;
+}
+
+.header-right .open-menu-btn .line-1 {
+  transform: translateY(-8px);
+}
+
+.header-right .open-menu-btn .line-3 {
+  transform: translateY(8px);
+}
+
+
 /*Footer*/
 .footer {
   padding-top: 30px;
@@ -261,7 +330,7 @@ body {
   background-color: black;
   font-size: 100%;
   color: white;
-  margin: none;
+  top: 100%;
   bottom: 0;
 }
 
@@ -357,7 +426,7 @@ body {
   background-color: rgb(71, 66, 66);
 }
 
-.active {
+.activus {
   background-color: rgb(71, 66, 66);
 }
 
@@ -367,71 +436,8 @@ body {
   color: black;
   position: relative;
 
-  .header .menu i {
-    height: 34px;
-    width: 34px;
-    border: 1px solid hsla(0, 0%, 0%, 0.25);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: auto;
-    cursor: pointer;
-    top: 7px;
-  }
+}
 
-  .header .menu .sub-menu {
-    position: static;
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-    padding: 0;
-    transition: none;
-    box-shadow: none;
-    width: 100%;
-    display: none;
-  }
-
-  .header .menu .sub-menu li:last-child {
-    border: none;
-  }
-
-  .header .menu .sub-menu a {
-    padding: 12px 0 12px 15px;
-  }
-
-  .header .menu .sub-menu span {
-    background-image: none;
-  }
-
-  .header .menu .sub-menu i {
-    transform: none;
-    right: 0;
-  }
-
-  .header-right .open-menu-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 44px;
-    cursor: pointer;
-    position: relative;
-    background-color: transparent;
-    border: none;
-  }
-
-  .header-right .open-menu-btn .line {
-    height: 2px;
-    width: 30px;
-    background-color: hsl(0, 0%, 0%);
-    position: absolute;
-  }
-
-  .header-right .open-menu-btn .line-1 {
-    transform: translateY(-8px);
-  }
-
-  .header-right .open-menu-btn .line-3 {
-    transform: translateY(8px);
-  }
+#topgin {
+  margin-top: 10%;
 }
