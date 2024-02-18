@@ -4,77 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/index.js"></script>
     <title>TechDepo - Főoldal</title>
 </head>
-<body>
-    <header class="header_foo">
-        <div class="container_foo">
-            <div class="logo_foo">
-                <img src="" alt="A TechDepo csapat logója">
-            </div>
-            <nav class="menu_foo">
-                <div class="fej_foo">
-                    <div class="logo_foo"><img src="" alt="A TechDepo csapat logója"></div>
-                    <button type="button" class="bezaras"></button>
-                </div>
-                <ul>
-                    <li><a href="#">Kezdőlap</a></li>
-                    <li class="leejt_foo">
-                        <a href="#">Termékek</a>
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="almenu_foo">
-                            <li><a href="#"><span>Számítógépek</span></a></li>
-                            <li><a href="#"><span>Laptopok</span></a></li>
-                            <li><a href="#"><span>Monitorok</span></a></li>
-                            <li class="leejt_foo">
-                                <a href="#"><span>Fejhallgatók</span></a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="almenu_foo almenu_foo_jobb">
-                                    <li><a href="#"><span>Over Ear</span></a></li>
-                                    <li><a href="#"><span>On Ear</span></a></li>
-                                    <li><a href="#"><span>In Ear</span></a></li>
-                                    <li><a href="#"><span>Earbuds</span></a></li>
-                                    <li><a href="#"><span>Wireless</span></a></li>
-                                    <li><a href="#"><span>DJ</span></a></li>
-                                    <li><a href="#"><span>Gaming</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
 
-                    <li><a href="#">Gyakran Ismételt Kérdések (GYIK)</a></li>
-                    <li><a href="#">Fórum</a></li>
-                    <li><a href="#">Elérhetőségek</a></li>
-                    <li class="leejt_foo">
-                        <a href="#">Irányelvek</a>
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="almenu_foo">
-                            <li><a href="#"><span>Adatvédelmi irányelvek</span></a></li>
-                            <li><a href="#"><span>Pénzvisszatérítési eljárás</span></a></li>
-                            <li><a href="#"><span>Szállítási szabályzat</span></a></li>
-                            <li><a href="#"><span>Szolgáltatási feltételek</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="fej-jobb">
-                <button type="button" class="kereso-gomb ikon-gomb"><i class="fa-solid fa-search"></i></button>
-                <button type="button" class="kocsi-gomb ikon-gomb"><i class="fa-solid fa-shopping-cart"></i></button>
-                <button type="button" class="menuzaras">
-                    <span class="line line-1"></span>
-                    <span class="line line-1"></span>
-                    <span class="line line-1"></span>
-                </button>
-            </div>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="" alt="A TechDepo csapat logója">
         </div>
-    </header>
-    <section class>
+        <nav class="menu">
+            <div class="head">
+                <div class="logo"><img src="" alt="A TechDepo csapat logója"></div>
+                <button type="button" class="close-menu-btn"></button>
+            </div>
+            <ul>
+                <li><a href="#">Kezdőlap</a></li>
+                <li class="dropdown">
+                    <a href="#">Termékek</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="sub-menu">
+                        <li><a href="#"><span>Számítógépek</span></a></li>
+                        <li><a href="#"><span>Laptopok</span></a></li>
+                        <li><a href="#"><span>Monitorok</span></a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Fejhallgatók</span></a>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <ul class="sub-menu sub-menu-right">
+                                <li><a href="#"><span>Over Ear</span></a></li>
+                                <li><a href="#"><span>On Ear</span></a></li>
+                                <li><a href="#"><span>In Ear</span></a></li>
+                                <li><a href="#"><span>Earbuds</span></a></li>
+                                <li><a href="#"><span>Wireless</span></a></li>
+                                <li><a href="#"><span>DJ</span></a></li>
+                                <li><a href="#"><span>Gaming</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">GYIK</a></li>
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Elérhetőségek</a></li>
+                <li class="dropdown">
+                    <a href="#">Irányelvek</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="sub-menu">
+                        <li><a href="#"><span>Adatvédelmi irányelvek</span></a></li>
+                        <li><a href="#"><span>Pénzvisszatérítési eljárás</span></a></li>
+                        <li><a href="#"><span>Szállítási szabályzat</span></a></li>
+                        <li><a href="#"><span>Szolgáltatási feltételek</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button type="button" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
+            <button type="button" class="cart-btn icon-btn"><i class="fa-solid fa-shopping-cart"></i></button>
+            <button type="button" class="open-menu-btn">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
+    </div>
+</header>
 
-    </section>
+
+<script src="../js/fooldal.js"></script>    
 </body>
 
 </html>
