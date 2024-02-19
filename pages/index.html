@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="/js/index.js"></script>
-    <script src="/js/slideshow.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/slideshow.js"></script>
     <title>TechDepo - Főoldal</title>
 </head>
 
@@ -67,7 +67,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                         <ul class="sub-menu">
                             <li><a href="#"><span>Egerek</span></a></li>
-                            <li><a href="#"><span>Billenytűzetek</span></a></li>
+                            <li><a href="#"><span>Billentyűzetek</span></a></li>
                             <li><a href="#"><span>Monitorok</span></a></li>
                         </ul>
                     </li>
@@ -75,7 +75,13 @@
                 </ul>
             </nav>
             <div class="header-right">
-                <button type="button" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
+                <form method="get" action="">
+                    <input type="text" name="search" placeholder="Keresés..">
+                    <button type="submit" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
+                </form>
+
+
+
                 <button type="button" class="cart-btn icon-btn"><i class="fa-solid fa-shopping-cart"></i></button>
                 <button type="button" class="open-menu-btn">
                     <span class="line line-1"></span>
