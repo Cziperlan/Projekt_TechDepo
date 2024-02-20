@@ -4,16 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/general.css">
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
+    <script src="../js/sandwitch.js"></script>
     <title>TechDepo - Főoldal</title>
 </head>
 
-<body id="body" onload="NowShow(1)">
-    <header class="header">
+<body onload="NowShow(1)">
+    <header>
+        <div class="header">
+            <div id="banner" class="header-left">
+                <a href="index.html" >
+                    <img src="" alt="TechDepo logó">
+                </a>
+            </div>
+            <div class="header-right">
+                <a href=""><i class="fas fa-search"></i></a>
+                <a href="../account/account.php"><i class="fas fa-user"></i></a>
+                <a href="../account/wishlist.html"><i class="fas fa-star"></i></a>
+                <a href="/account/cart.html"><i class="fas fa-shopping-cart "></i></a>
+                <a href="tracking.html">TRACK YOU ORDER</a>
+
+            </div>
+        </div>
+        <div class="topnav">
+            <a class="active" href="index.html">Kezdőlap</a>
+            <a href="../products/onsale.html">Ajánlataink</a>
+            <a href="../products/all.html">Termékeink</a>
+            <a href="../products/accessories.html">Kiegészítők</a>
+            <a href="../pages/forum.html">Fórum</a>        
+            <div class="sandwitch" onclick="tranSandwitch(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+             </div>
+        </div>
+    </header>
+    
+<!--   <header class="header">
         <div class="contain">
             <div class="logo">
                 <img src="" alt="A TechDepo csapat logója">
@@ -75,14 +106,14 @@
                     <button type="submit" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
                 </form>
                 <button type="button" class="cart-btn icon-btn"><i class="fa-solid fa-shopping-cart"></i></button>
-                <!--<button type="button" class="open-menu-btn">
+                <button type="button" class="open-menu-btn">
                     <span class="line line-1"></span>
                     <span class="line line-2"></span>
                     <span class="line line-3"></span>
-                </button>-->
+                </button>
             </div>
         </div>
-    </header>
+    </header>--> 
     <div class="slideshow" id="topgin">
         <div class="S">
             <a href="/products/towers.html">

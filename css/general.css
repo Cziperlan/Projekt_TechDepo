@@ -1,6 +1,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {box-sizing: border-box;}
 
+#body {
+  margin: none;
+}
 
+/*header*/
+
+.header {
+  overflow: hidden;
+  background-color: white;
+  padding: 20px 10px;
+  border-bottom: 1px solid black;
+}
+
+.header-right{
+  float: none;
+  margin-left: 80%;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 2%;
+  text-decoration: underline;
+  font-size: large; 
+}
+
+.search-cont {
+  float: right;
+}
+
+.header .search-cont input[type=text] {
+  padding: 6px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
+.header .search-cont button {
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.header .search-cont button:active {
+  background: #ccc;
+}
+
+#banner {
+  height: auto;
+  width: 200px;
+  size: 100%;
+}
+
+/*topnav*/
+
+.topnav {
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  color: white;
+  font-variant: small-caps;
+  display: flex;
+  align-items: center;
+}
+
+.topnav a {
+  float: left;
+  padding: 2%;
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  width: 10%;
+  text-align: center;
+}
+
+.topnav a.active {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.topnav .icon .sandwitch{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .sandwitch {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/*Animált szendvics*/
+
+@media screen and (max-width: 600px){
+  .sandwitch {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  
+}
 
 /*Footer*/
 .footer {

@@ -19,3 +19,5 @@ menu.querySelectorAll(".dropdown > i").forEach((arrow) => {
         this.closest(".dropdown").classList.toggle("active");
     });
 });
+
+
