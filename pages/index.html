@@ -5,133 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/general.css">
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>TechDepo - Főoldal</title>
 </head>
 
 <body onload="NowShow(1)">
     <header>
         <div class="header">
-            <div id="banner" class="header-left">
-                <a href="index.html" >
+            <div id="logo" class="left">
+                <a href="index.html">
                     <img src="" alt="TechDepo logó">
                 </a>
             </div>
-            <div class="header-right">
+            <div class="right">
                 <a href=""><i class="fas fa-search"></i></a>
                 <a href="../account/account.php"><i class="fas fa-user"></i></a>
                 <a href="../account/wishlist.html"><i class="fas fa-star"></i></a>
                 <a href="/account/cart.html"><i class="fas fa-shopping-cart "></i></a>
                 <a href="tracking.html">TRACK YOU ORDER</a>
-
             </div>
         </div>
         <div class="topnav">
             <a class="active" href="index.html">Kezdőlap</a>
             <a href="../products/onsale.html">Ajánlataink</a>
-            <a href="../products/all.html">Termékeink</a>
-            <a href="../products/accessories.html">Kiegészítők</a>
-            <a href="../pages/forum.html">Fórum</a>        
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Termékeink
+                </button>
+                <div class="drop-content">
+                    <div class="drop-row">
+                        <div class="drop-col">
+                            <h3>Számítógépek</h3>
+                            <a href="">Gamer PC-k</a>
+                            <a href="">Irodai PC-k</a>
+                        </div>
+                        <div class="drop-col">
+                            <h3>Laptopok</h3>
+                            <a href="">Gamer Laptopok</a>
+                            <a href="">Notebookok</a>
+                        </div>
+                        <div class="drop-col">
+                            <h3>Audio</h3>
+                            <a href="">Fejhallgatók</a>
+                            <a href="">Fülhallgatók</a>
+                        </div>
+                        <div class="drop-col">
+                            <h3>Perifériák</h3>
+                            <a href="">Egerek</a>
+                            <a href="">Billentyűzetek</a>
+                            <a href="">Monitorok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Brandek
+                </button>
+                <div class="drop-content">
+                    <div class="drop-row">
+                        <div class="drop-col">
+                            <a href="">Acer</a>
+                            <a href="">Apple</a>
+                            <a href="">Asus</a>
+                            <a href="">Dell</a>
+                        </div>
+                        <div class="drop-col">
+                            <a href="">Trust</a>
+                            <a href="">Razer</a>
+                            <a href="">Coolermaster</a>
+                            <a href="">Lenovo</a>
+                        </div>
+                        <div class="drop-col">
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="../pages/forum.html">Fórum</a>
             <div class="sandwitch" onclick="tranSandwitch(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
-             </div>
+            </div>
         </div>
     </header>
-    
-<!--   <header class="header">
-        <div class="contain">
-            <div class="logo">
-                <img src="" alt="A TechDepo csapat logója">
-            </div>
-            <nav class="menu">
-                <div class="head">
-                    <div class="logo"><img src="" alt="A TechDepo csapat logója"></div>
-                    <button type="button" class="close-menu-btn"></button>
-                </div>
-                <ul>
-                    <li><a href="#">Kezdőlap</a></li>
-                    <li><a href="#">Ajánlataink</a></li>
-                    <li class="dropdown">
-                        <a href="#">Termékek</a>
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li class="dropdown">
-                                <a href="#"><span>Számítógépek</span></a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="sub-menu sub-menu-right">
-                                    <li><a href="#"><span>Prebuilt</span></a></li>
-                                    <li><a href="#"><span>PC Builder</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#"><span>Laptopok</span></a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="sub-menu sub-menu-right">
-                                    <li><a href="#"><span>Gamer</span></a></li>
-                                    <li><a href="#"><span>Irodai</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#"><span>Fejhallgatók</span></a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="sub-menu sub-menu-right">
-                                    <li><a href="#"><span>Over Ear</span></a></li>
-                                    <li><a href="#"><span>In Ear</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Márkák</a></li>
-                    <li class="dropdown">
-                        <a href="#">Kiegészítők</a>
-                        <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="#"><span>Egerek</span></a></li>
-                            <li><a href="#"><span>Billentyűzetek</span></a></li>
-                            <li><a href="#"><span>Monitorok</span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Fórum</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <form method="get" action="">
-                    <input type="text" name="search" placeholder="Keresés..">
-                    <button type="submit" class="search-btn icon-btn"><i class="fa-solid fa-search"></i></button>
-                </form>
-                <button type="button" class="cart-btn icon-btn"><i class="fa-solid fa-shopping-cart"></i></button>
-                <button type="button" class="open-menu-btn">
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </button>
-            </div>
-        </div>
-    </header>--> 
-    <div class="slideshow" id="topgin">
+    <div class="slideshow">
         <div class="S">
             <a href="/products/towers.html">
                 <img class="" src="" alt="Számítógépek">
             </a>
-            <div class="subt title">Számítógépek</div>
+            <div class="subt">Számítógépek</div>
         </div>
         <div class="S">
             <a href="/products/notebooks.html">
                 <img class="" src="" alt="Laptopok">
             </a>
-            <div class="subt title">Laptopok</div>
+            <div class="subt">Laptopok</div>
         </div>
         <div class="S">
             <a href="/products/headphones.html">
                 <img class="" src="" alt="Fejhallgatók">
             </a>
-            <div class="subt title">Fejhallgatók</div>
+            <div class="subt">Fejhallgatók</div>
         </div>
         <a class="prev" onclick="Skip(-1)">❮</a>
         <a class="next" onclick="Skip(1)">❯</a>
@@ -142,39 +123,105 @@
         <span class="dind" onclick="NowShow(2)"></span>
         <span class="dind" onclick="NowShow(3)"></span>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="col-xs-12 col-sm-6 col-md-2">
+                                <a href="#">
+                                    <img src="" class="img-responsive center-block"></a>
+                                <h4 class="text-center"></h4>
+                                <h5 class="text-center"></h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-2">
+                                <a href="#">
+                                    <img src="" class="img-responsive center-block">
+                                </a>
+                                <h4 class="text-center"></h4>
+                                <h5 class="text-center"></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-2">
+                                <a href="#">
+                                    <img src="" class="img-responsive center-block">
+                                </a>
+                                <span class="badge"></span>
+                                <h4 class="text-center"></h4>
+                                <h5 class="text-center"></h5>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-xs-12 col-sm-6 col-md-2">
+                                <a href="#">
+                                    <img src="" class="img-responsive center-block">
+                                </a>
+                                <h4 class="text-center"></h4>
+                                <h5 class="text-center"></h5>
+                            </div>
+                        </div>
+                    </div>
+                        <div id="slider-control">
+                            <a class="left carousel-control" href="#itemslider" data-slide="prev">
+                                <img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png"
+                                    alt="Left" class="img-responsive">
+                            </a>
+                            <a class="right carousel-control" href="#itemslider" data-slide="next">
+                                <img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right"
+                                    class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer id="topgin">
         <div class="row footer">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
-                <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
-                <input type="text" name="email" placeholder="E-Mail cím" required>
+                <form class="f-form" action="" method="post">
+                    <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
+                    <input type="text" id="email" name="email" placeholder="E-Mail cím" required>
+                    <input type="submit" name="newsletter" id="newsletter">
+                </form>
             </div>
             <div class="col-lg-2 col-md-6 col-sm-12">
                 <h1 class="footer-title">Irányelveink</h1>
-                <li>
-                    <a href="/policies/privacy-policy.html">Adatvédelmi tájékoztató</a>
-                </li>
-                <li>
-                    <a href="/policies/refund-policy.html">Pénzvisszatérítési garancia</a>
-                </li>
-                <li>
-                    <a href="/policies/shipping-policy.html">Szállítás</a>
-                </li>
-                <li>
-                    <a href="/pages/faq.html">GYIK</a>
-                </li>
+                <ul class="f-ul">
+                    <li>
+                        <a href="/policies/privacy-policy.html">Adatvédelmi tájékoztató</a>
+                    </li>
+                    <li>
+                        <a href="/policies/refund-policy.html">Pénzvisszatérítési garancia</a>
+                    </li>
+                    <li>
+                        <a href="/policies/shipping-policy.html">Szállítás</a>
+                    </li>
+                    <li>
+                        <a href="/pages/faq.html">GYIK</a>
+                    </li>
+                </ul>
             </div>
             <div class="col-lg-2 col-mg-6 col-sm-12">
                 <h1 class="footer-title">Rólunk</h1>
-                <li>
+                <ul class="f-ul">
                     <a href="/pages/about.html">Cégünkről</a>
-                </li>
-                <li>
-                    <a href="/pages/forum.html">A TechDepo fórum</a>
-                </li>
-                <li>
-                    <a href="/policies/terms-of-service.html">Szolgáltatási feltételek</a>
-                </li>
+                    </li>
+                    <li>
+                        <a href="/pages/forum.html">A TechDepo fórum</a>
+                    </li>
+                    <li>
+                        <a href="/policies/terms-of-service.html">Szolgáltatási feltételek</a>
+                    </li>
+                </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <h1 class="footer-title">Személyes átvétel</h1>
@@ -201,18 +248,26 @@
                 <h1 class="footer-title">Követnél minket?</h1>
                 <p>Az alábbi linkeken megteheted:</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="footer/icon1.png" alt="Instagramm" class="f-ikon">
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="footer/icon2.png" alt="Facebook" class="f-ikon">
-                    </a>
-                    <a href="https://twitter.com/?lang=hu" target="_blank">
-                        <img src="footer/icon3.png" alt="Twitter" class="f-ikon">
-                    </a>
-                    <br>
+                    <ul class="f-ul">
+                        <li>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="footer/icon1.png" alt="Instagramm" class="f-ikon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com" target="_blank">
+                                <img src="footer/icon2.png" alt="Facebook" class="f-ikon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/?lang=hu" target="_blank">
+                                <img src="footer/icon3.png" alt="Twitter" class="f-ikon">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
     </footer>
 </body>
 
