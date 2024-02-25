@@ -28,6 +28,9 @@
     }
     .comment_box{
         text-align: left;
+        font-size: large;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
    
     
