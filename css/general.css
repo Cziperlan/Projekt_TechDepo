@@ -231,18 +231,16 @@
   display: none;
 }
 
-.linkpic {
+.Spic {
   vertical-align: middle;
-  margin-right: 40%;
-  margin-left: 24%;
-  width: 800px;
-  height: 500px;
-
+  width: 2000px;
+  height: auto;
+  left: 0;
 }
 
 .slideshow {
   border-radius: 20px;
-  max-width: 1500px;
+  max-width: 2000px;
   position: relative;
   margin: auto;
 }
@@ -258,10 +256,11 @@
   color: white;
   background-color: black;
   font-weight: bold;
-  font-size: 30px;
+  font-size: xx-large;
   transition: 0.3s ease;
   user-select: none;
   border-radius: 50px;
+  text-decoration: none;
 }
 
 .next {
@@ -299,7 +298,7 @@
   text-align: center;
   color: black;
   position: relative;
-
+  font-size: xx-large;
 }
 
 #topgin {
@@ -308,7 +307,7 @@
 
 
 /*Carousel*/
-
+/*
 #slider-text{
   padding-top: 40px;
   display: block;
@@ -396,11 +395,11 @@
 }
 @media all and (min-width: 768px) {
   .carousel-showmanymoveone .carousel-inner > .active.left,
-  .carousel-showmanymoveone .carousel-inner > .prev {
+  .carousel-showmanymoveone .carousel-inner > .previ {
     left: -50%;
   }
   .carousel-showmanymoveone .carousel-inner > .active.right,
-  .carousel-showmanymoveone .carousel-inner > .next {
+  .carousel-showmanymoveone .carousel-inner > .nexti {
     left: 50%;
   }
   .carousel-showmanymoveone .carousel-inner > .left,
@@ -476,3 +475,4 @@
     left: 0;
   }
 }
+*/
