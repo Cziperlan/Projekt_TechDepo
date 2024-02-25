@@ -200,6 +200,7 @@
   color: white;
   text-decoration: none;
   cursor: pointer;
+  font-size: medium;
 }
 
 .f-ul {
@@ -212,7 +213,7 @@
 
 .footer-title {
   margin-left: 30px;
-  font-size: x-large;
+  font-size: xx-large;
   color: white;
   font-variant: small-caps;
 }
@@ -228,9 +229,17 @@
 .f-form {
   margin-left: 30px;
   text-align: left;
-
+  border-radius: 8px;
 }
 
+.footer input {
+  margin-top: 2px;
+  border-radius: 8px;
+  background-color: rgba(36, 36, 36, 0.6);
+  border: 2px solid white;
+  color: white;
+  font-size: large;
+}
 
 /* Slideshow */
 .S {
@@ -357,19 +366,21 @@
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  margin: 0 10px;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
   transition: 0.6s ease;
+  scale: 1.8;
+  border: 1px solid black;
 }
 
 .dind:hover {
-  background-color: rgb(71, 66, 66);
+  background-color: rgb(172, 171, 171);
 }
 
 .activus {
-  background-color: rgb(71, 66, 66);
+  background-color: black;
 }
 
 .subt {
