@@ -255,6 +255,7 @@
   top: 50%;
   left: 25%;
   right: 25%;
+  scale: 2.0;
 }
 
 .ov_button {
@@ -266,13 +267,10 @@
   font-variant: small-caps;
   position: absolute;
   text-align: center;
-  top: 55%;
+  top: 56%;
   left: 47%;
   right: 47%;
-}
-
-.ov_button:hover {
-  background-color: rgba(48, 48, 48, 0.6);
+  scale: 1.00;
 }
 
 .overlayer {
@@ -285,6 +283,16 @@
   opacity: 0;
   transition: 0.5s ease;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Scont {
+  position: relative;
+  border: none;
+  padding: none;
+  margin: none;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  transform: scale(1.0);
 }
 
 .Scont:hover .overlayer {
@@ -300,14 +308,10 @@
   overflow: hidden;
 }
 
-.Scont {
-  position: relative;
-  border: none;
-  padding: none;
-  margin: none;
-  overflow: hidden;
-  transition-duration: 0.5s;
-  transform: scale(1.0);
+.ov_button:hover {
+  background-color: rgba(36, 36, 36, 0.6);
+  transform: scale(1.1);
+  transition-duration: 0.9ms;
 }
 
 .slideshow {
@@ -323,16 +327,18 @@
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 20px;
   margin-top: -22px;
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   font-weight: bold;
   font-size: xx-large;
   transition: 0.3s ease;
   user-select: none;
   border-radius: 50px;
   text-decoration: none;
+  scale: 1.00;
+  border: 0.1px solid white;
 }
 
 .next {
@@ -342,7 +348,8 @@
 
 .next:hover,
 .prev:hover {
-  background-color: #443d3d;
+  transform: scale(1.2);
+  background-color: rgba(36, 36, 36, 0.6);
   color: white;
 }
 
