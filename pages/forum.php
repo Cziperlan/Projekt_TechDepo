@@ -83,12 +83,13 @@ if(isset($_POST["submit"])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>TechDepo - Főoldal</title>
 </head>
-<body>
-  <header>
+<body id="body" onload="NowShow(1)">
+<header>
         <div class="header">
                 <a href="index.html">
-                    <img src="../logo.png" alt="TechDepo logó">
+                     <img src="../logo.png" alt="TechDepo logó">
                 </a>
+                <span class="header-right"></span>
                 <a href=""><i class="fas fa-search"></i></a>
                 <a href="../account/account.php"><i class="fas fa-user"></i></a>
                 <a href="../account/wishlist.html"><i class="fas fa-star"></i></a>
@@ -96,72 +97,21 @@ if(isset($_POST["submit"])){
                 <a href="tracking.html">TRACK YOU ORDER</a>
         </div>
         <div class="topnav">
+                <a href="../pages/index.html">Kezdőlap</a>
+                <a href="">Ajánlataink</a>
+                <a href="">Termékeink</a>
+                <a href="">Brandek</a>
+                <a href="">Akciós Termékeink</a>
+                <a class="topright" href="">Rólunk</a>
+            <!--
             <div class="sandwitch" onclick="tranSandwitch(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
-            <div class="topnav-left">
-                <a class="topnav act" href="index.html">Kezdőlap</a>
-                <a href="../products/onsale.html">Ajánlataink</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Termékeink</button>
-                    <div class="dropdown-cont">
-                        <div class="droprow">
-                            <div class="dropcol">
-                                <h3>Számítógépek</h3>
-                                <a href="">Gamer PC-k</a>
-                                <a href="">Irodai PC-k</a>
-                            </div>
-                            <div class="dropcol">
-                                <h3>Laptopok</h3>
-                                <a href="">Gamer Laptopok</a>
-                                <a href="">Notebookok</a>
-                            </div>
-                            <div class="dropcol">
-                                <h3>Audio</h3>
-                                <a href="">Fejhallgatók</a>
-                                <a href="">Fülhallgatók</a>
-                            </div>
-                            <div class="dropcol">
-                                <h3>Perifériák</h3>
-                                <a href="">Billentyűzetek</a>
-                                <a href="">Monitorok</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Brandek</button>
-                    <div class="dropdown-cont">
-                        <div class="droprow">
-                            <div class="dropcol">
-                                <a href="">Acer</a>
-                                <a href="">Apple</a>
-                            </div>
-                            <div class="dropcol">
-                                <a href="">Asus</a>
-                                <a href="">Dell</a>
-                            </div>
-                            
-                            <div class="dropcol">
-                                <a href="">Trust</a>
-                                <a href="">Razer</a>
-                            </div>    
-                            <div class="dropcol">
-                                <a href="">Corsair</a>
-                                <a href="">Lenovo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="topnav-right">
-                <a href="../pages/index.php">Fórum</a>
-            </div>
-            
+        -->
         </div>
-  </header>
+    </header>
 
 
 
