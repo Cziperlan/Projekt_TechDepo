@@ -238,10 +238,76 @@
 }
 
 .Spic {
-  vertical-align: middle;
   width: 2000px;
   height: auto;
   left: 0;
+  display: block;
+  overflow: hidden;
+  scale: 1.00;
+
+}
+
+.overlayer_text {
+  color: white;
+  font-size: xx-large;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+}
+
+.ov_button {
+  border-radius: 8px;
+  border:1px solid white ;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: medium;
+  font-variant: small-caps;
+  position: absolute;
+  text-align: center;
+  top: 55%;
+  left: 47%;
+  right: 47%;
+}
+
+.ov_button:hover {
+  background-color: rgba(48, 48, 48, 0.6);
+}
+
+.overlayer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Scont:hover .overlayer {
+  opacity: 1;
+  transform: scale(1.2);
+  overflow: hidden;
+  transition-duration: 0, 7s;
+}
+
+.Scont:hover .Spic {
+  transform: scale(1.2);
+  transition-duration: 0.9s;
+  overflow: hidden;
+}
+
+.Scont {
+  position: relative;
+  border: none;
+  padding: none;
+  margin: none;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  transform: scale(1.0);
 }
 
 .slideshow {
