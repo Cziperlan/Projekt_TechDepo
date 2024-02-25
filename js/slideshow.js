@@ -18,11 +18,21 @@ function showSlide(n) {
     if (n < 1) { S = slidepics.length }
     for (i = 0; i < slidepics.length; i++) {
         slidepics[i].style.display = "none";
+
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" activus", "");
     }
     slidepics[S - 1].style.display = "block";
+    
+
     dots[S - 1].className += " activus";
 
 }
+
+setInterval(()=>{
+
+    
+    NowShow(S)
+     S++;
+},6000)
