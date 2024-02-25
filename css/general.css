@@ -65,17 +65,60 @@
 .topnav.act {
   text-decoration: underline;
 }
-/*Topnav dropdown*/
-.dropdown {
-  float: left;
+/*
+.dropdown .dropbtn {
+  background-color: black;
+  font-size: x-large;  
+  color: white;
+  margin: 0;
 }
 
-.dropdown .dropbtn {
+.dropdown-cont {
+  display: none;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .drop-content {
+  display: block;
+}
+
+.drop-col {
+  padding: 10px;
+  background-color: black;
+  height: 250px;
+}
+
+.drop-col a {
+  color: white;
+  background-color: black;
+  padding: 30px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.drop-col a:hover {
+  background-color: #1a1818;
+}
+
+.drop-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+*/
+/*Topnav dropdown */
+
+.dropbtn {
   background-color: black;
   font-size: x-large;  
   border: none;
   color: white;
-  padding: 40px;
+  padding: 50px;
 }
 
 .dropbtn:hover {
@@ -83,6 +126,39 @@
   text-decoration: underline;
 }
 
+.dropdown-content {
+  position: absolute;
+  display: none;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  background-color: black;
+  color: white;
+  padding: 40px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.subdown:hover .subdown-content {
+  display: block;
+}
+.subdown-content{
+  position: absolute;
+  display: none;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 13.5em;
+  top: 0;
+} 
 /*Animált szendvics*/
 
 .sandwitch{
