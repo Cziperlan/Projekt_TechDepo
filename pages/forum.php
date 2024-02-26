@@ -8,7 +8,7 @@ if(isset($_POST["submit"])){
   $date = date('F d Y, h:i:s A');
   $reply_id = $_POST["reply_id"];
 
-  $query = "INSERT INTO tb_data VALUES('', '$name', '$comment', '$date', '$reply_id')";
+  $query = "INSERT INTO data VALUES('', '$name', '$comment', '$date', '$reply_id')";
   mysqli_query($conn, $query);
 }
 ?>
@@ -118,7 +118,7 @@ if(isset($_POST["submit"])){
   
     <div class="container">
       <?php
-      $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = 0"); 
+      $datas = mysqli_query($conn, "SELECT * FROM data WHERE reply_id = 0"); 
       foreach($datas as $data) {
         require 'comment.php';
       }
