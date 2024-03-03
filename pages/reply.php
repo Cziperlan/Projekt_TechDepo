@@ -13,7 +13,7 @@
   <button class="reply" onclick = "reply(<?php echo $reply_id; ?>, '<?php echo $data['name']; ?>');">Válasz</button>
   <?php
   unset($datas);
-  $datas = mysqli_query($conn, "SELECT * FROM tb_data WHERE reply_id = $reply_id");
+  $datas = mysqli_query($conn, "SELECT * FROM tb_dataforum WHERE reply_id = $reply_id");
   if(mysqli_num_rows($datas) > 0) {
     foreach($datas as $data){
       require 'reply.php';

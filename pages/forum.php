@@ -1,6 +1,6 @@
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "data");
+$conn = mysqli_connect("localhost", "root", "", "data2");
 
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
@@ -8,7 +8,7 @@ if(isset($_POST["submit"])){
   $date = date('F d Y, h:i:s A');
   $reply_id = $_POST["reply_id"];
 
-  $query = "INSERT INTO data VALUES('', '$name', '$comment', '$date', '$reply_id')";
+  $query = "INSERT INTO tb_dataforum VALUES('', '$name', '$comment', '$date', '$reply_id')";
   mysqli_query($conn, $query);
 }
 ?>
@@ -118,7 +118,7 @@ if(isset($_POST["submit"])){
   
     <div class="container">
       <?php
-      $datas = mysqli_query($conn, "SELECT * FROM data WHERE reply_id = 0"); 
+      $datas = mysqli_query($conn, "SELECT * FROM tb_dataforum WHERE reply_id = 0"); 
       foreach($datas as $data) {
         require 'comment.php';
       }
