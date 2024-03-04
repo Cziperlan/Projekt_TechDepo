@@ -13,63 +13,59 @@
 <body id="body" onload="NowShow(1)">
     <header>
         <div class="header">
-                <a href="index.html">
-                     <img src="../logo.png" alt="TechDepo logó">
-                </a>
-                <span class="header-right"></span>
-                <a href=""><i class="fas fa-search"></i></a>
-                <a href="../account/account.php"><i class="fas fa-user"></i></a>
-                <a href="../account/wishlist.html"><i class="fas fa-star"></i></a>
-                <a href="/account/cart.html"><i class="fas fa-shopping-cart"></i></a>
-                <a href="tracking.html">TRACK YOU ORDER</a>
+                    <a href="index.html">
+                         <img src="../logo.png" alt="TechDepo logó">
+                    </a> 
+                <div>
+                    <form action="" method="get">
+                        <input type="text" id="search" name="search" placeholder="Keresés...">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div>  
+                    <a class="header-dis" href="../account/account.php"><i class="fas fa-user"></i></a>
+                    <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star"></i></a>
+                    <a href="/account/cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="header-dis" href="tracking.html">TRACK YOU ORDER</a>
+                </div>
         </div>
         <div class="topnav">
-                <div class="sandwitch" onclick="tranSandwitch(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+                <div class="menu">
+                    <div id="dpr" class="sandwitch" onclick="tranSandwitch(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+
                 </div>
                 <a href="">Kezdőlap</a>
                 <a href="">Ajánlataink</a>
-                <!--<div class="dropdown">
-                    <button class="dropbtn">Termékeink</button>
-                    <div class="dropdown-cont">
-                        <div class="drop-row">
-                            <div class="drop-col">
-                                <h3>Számítógépek</h3>
-                                <a href="">Gamer PC-k</a>
-                                <a href="">Irodai PC-k</a>
-                            </div>
-                            <div class="drop-col">
-                                <h3>Laptopok</h3>
-                                <a href="">Gamer Laptopok</a>
-                                <a href="">Notebookok</a>
-                            </div>
-                            <div class="drop-col">
-                                <h3>Audio</h3>
-                                <a href="">Fejhallgatók</a>
-                                <a href="">Fülhallgatók</a>
-                            </div>
-                            <div class="drop-col">
-                                <h3>Perifériák</h3>
-                                <a href="">Billentyűzetek</a>
-                                <a href="">Monitorok</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="dropdown">
                     <button class="dropbtn">Termékeink</button>
                         <div class="dropdown-content">
                             <div class="subdown">
-                                <button class="dropbtn">Számítógépek</button>
+                                <button class="subbtn">Számítógépek</button>
                                     <div class="subdown-content">
                                         <a href="">Gamer PC</a>
                                         <a href="">Irodai PC</a>
                                     </div>
                             </div>
-                            <a href="">Laptopok</a>
-                            <a href="">Monitorok</a>
+                            <div class="subdown">
+                                <button class="subbtn">Laptopok</button>
+                                    <div class="subdown-content subdown-second">
+                                        <a href="">Gamer PC</a>
+                                        <a href="">Irodai PC</a>
+                                    </div>
+                            </div>
+                            <div class="subdown">
+                                <button class="subbtn">Monitorok</button>
+                            <div class="subdown-content subdown-third">
+                                        <a href="">Gamer PC</a>
+                                        <a href="">Irodai PC</a>
+                                    </div>
+                            </div>
                         </div>
                 </div>
             
@@ -83,10 +79,9 @@
                             <a href="forum.php">TechDepo fórum</a>
                         </div>
                 </div>
-                
-    
         </div>
     </header>
+    <a class="jumper" href="#jump"><i class="fas fa-angle-double-down"></i></a>
     <div class="slideshow">
         <div class="S">
             <div class="Scont">
@@ -144,6 +139,7 @@
         <span class="dind" onclick="NowShow(4)"></span>
         <span class="dind" onclick="NowShow(5)"></span>
     </div>
+    <span id="jump"></span>
     <!--
     <div class="container-fluid">
         <div class="row">
@@ -293,7 +289,7 @@
         </div>
         <div class="row footer">
             <div class="col-lg-12">
-                <p class="">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
+                <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
         </div>
     </footer>

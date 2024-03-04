@@ -12,26 +12,57 @@
   background-color: white; 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
-
+/*
 .header-right {
   display: flex;
   margin-left: auto;
-}
+} */
 
 .header img {
   display: flex;
-  vertical-align: middle;
-  width: 140px;
+  width: 110px;
   height: auto;
-  padding: 10px;
-  margin-left: 10px;
+  padding: 5px;
 }
 
 .header a {
   color: black;
-  padding: 10px;
   font-size: large;
+  padding-right: 10px;
+}
+
+.header input{
+  width: 500px;
+  border-radius: 16px;
+  border: 3px solid black;
+  height: 45px;
+}
+
+@media (max-width: 992px) {
+  .header input {
+    width: 200px ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header input {
+    width: 200px;
+  }
+
+  .header-dis {
+    display: none;
+  }
+}
+
+.header button {
+  color: white;
+  background-color: black;
+  border-radius: 12px;
+  border: 1px solid black;
+  padding: 10px 12px 10px 12px;
 }
 
 /*topnav*/
@@ -44,11 +75,10 @@
 }
 
 .topnav a {
-  padding: 50px;
+  padding: 20px;
   color: white;
   text-decoration: none;
   font-size: x-large;
-  text-align: center;
   vertical-align: middle;
 }
 
@@ -118,11 +148,24 @@
   font-size: x-large;  
   border: none;
   color: white;
-  padding: 50px;
+  padding: 20px;
+}
+
+.dropdown-content .subbtn {
+  background-color: white;
+  font-size: large;  
+  border: none;
+  color: black;
+  padding: 20px;
 }
 
 .dropbtn:hover {
   background-color: #1a1818;
+  text-decoration: underline;
+}
+
+.subbtn:hover {
+  color: rgb(106, 1, 1);
   text-decoration: underline;
 }
 
@@ -136,11 +179,12 @@
 }
 
 .dropdown-content a {
-  background-color: black;
-  color: white;
-  padding: 50px;
+  background-color: white;
+  color: black;
   text-decoration: none;
   display: block;
+  padding: 20px;
+  font-size: large;
 }
 
 .dropdown:hover .dropdown-content {
@@ -155,9 +199,28 @@
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  left: 13.5em;
+  left: 8em;
   top: 0;
-} 
+  font-size: large;
+}
+
+.dropdown-content a:hover {
+  color: rgb(106, 1, 1);
+  background-color: white;
+}
+
+.subdown-second {
+top: 2.5em;
+}
+
+.subdown-third {
+top: 5em;
+}
+
+.menu {
+  display: none;
+}
+
 /*Animált szendvics*/
 
 .sandwitch{
@@ -256,13 +319,20 @@
   font-size: large;
 }
 
+.f-center {
+  margin-left: 40%;
+  margin-right: 35%;
+}
+
+
 /* Slideshow */
 .S {
   display: none;
 }
 
 .Spic {
-  width: 2000px;
+  object-position: center;
+  width: 100%;
   height: auto;
   left: 0;
   display: block;
@@ -354,15 +424,13 @@
   padding: 20px;
   margin-top: -22px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6);
   font-weight: bold;
   font-size: xx-large;
   transition: 0.3s ease;
   user-select: none;
   border-radius: 50px;
   text-decoration: none;
-  scale: 1.00;
-  border: 0.1px solid white;
+  scale: 2.00;
 }
 
 .next {
@@ -371,10 +439,11 @@
 }
 
 .next:hover,
-.prev:hover {
-  transform: scale(1.2);
-  background-color: rgba(36, 36, 36, 0.6);
+.prev:hover,
+.jumper:hover {
+  transform: scale(1.4);
   color: white;
+  transition-duration: 0.5s ease;
 }
 
 .dind {
@@ -404,6 +473,24 @@
   color: black;
   position: relative;
   font-size: xx-large;
+}
+
+.jumper {
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 200px;
+  left: 48%;
+  right: 48%;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  transition: 0.3s ease;
+  border-radius: 50px;
+  text-decoration: none;
+  scale: 1.50;
+  text-align: center;
 }
 
 #topgin {

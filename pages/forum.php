@@ -1,6 +1,6 @@
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "data2");
+$conn = mysqli_connect("localhost", "root", "", "webshop");
 
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
@@ -131,7 +131,97 @@ if(isset($_POST["submit"])){
         <button class = "submit" type="submit" name="submit">Közzétesz</button>
       </form>
     </div>
+  <footer>
+    <div class="row footer">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
+                <form class="f-form" action="" method="post">
+                    <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
+                    <input type="text" id="email" name="email" placeholder="E-Mail cím" required>
+                    <input type="submit" name="newsletter" id="newsletter">
+                </form>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12">
+                <h1 class="footer-title">Irányelveink</h1>
+                <ul class="f-ul">
+                    <li>
+                        <a href="../policies/privacy-policy.html">Adatvédelmi tájékoztató</a>
+                    </li>
+                    <li>
+                        <a href="../policies/refund-policy.html">Pénzvisszatérítési garancia</a>
+                    </li>
+                    <li>
+                        <a href="../policies/refund-policy.html">Szállítás</a>
+                    </li>
+                    <li>
+                        <a href="../pages/faq.html">GYIK</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-mg-6 col-sm-12">
+                <h1 class="footer-title">Rólunk</h1>
+                <ul class="f-ul">
+                    <a href="../pages/about.html">Cégünkről</a>
+                    </li>
+                    <li>
+                        <a href="../pages/forum.php">A TechDepo fórum</a>
+                    </li>
+                    <li>
+                        <a href="../policies/terms-of-service.html">Szolgáltatási feltételek</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <h1 class="footer-title">Személyes átvétel</h1>
+                <ul class="f-ul">
+                    <li>
+                        Győr, Szent István utca 7, 9021
+                    </li>
 
+                    <li>
+                        <span>+36 20 468 8923</span>
+                    </li>
+                    <li>
+                        <span>techdepo@nincsmail.hu</span>
+                    </li>
+                    <li>
+                        <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
+                    </li>
+                    <li>
+                        <span>Térkép: <a href="térkép"></a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12">
+                <h1 class="footer-title">Követnél minket?</h1>
+                <div class="social-links">
+                    <ul class="f-ul">
+                        <p>Az alábbi linkeken megteheted:</p>
+                        <li>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="footer/icon1.png" alt="Instagramm" class="f-ikon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com" target="_blank">
+                                <img src="footer/icon2.png" alt="Facebook" class="f-ikon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/?lang=hu" target="_blank">
+                                <img src="footer/icon3.png" alt="Twitter" class="f-ikon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-lg-12">
+                <p class="">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
+            </div>
+        </div>
+    </footer>
     <script>
       function reply(id, name){
         title = document.getElementById('title');
@@ -139,5 +229,6 @@ if(isset($_POST["submit"])){
         document.getElementById('reply_id').value = id;
       }
     </script>
+
   </body>
 </html>
