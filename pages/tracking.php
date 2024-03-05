@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/account.css">
-    <title>TechDepo - Regisztáció</title>
+    <title>TechDepo - Csomagkövetés</title>
 </head>
-
 <body>
     <header>
         <div class="header">
-                    <a href="../pages/index.php">
+                    <a href="index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
@@ -26,7 +23,7 @@
                     </form>
                 </div>
                 <div>  
-                    <a class="header-dis" href="../account/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOU ORDER</a>
@@ -86,18 +83,11 @@
         </div>
     </header>
     <div class="bigbox">
-        <form action="includes/formhandler.inc.php" method="POST" class="bigbox-inner">  
-                <h1>Regisztráció</h1>
-                <input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">
-                <input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">
-                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="text" name="pwd" placeholder="Jelszó">
-                <input class="bigbox-input" type="text" name="email" placeholder="E-Mail cím">
-                <span>
-                    <input type="checkbox" name="tos" required>
-                    <label for="tos">Elfogadom a <a href="">Szolgáltatási felételeket</a></label>
-                </span>
-                <button type="submit">Regisztráció</button>
+        <form class="bigbox-inner" action="" method="get">
+            <h1>Rendelés követés</h1>
+            <p>Követsd nyomon csomagod egy egyszerű gombnyomással!</p>
+            <input class="bigbox-input" type="text" name="track" placeholder="A rendelésed száma">
+            <button type="submit">Követés indítása</button>
         </form>
     </div>
     <footer>
@@ -188,5 +178,4 @@
             </div>
     </footer>
 </body>
-
 </html>

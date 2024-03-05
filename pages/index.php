@@ -28,7 +28,7 @@
                     <a class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                    <a class="header-dis2" href="tracking.html">TRACK YOU ORDER</a>
+                    <a class="header-dis2" href="../pages/tracking.php">TRACK YOU ORDER</a>
                 </div>
         </div>
         <div class="topnav">
@@ -287,6 +287,9 @@
                                 </a>
                         </ul>
                 </div>
+            </div>
+            <div>
+                <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
     </footer>
     <script src="../js/index.js"></script>
