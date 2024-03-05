@@ -362,6 +362,32 @@ top: 7.5em;
   scale: 1.00;
 }
 
+@media screen and (max-width: 1200px) {
+  .ov_button {
+    top: 62%;
+    left: 43%;
+    right: 43%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ov_button {
+    top: 70%;
+    left: 40%;
+    right: 40%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ov_button {
+    top: 70%;
+    left: 36%;
+    right: 36%;
+  }
+}
+
+
+
 .overlayer {
   position: absolute;
   top: 0;
