@@ -86,36 +86,77 @@ if(isset($_POST["submit"])){
 <body id="body" onload="NowShow(1)">
 <header>
         <div class="header">
-                <a href="index.html">
-                     <img src="../logo.png" alt="TechDepo logó">
-                </a>
-                <span class="header-right"></span>
-                <a href=""><i class="fas fa-search"></i></a>
-                <a href="../account/account.php"><i class="fas fa-user"></i></a>
-                <a href="../account/wishlist.html"><i class="fas fa-star"></i></a>
-                <a href="/account/cart.html"><i class="fas fa-shopping-cart"></i></a>
-                <a href="tracking.html">TRACK YOU ORDER</a>
+                    <a href="index.php">
+                         <img src="../logo.png" alt="TechDepo logó">
+                    </a> 
+                <div>
+                    <form action="" method="get">
+                        <input type="text" id="search" name="search" placeholder="Keresés...">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div>  
+                    <a class="header-dis" href="../account/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a class="header-dis2" href="tracking.html">TRACK YOU ORDER</a>
+                </div>
         </div>
         <div class="topnav">
-                <a href="../pages/index.html">Kezdőlap</a>
-                <a href="">Ajánlataink</a>
-                <a href="">Termékeink</a>
-                <a href="">Brandek</a>
-                <a href="">Akciós Termékeink</a>
-                <a class="topright" href="">Rólunk</a>
+                <div class="menu">
+                   <a href=""><i class="fa fa-home" aria-hidden="true"></i></a>
+                   <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
+                   <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
+                </div>
+              <div class="sandwitch" onclick="tranSandwitch(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
+                <a class="topnav-dis" href="">Ajánlataink</a>
+                <div class="dropdown top topnav-dis">
+                    <button class="dropbtn">Termékeink</button>
+                        <div class="dropdown-content">
+                            <div class="subdown">
+                                <button class="subbtn">Számítógépek</button>
+                                    <div class="subdown-content">
+                                        <a href="">Gamer PC</a>
+                                        <a href="">Irodai PC</a>
+                                    </div>
+                            </div>
+                            <div class="subdown">
+                                <button class="subbtn">Laptopok</button>
+                                    <div class="subdown-content subdown-second">
+                                        <a href="">Gamer Laptopok</a>
+                                        <a href="">Notebookok</a>
+                                    </div>
+                            </div>
+                            <div class="subdown">
+                                <button class="subbtn">Kiegészítők</button>
+                            <div class="subdown-content subdown-third">
+                                        <a href="">Fejhallgatók</a>
+                                        <a href="">Monitorok</a>
+                                        <a href="">Perifériák</a>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
             
-            <div class="sandwitch" onclick="tranSandwitch(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-      
+                <a class="topnav-dis" href="">Brandek</a>
+                <a class="topnav-dis" href="">Akciós Termékeink</a>
+                <div class="dropdown topright topnav-dis">
+                    <button class="dropbtn">Rólunk</button>
+                        <div class="dropdown-content">
+                            <a href="">Cégünkről</a>
+                            <a href="">Az oldal használata</a>
+                            <a href="../pages/forum.php">TechDepo fórum</a>
+                        </div>
+                </div>
         </div>
     </header>
-
-
-
-  
     <div class="container">
       <?php
       $datas = mysqli_query($conn, "SELECT * FROM tb_dataforum WHERE reply_id = 0"); 
@@ -131,17 +172,18 @@ if(isset($_POST["submit"])){
         <button class = "submit" type="submit" name="submit">Közzétesz</button>
       </form>
     </div>
-  <footer>
-    <div class="row footer">
-            <div class="col-lg-3 col-md-6 col-sm-12">
+    <footer>
+        <div class="footer row mx-0">
+            <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
                 <form class="f-form" action="" method="post">
                     <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
+                    <br>
                     <input type="text" id="email" name="email" placeholder="E-Mail cím" required>
                     <input type="submit" name="newsletter" id="newsletter">
                 </form>
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="col-lg-2 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Irányelveink</h1>
                 <ul class="f-ul">
                     <li>
@@ -158,10 +200,14 @@ if(isset($_POST["submit"])){
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-mg-6 col-sm-12">
+            <div class="col-lg-2 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Rólunk</h1>
                 <ul class="f-ul">
-                    <a href="../pages/about.html">Cégünkről</a>
+                    <li>
+                        <a href="../pages/about.html">Cégünkről</a>
+                    </li>
+                    <li>
+                        <a href="">Az oldal használata</a>
                     </li>
                     <li>
                         <a href="../pages/forum.php">A TechDepo fórum</a>
@@ -171,7 +217,7 @@ if(isset($_POST["submit"])){
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-2 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Személyes átvétel</h1>
                 <ul class="f-ul">
                     <li>
@@ -192,35 +238,23 @@ if(isset($_POST["submit"])){
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <div class="social-links">
-                    <ul class="f-ul">
-                        <p>Az alábbi linkeken megteheted:</p>
-                        <li>
-                            <a href="https://www.instagram.com" target="_blank">
-                                <img src="footer/icon1.png" alt="Instagramm" class="f-ikon">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank">
-                                <img src="footer/icon2.png" alt="Facebook" class="f-ikon">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/?lang=hu" target="_blank">
-                                <img src="footer/icon3.png" alt="Twitter" class="f-ikon">
-                            </a>
-                        </li>
-                    </ul>
+                        <ul class="f-ul">
+                            <p>Az alábbi linkeken megteheted:</p>
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
+                                </a>
+                                <a href="https://twitter.com/?lang=hu" target="_blank">
+                                    <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
+                                </a>
+                        </ul>
                 </div>
             </div>
-        </div>
-        <div class="row footer">
-            <div class="col-lg-12">
-                <p class="">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
-            </div>
-        </div>
     </footer>
     <script>
       function reply(id, name){

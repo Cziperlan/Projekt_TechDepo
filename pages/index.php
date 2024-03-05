@@ -13,7 +13,7 @@
 <body id="body" onload="NowShow(1)">
     <header>
         <div class="header">
-                    <a href="index.html">
+                    <a href="index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
@@ -25,7 +25,7 @@
                     </form>
                 </div>
                 <div>  
-                    <a class="header-dis" href="../account/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="tracking.html">TRACK YOU ORDER</a>
@@ -42,7 +42,7 @@
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
-                <a class="topnav-dis" href="">Kezdőlap</a>
+                <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="">Ajánlataink</a>
                 <div class="dropdown top topnav-dis">
                     <button class="dropbtn">Termékeink</button>
@@ -79,7 +79,7 @@
                         <div class="dropdown-content">
                             <a href="">Cégünkről</a>
                             <a href="">Az oldal használata</a>
-                            <a href="forum.php">TechDepo fórum</a>
+                            <a href="../pages/forum.php">TechDepo fórum</a>
                         </div>
                 </div>
         </div>
@@ -274,32 +274,20 @@
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <div class="social-links">
-                    <ul class="f-ul">
-                        <p>Az alábbi linkeken megteheted:</p>
-                        <li>
-                            <a href="https://www.instagram.com" target="_blank">
-                                <img src="footer/icon1.png" alt="Instagramm" class="f-ikon">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank">
-                                <img src="footer/icon2.png" alt="Facebook" class="f-ikon">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/?lang=hu" target="_blank">
-                                <img src="footer/icon3.png" alt="Twitter" class="f-ikon">
-                            </a>
-                        </li>
-                    </ul>
+                        <ul class="f-ul">
+                            <p>Az alábbi linkeken megteheted:</p>
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
+                                </a>
+                                <a href="https://twitter.com/?lang=hu" target="_blank">
+                                    <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
+                                </a>
+                        </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer row mx-0">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
-            </div>
-        </div>
     </footer>
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
