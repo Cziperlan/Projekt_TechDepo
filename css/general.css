@@ -3,7 +3,7 @@
 }
 
 #body {
-  margin: none;
+  transition: 0.5s ease;
 }
 
 /*header*/
@@ -35,10 +35,21 @@
 }
 
 .header input{
-  width: 900px;
+  width: 800px;
   border-radius: 16px;
   border: 3px solid black;
   height: 45px;
+  padding: 5px;
+}
+
+@media (max-width: 1200px) {
+  .header-dis2 {
+    display: none;
+  }
+
+  .header input {
+    width: 400px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -56,24 +67,13 @@
 
 @media screen and (max-width: 768px) {
   .header input {
-    width: 100px;
+    width: 80%;
   }
-
   .header-dis {
     display: none;
   }
   .header-dis2 {
     display: none;
-  }
-}
-
-@media (max-width: 1200px) {
-  .header-dis2 {
-    display: none;
-  }
-
-  .header input {
-    width: 400px;
   }
 }
 
@@ -227,6 +227,7 @@ top: 7.5em;
     border-radius: 8px;
     padding: 10px;
     background-color: black;
+    margin-right: 10px;
   }
   .sandwitch:hover {
     background-color: #1a1818;
@@ -234,7 +235,7 @@ top: 7.5em;
   
   .bar1, .bar2, .bar3 {
     border: black 0.1px solid;
-    border-radius: 3px;
+    border-radius: 4px;
     width: 50px;
     height: 8px;
     background-color: white;
@@ -252,6 +253,52 @@ top: 7.5em;
     transform: translate(0, -14px) rotate(45deg);
   }
   
+}
+
+#dropLinks {
+  display: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a, .sidedrop {
+  padding: 10px 22px 10px 22px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  background-color: #1a1818;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+}
+
+.sidecont {
+  display: none;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
 
 /*Footer*/
@@ -350,6 +397,12 @@ top: 7.5em;
   scale: 2.0;
 }
 
+@media screen and (max-width: 768px) {
+  .overlayer_text {
+    font-size: 100%;
+  }
+}
+
 .ov_button {
   border-radius: 8px;
   border:1px solid white ;
@@ -365,7 +418,7 @@ top: 7.5em;
   scale: 1.00;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
   .ov_button {
     top: 62%;
     left: 43%;
@@ -449,11 +502,10 @@ top: 7.5em;
   margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: xx-large;
   transition: 0.3s ease;
   user-select: none;
   text-decoration: none;
-  font-size: 10rem;
+  font-size: 5rem;
 }
 
 .next {
@@ -502,8 +554,8 @@ top: 7.5em;
   cursor: pointer;
   position: absolute;
   top: 200px;
-  left: 47%;
-  right: 47%;
+  left: 40%;
+  right: 40%;
   padding: 10px;
   color: white;
   font-weight: bold;
@@ -513,6 +565,12 @@ top: 7.5em;
   text-decoration: none;
   scale: 1.50;
   text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .jumper {
+    display: none
+  };
 }
 
 #topgin {
