@@ -84,9 +84,9 @@ if(isset($_POST["submit"])){
     <title>TechDepo - Főoldal</title>
 </head>
 <body id="body" onload="NowShow(1)">
-<header>
+    <header>
         <div class="header">
-                    <a href="index.php">
+                    <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
@@ -98,26 +98,38 @@ if(isset($_POST["submit"])){
                     </form>
                 </div>
                 <div>  
-                    <a class="header-dis" href="../account/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a  class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOU ORDER</a>
                 </div>
         </div>
+        <div class="sidenav" id="navSide">
+                            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
+                            <a href="">Ajánlataink</a>
+                            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sidecont">
+                                    <a href=""> - Számítógépek</a>
+                                    <a href=""> - Laptopok</a>
+                                </div>
+                            <a href="">Brandek</a>
+                            <a href="">Rólunk</a>
+                            <a href="../pages/forum.php">Fórum</a>
+                        </div>
         <div class="topnav">
-                <div class="menu">
-                   <a href=""><i class="fa fa-home" aria-hidden="true"></i></a>
-                   <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
-                   <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
-                </div>
-              <div class="sandwitch" onclick="tranSandwitch(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
+                    <div class="menu">
+                        <a href="../pages/index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
+                    </div>
+                    <button class="sandwitch dropbtn"  onclick="openNav()">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="">Ajánlataink</a>
-                <div class="dropdown top topnav-dis">
+                <div class="dropdown topnav-dis">
                     <button class="dropbtn">Termékeink</button>
                         <div class="dropdown-content">
                             <div class="subdown">

@@ -12,7 +12,7 @@
 <body id="body" onload="NowShow(1)">
     <header>
         <div class="header">
-                    <a href="index.php">
+                    <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
@@ -40,11 +40,11 @@
                                 </div>
                             <a href="">Brandek</a>
                             <a href="">Rólunk</a>
-                            <a href="">Fórum</a>
+                            <a href="../pages/forum.php">Fórum</a>
                         </div>
         <div class="topnav">
                     <div class="menu">
-                        <a href=""><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <a href="../pages/index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
