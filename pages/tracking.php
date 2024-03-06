@@ -85,7 +85,7 @@
     <div class="bigbox">
         <form class="bigbox-inner" action="" method="get">
             <h1>Rendelés követés</h1>
-            <p>Követsd nyomon csomagod egy egyszerű gombnyomással!</p>
+            <p>Követsd nyomon csomagod állapotát egy egyszerű gombnyomással!</p>
             <input class="bigbox-input" type="text" name="track" placeholder="A rendelésed száma">
             <button type="submit">Követés indítása</button>
         </form>
