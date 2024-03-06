@@ -25,7 +25,7 @@
                     </form>
                 </div>
                 <div>  
-                    <a class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a  class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOU ORDER</a>
@@ -37,11 +37,12 @@
                    <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
                    <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                 </div>
-              <div class="sandwitch" onclick="tranSandwitch(this)">
+                <button class="sandwitch" onclick="tranSandwitch(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
-                </div>
+                </button>
+                
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="">Ajánlataink</a>
                 <div class="dropdown top topnav-dis">
