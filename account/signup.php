@@ -98,7 +98,7 @@
         </div>
     </header>
     <div class="bigbox">
-        <form action="includes/formhandler.inc.php" method="POST" class="bigbox-inner">  
+        <form action="../includes/formhandler.inc.php" method="POST" class="bigbox-inner">  
                 <h1>Regisztráció</h1>
                 <input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">
                 <input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">

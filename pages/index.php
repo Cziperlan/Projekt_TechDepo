@@ -220,70 +220,7 @@
         <h1>Laptopok</h1>
     </div>
     <div class="product-box"> 
-        <div class="product-inner">
-            <a href="">
-                <img src="../gallery/test_pic.jpg" alt="">
-            </a>
-            <div>
-                <a href=""><h3>Lorem Ipsum</h3></a>
-                <span>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-                <span>999$</span>
-            </div>
-        </div>
-        <div class="product-inner">
-            <a href="">
-                <img src="../gallery/test_pic.jpg" alt="">
-            </a>
-            <div>
-                <a href=""><h3>Lorem Ipsum</h3></a>
-                <span>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-                <span>999$</span>
-            </div>
-        </div>
-        <div class="product-inner">
-            <a href="">
-                <img src="../gallery/test_pic.jpg" alt="">
-            </a>
-            <div>
-                <a href=""><h3>Lorem Ipsum</h3></a>
-                <span>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-                <span>999$</span>
-            </div>
-        </div>
-        <div class="product-inner">
-            <a href="">
-                <img src="../gallery/test_pic.jpg" alt="">
-            </a>
-            <div>
-                <a href=""><h3>Lorem Ipsum</h3></a>
-                <span>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </span>
-                <span>999$</span>
-            </div>
-        </div>
+        
         <div class="product-inner">
             <a href="">
                 <img src="../gallery/test_pic.jpg" alt="">
@@ -417,9 +354,15 @@
                 <span>999$</span>
             </div>
         </div>
+        
+    </div>
+    <div class="product-title">
+        <h1>Gamer Fejhallgatók</h1>
+    </div>
+    <div class="product-box"> 
         <div class="product-inner">
             <a href="">
-                <img src="../gallery/test_pic2.jpg" alt="">
+                <img src="../gallery/test_pic3.jpg" alt="">
             </a>
             <div>
                 <a href=""><h3>Lorem Ipsum</h3></a>
@@ -435,7 +378,7 @@
         </div>
         <div class="product-inner">
             <a href="">
-                <img src="../gallery/test_pic2.jpg" alt="">
+                <img src="../gallery/test_pic3.jpg" alt="">
             </a>
             <div>
                 <a href=""><h3>Lorem Ipsum</h3></a>
@@ -451,7 +394,7 @@
         </div>
         <div class="product-inner">
             <a href="">
-                <img src="../gallery/test_pic2.jpg" alt="">
+                <img src="../gallery/test_pic3.jpg" alt="">
             </a>
             <div>
                 <a href=""><h3>Lorem Ipsum</h3></a>
@@ -467,7 +410,7 @@
         </div>
         <div class="product-inner">
             <a href="">
-                <img src="../gallery/test_pic2.jpg" alt="">
+                <img src="../gallery/test_pic3.jpg" alt="">
             </a>
             <div>
                 <a href=""><h3>Lorem Ipsum</h3></a>
@@ -481,6 +424,151 @@
                 <span>999$</span>
             </div>
         </div>
+        
+    </div>
+    <div class="product-title">
+        <h1>Monitorok</h1>
+    </div>
+    <div class="product-box"> 
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic4.jpg" alt="">
+            </a>
+            <div>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic4.jpg" alt="">
+            </a>
+            <div>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic4.jpg" alt="">
+            </a>
+            <div>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic4.jpg" alt="">
+            </a>
+            <div>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="product-title">
+        <h1>Gamer Perifériák</h1>
+    </div>
+    <div class="product-box"> 
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic5.jpg" alt="">
+            </a>
+            <div>
+                <span><i class="fas fa-eye"></i></span>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic5.jpg" alt="">
+            </a>
+            <div>
+                <span><i class="fas fa-eye"></i></span>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic5.jpg" alt="">
+            </a>
+            <span><i class="fas fa-eye"></i></span>
+            <div>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        <div class="product-inner">
+            <a href="">
+                <img src="../gallery/test_pic5.jpg" alt="">
+            </a>
+            <div>
+                <span><i class="fas fa-eye"></i></span>
+                <a href=""><h3>Lorem Ipsum</h3></a>
+                <span>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+                <span>999$</span>
+            </div>
+        </div>
+        
     </div>
     <footer id="topgin">
         <div class="footer row mx-0">
