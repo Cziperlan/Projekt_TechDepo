@@ -48,7 +48,7 @@
                         <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
-                    <button class="sandwitch dropbtn"  onclick="openNav()">
+                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>

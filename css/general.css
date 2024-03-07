@@ -270,6 +270,7 @@ top: 7.5em;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  border-left: white 1px solid;
 }
 
 .sidenav a, .sidedrop {
@@ -441,8 +442,6 @@ top: 7.5em;
     right: 36%;
   }
 }
-
-
 
 .overlayer {
   position: absolute;
