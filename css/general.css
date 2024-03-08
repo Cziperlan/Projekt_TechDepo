@@ -186,11 +186,11 @@
 }
 
 .subdown-second {
-top: 4.5em;
+top: 5.2em;
 }
 
 .subdown-third {
-top: 9.2em;
+top: 11em;
 }
 
 /*Reszponzív navi*/
@@ -744,6 +744,30 @@ top: 9.2em;
 }
 
 
+/*Split box*/
+
+.split-box {
+  display: flex;
+  width: 100%;
+}
+
+.split-left {
+  display: flex;
+  width: 20%;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  border-right: 3px solid black;
+}
+
+.split-right {
+  display: flex;
+  width: 80%;
+  flex-flow: row wrap;
+  align-items: space-around;
+  justify-content: space-around;
+  padding: 30px;
+}
 /*Carousel*/
 /*
 #slider-text{

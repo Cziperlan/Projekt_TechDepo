@@ -27,7 +27,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
 
         die();
 
-        header("Location: ../account/account.php");
+        header("Location: ../pages/account.php");
 
     } catch (PDOException $exep) {
         die("Query failed" . $exep->getMessage());

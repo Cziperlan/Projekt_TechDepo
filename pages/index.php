@@ -61,7 +61,7 @@
                             <div class="subdown">
                                 <button class="subbtn">Számítógépek</button>
                                     <div class="subdown-content">
-                                        <a href="">Gamer PC</a>
+                                        <a href="../products/towers.html">Gamer PC</a>
                                         <a href="">Irodai PC</a>
                                     </div>
                             </div>
@@ -657,7 +657,6 @@
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
     </footer>
-    <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
     <script src="../js/carousel.js"></script>
