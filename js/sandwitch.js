@@ -15,11 +15,15 @@ function closeNav() {
     /*document.getElementById("body").style.marginRight= "0";*/
   }
 
-function dropSide() {
-  document.getElementsByClassName("sidecont").style.display = "block";
- /*  if (sidecont.style.display === "block") {
-    sidecont.style.display = "none";
-  } else {
-    sidecont.style.display = "block";
-  }*/
+  function dropSide() {
+  let sideconts = document.getElementsByClassName("sidecont");
+
+   
+     if (sideconts[0].style.display === "block") {
+      sideconts[0].style.display = "none";
+      
+    } else {
+      sideconts[0].style.display = "block";
+    }
+ 
 }
