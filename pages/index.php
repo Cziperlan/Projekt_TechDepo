@@ -37,10 +37,16 @@
                                 <div class="sidecont">
                                     <a href=""> - Számítógépek</a>
                                     <a href=""> - Laptopok</a>
+                                    <a href=""> - Monitorok</a>
+                                    <a href=""> - Perifériák</a>
                                 </div>
                             <a href="">Brandek</a>
-                            <a href="">Rólunk</a>
-                            <a href="../pages/forum.php">Fórum</a>
+                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sidecont2">
+                                    <a href=""> - Cégünkről</a>
+                                    <a href=""> - Az oldal használata</a>
+                                    <a href="../pages/forum.php"> - Fórum</a>
+                                </div>
                         </div>
         <div class="topnav">
                     <div class="menu">

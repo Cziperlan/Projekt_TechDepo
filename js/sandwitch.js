@@ -5,7 +5,7 @@ function tranSandwitch(sand) {
 
   
 function openNav() {
-    document.getElementById("navSide").style.width = "250px";
+    document.getElementById("navSide").style.width = "300px";
     /*document.getElementById("body").style.marginRight = "250px"; 
     document.getElementById("hambi").style.display = "none";*/
   }
@@ -24,6 +24,19 @@ function closeNav() {
       
     } else {
       sideconts[0].style.display = "block";
+    }
+ 
+}
+
+function dropSide2() {
+  let sidecont2s = document.getElementsByClassName("sidecont2");
+
+   
+     if (sidecont2s[0].style.display === "block") {
+      sidecont2s[0].style.display = "none";
+      
+    } else {
+      sidecont2s[0].style.display = "block";
     }
  
 }

@@ -305,6 +305,19 @@ top: 11em;
   transition: 0.3s;
 }
 
+.sidecont2{
+  display: none;
+}
+
+.sidecont2, .sidecont2 a {
+  
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  
+  transition: 0.3s;
+}
+
 /*Footer*/
 .footer {
   padding: 20px;
