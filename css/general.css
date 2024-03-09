@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 768px) {
   .header input {
-    width: 80%;
+    width: 70%;
   }
   .header-dis {
     display: none;
@@ -76,6 +76,12 @@
     display: none;
   }
 }
+
+/* @media screen and (max-width: 374px) {
+  .header input {
+    width: 70%;
+  }
+} */
 
 .header button {
   color: white;
@@ -437,7 +443,7 @@ top: 11em;
 
 @media screen and (max-width: 1300px) {
   .ov_button {
-    top: 62%;
+    top: 59%;
     left: 43%;
     right: 43%;
   }
@@ -445,7 +451,7 @@ top: 11em;
 
 @media screen and (max-width: 992px) {
   .ov_button {
-    top: 70%;
+    top: 62%;
     left: 40%;
     right: 40%;
   }
@@ -453,11 +459,12 @@ top: 11em;
 
 @media screen and (max-width: 768px) {
   .ov_button {
-    top: 70%;
+    top: 62%;
     left: 36%;
     right: 36%;
   }
 }
+
 
 .overlayer {
   position: absolute;
@@ -511,7 +518,7 @@ top: 11em;
 .prev {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 45%;
   width: auto;
   padding: 20px;
   margin-top: -22px;
@@ -520,7 +527,7 @@ top: 11em;
   transition: 0.3s ease;
   user-select: none;
   text-decoration: none;
-  font-size: 5rem;
+  font-size: 7rem;
 }
 
 .next {
@@ -534,6 +541,21 @@ top: 11em;
   color: white;
   transition-duration: 0.5s ease;
 }
+
+@media screen and (max-width:768px) {
+  .next, .prev {
+    display: none;
+  }
+   .overlayer {
+    opacity: 1;
+    transform: scale(1.0);
+    overflow: hidden;
+    transition-duration: 0, 7s;
+  }
+
+  
+}
+
 
 .dind {
   cursor: pointer;
@@ -589,7 +611,7 @@ top: 11em;
 }
 
 #topgin {
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 /*Signup és Account flexbox*/
@@ -678,7 +700,6 @@ top: 11em;
 /*Product Flex*/
 
 .product-title {
-  margin-top: 50px;
   display: flex;
   margin-bottom: 50px;
   flex-direction: row;
@@ -687,7 +708,7 @@ top: 11em;
 .product-title h1 {
   display: flex;
   justify-items: center;
-  font-size: 5rem;
+  font-size: 3.2rem;
   color: black;
   text-align: center;
   align-self: center;
@@ -695,24 +716,30 @@ top: 11em;
 }
 
 .product-box {
-  margin-top: 100px;
   display: flex;
   flex-flow: row wrap;
   align-items: space-around;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .product-inner {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 21%;
   border: 3px solid black;
   border-radius: 30px;
   background-color: white;
   color: black;
-  padding: 30px;
+  padding: 10px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width:768px) {
+  .product-inner {
+    width: 47%;
+  }
 }
 
 .product-inner img {
@@ -771,9 +798,9 @@ top: 11em;
   display: flex;
   width: 20%;
   flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
   border-right: 3px solid black;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .split-right {
@@ -784,6 +811,12 @@ top: 11em;
   justify-content: space-around;
   padding: 30px;
 }
+
+.split-inner {
+  border: none;
+  
+}
+
 /*Carousel*/
 /*
 #slider-text{

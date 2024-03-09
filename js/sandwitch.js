@@ -5,7 +5,7 @@ function tranSandwitch(sand) {
 
   
 function openNav() {
-    document.getElementById("navSide").style.width = "300px";
+    document.getElementById("navSide").style.width = "400px";
     /*document.getElementById("body").style.marginRight = "250px"; 
     document.getElementById("hambi").style.display = "none";*/
   }

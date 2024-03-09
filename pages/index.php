@@ -222,7 +222,7 @@
         </div>
     </div>
     -->
-    <div class="product-title">
+    <div id="topgin" class="product-title">
         <h1>Laptopok</h1>
     </div>
     <div class="product-box"> 
@@ -576,7 +576,7 @@
         </div>
         
     </div>
-    <footer id="topgin">
+    <footer>
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
