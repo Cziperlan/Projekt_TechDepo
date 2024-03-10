@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" href="../css/forum.css">
+</head>
 <div class="reply">
     <h4>Válasz</h4>
   
@@ -20,11 +23,6 @@
     }
   }
   ?>
-  <style>
-    p.dátum{
-        font-style: italic;
-        font-size: small;
-        font-family: 'Courier New', Courier, monospace;
-    }
-  </style>
+
+
 </div>

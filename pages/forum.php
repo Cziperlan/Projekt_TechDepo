@@ -1,6 +1,6 @@
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "webshop");
+$conn = mysqli_connect("localhost", "root", "", "mind1");
 
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
@@ -14,68 +14,12 @@ if(isset($_POST["submit"])){
 ?>
 
 <html>
-
-   
-  <style>
-    *{
-      margin: 0px;
-      padding: 0px;
-    }
-    body{
-      background: #212523;
-    }
-    .container{
-      background: white;
-      width: 700px;
-      margin: 0 auto;
-      padding-top: 6px;
-      padding-bottom: 5px;
-    }
-    .comment, .reply{
-      margin-top: 5px;
-      padding: 10px;
-      border-bottom: 1px solid black;
-    }
-    .reply{
-      border: 1px solid #ccc;
-    }
-    p{
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-    form{
-      margin: 10px;
-      text-align: center;
-    }
-    form h3{
-      margin-bottom: 5px;
-    }
-
-   
-    form input, form textarea{
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-    form button.submit, button{
-      background: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 10px 20px;
-      width: 100%;
-    }
-    button.reply{
-      background: pink;
-    }
-  </style>
-
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/forum.css">
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
@@ -84,7 +28,7 @@ if(isset($_POST["submit"])){
     <title>TechDepo - Főoldal</title>
 </head>
 <body id="body" onload="NowShow(1)">
-    <header>
+<header>
         <div class="header">
                     <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
@@ -111,10 +55,16 @@ if(isset($_POST["submit"])){
                                 <div class="sidecont">
                                     <a href=""> - Számítógépek</a>
                                     <a href=""> - Laptopok</a>
+                                    <a href=""> - Monitorok</a>
+                                    <a href=""> - Perifériák</a>
                                 </div>
                             <a href="">Brandek</a>
-                            <a href="">Rólunk</a>
-                            <a href="../pages/forum.php">Fórum</a>
+                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sidecont2">
+                                    <a href=""> - Cégünkről</a>
+                                    <a href=""> - Az oldal használata</a>
+                                    <a href="../pages/forum.php"> - Fórum</a>
+                                </div>
                         </div>
         <div class="topnav">
                     <div class="menu">
@@ -122,7 +72,7 @@ if(isset($_POST["submit"])){
                         <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
-                    <button class="sandwitch dropbtn"  onclick="openNav()">
+                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
@@ -135,7 +85,7 @@ if(isset($_POST["submit"])){
                             <div class="subdown">
                                 <button class="subbtn">Számítógépek</button>
                                     <div class="subdown-content">
-                                        <a href="">Gamer PC</a>
+                                        <a href="../products/towers.html">Gamer PC</a>
                                         <a href="">Irodai PC</a>
                                     </div>
                             </div>
