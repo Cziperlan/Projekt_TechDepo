@@ -97,7 +97,24 @@
     <div class="split-box">
         <div class="split-left">
             <div class="split-inner">
-                
+                <h1>Szűrök</h1>
+                <div class="split-ranger">
+                    <h3>Ár</h3>
+                    <div class="split-slider">
+                        <input id="fromSlider" type="range" value="1000" min="1000" max="1000000"/>
+                        <input id="toSlider" type="range" value="1000000" min="1000" max="1000000"/>
+                    </div>
+                    <div class="split-form">
+                        <div class="split-form-cont">
+                            <div >Min</div>
+                            <input  type="number" id="fromInput" value="1000" min="1000" max="1000000"/>
+                        </div>
+                        <div class="split-form-cont">
+                            <div >Max</div>
+                            <input  type="number" id="toInput" value="1000000" min="1000" max="1000000"/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="split-right">
@@ -337,5 +354,6 @@
     <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
     <script src="../js/carousel.js"></script>
+    <script src="../js/range-slider.js"></script>
 </body>
 </html>
