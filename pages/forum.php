@@ -1,6 +1,6 @@
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "mind1");
+$conn = mysqli_connect("localhost", "root", "", "webshop");
 
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
@@ -118,8 +118,9 @@ if(isset($_POST["submit"])){
                         </div>
                 </div>
         </div>
-    </header>
-    <div class="container">
+    
+</header>
+    <div class="container forum">
       <?php
       $datas = mysqli_query($conn, "SELECT * FROM tb_dataforum WHERE reply_id = 0"); 
       foreach($datas as $data) {

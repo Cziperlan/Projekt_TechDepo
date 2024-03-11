@@ -3,7 +3,7 @@
     padding: 0px;
   }
   body{
-    background: #212523;
+    background: white;
   }
   .container{
     background: white;
@@ -11,6 +11,7 @@
     margin: 0 auto;
     padding-top: 6px;
     padding-bottom: 5px;
+    box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
   }
   .comment, .reply{
     margin-top: 5px;
@@ -20,25 +21,25 @@
   .reply{
     border: 1px solid #ccc;
   }
-  p{
+  .forum p{
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  form{
+  .forum  form{
     margin: 10px;
     text-align: center;
   }
-  form h3{
+  .forum form h3{
     margin-bottom: 5px;
   }
 
  
-  form input, form textarea{
+  .forum form input, form textarea{
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
   }
-  form button.submit, button{
+  .forum form button.submit,.forum button{
     background: #4CAF50;
     color: white;
     border: none;
