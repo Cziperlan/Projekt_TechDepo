@@ -1,3 +1,7 @@
+<?php
+require_once '../includes/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -16,8 +20,8 @@
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
-                    <form action="" method="get">
-                        <input type="text" id="search" name="search" placeholder="Keresés...">
+                    <form action="search.php" method="get">
+                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
                         </button>
@@ -226,11 +230,18 @@
         <h1>Laptopok</h1>
     </div>
     <div class="product-box"> 
-        
         <div class="product-inner">
-            <a href="">
-                <img src="../gallery/test_pic.jpg" alt="">
-            </a>
+            <div class="inner-cont">
+                <a href="">
+                    <span class="product-link">
+                        <img src="../gallery/test_pic.jpg" alt="">
+                    </span>
+                    <div class="product-overlay">
+                        <p class="poverlay-title">Lorem ipsum</p>
+                        <p class="poverlay-sub"><i class="fas fa-eye"></i></p>
+                    </div>
+                </a>
+            
             <div>
                 <a href=""><h3>Lorem Ipsum</h3></a>
                 <span>
@@ -242,6 +253,7 @@
                 </span>
                 <span>999$</span>
             </div>
+        </div>
         </div>
         <div class="product-inner">
             <a href="">

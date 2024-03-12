@@ -721,44 +721,23 @@ top: 11em;
   align-items: space-around;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .product-inner {
   display: flex;
   flex-direction: column;
   width: 21%;
-  border: 3px solid black;
   border-radius: 30px;
   background-color: white;
   color: black;
-  padding: 10px;
   margin-bottom: 50px;
+  border: 3px solid black;
 }
 
 @media screen and (max-width:768px) {
   .product-inner {
     width: 47%;
   }
-}
-
-.product-inner img {
-  display: flex;
-  justify-self: flex-start;
-  border-radius: 20px;
-  align-self: center;
-  width: 100%;
-  height: auto;
-  scale: 1.0;
-  overflow: hidden;
-}
-
-.product-inner img:hover {
-  opacity: 1;
-  width: 100%;
-  transform: scale(1.05);
-  overflow: hidden;
-  transition-duration: 0, 7s;
 }
 
 .product-inner a {
@@ -786,6 +765,71 @@ top: 11em;
   padding: 10px;
 }
 
+.inner-cont {
+  border: none;
+  padding: none;
+  margin: none;
+  overflow: hidden;
+  transition-duration: 0.5s;
+  transform: scale(1.0);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+}
+
+
+.product-inner img {
+  display: block;
+  overflow: hidden;
+  transition-duration: 0.7s;
+  border-radius: 30px;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.inner-cont:hover .product-overlay {
+  opacity: 0.7;
+  transform: scale(1.0);
+  overflow: hidden;
+  transition-duration: 0, 7s;
+}
+
+.inner-cont:hover img {
+  transform: scale(1.1);
+  transition-duration: 0.7s;
+  overflow: hidden;
+}
+
+.poverlay-title {
+  color: white;
+  font-size: xx-large;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 25%;
+  right: 25%;
+}
+
+.poverlay-sub {
+  color: white;
+  font-size: xx-large;
+  position: absolute;
+  text-align: center;
+  top: 55%;
+  left: 25%;
+  right: 25%;
+}
 
 /*Split box*/
 

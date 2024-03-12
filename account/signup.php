@@ -1,3 +1,8 @@
+<?php
+    require_once '../includes/config.session.inc.php';
+    require_once '../includes/signup.view.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -98,18 +103,19 @@
         </div>
     </header>
     <div class="bigbox">
-        <form action="../includes/formhandler.inc.php" method="POST" class="bigbox-inner">  
+        <form action="../includes/signup.inc.php" method="POST" class="bigbox-inner">  
                 <h1>Regisztráció</h1>
-                <input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">
-                <input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">
-                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="text" name="pwd" placeholder="Jelszó">
-                <input class="bigbox-input" type="text" name="email" placeholder="E-Mail cím">
+                <?php
+                signupInput();
+                ?>
                 <span>
                     <input type="checkbox" name="tos" required>
                     <label for="tos">Elfogadom a <a href="">Szolgáltatási felételeket</a></label>
                 </span>
                 <button type="submit">Regisztráció</button>
+                <?php
+                    check_signup_errors();
+                ?>
         </form>
     </div>
     <footer>
