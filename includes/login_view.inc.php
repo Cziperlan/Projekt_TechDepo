@@ -24,6 +24,6 @@ function output_username() {
     if (isset($_SESSION["user_id"])) {
        echo "Üdv újra, ". $_SESSION["user_username"];
 }   else {
-    echo "Bejelentkezés sikertelen!";
+    echo "A hozzáféréshez jelentkezz be!";
 }
 }

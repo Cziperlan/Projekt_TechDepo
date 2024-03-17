@@ -1,6 +1,6 @@
 <?php
     require_once '../includes/config.session.inc.php';
-    require_once '../includes/signup.view.inc.php';
+    require_once '../includes/signup_view.inc.php';
 ?>
 
 <!DOCTYPE html>

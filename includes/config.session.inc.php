@@ -8,7 +8,6 @@ session_set_cookie_params([
     'domain' => 'localhost', /*ha hostoljuk akkor valami.hu */
     'path' => '/',
     'secure' => true,
-    'http_only' => true,
 ]);
 
 session_start();

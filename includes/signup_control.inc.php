@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-function is_input_empty(string $username,string $pwd,string $email,string $firstname, string $lastname, bool $tos) {
-    if (empty($username) || empty($pwd) || empty($email) || empty($firstname) || empty($lastname) || empty($tos)) {
+function is_input_empty(string $username,string $pwd,string $email, string $lastname, string $firstname, bool $tos) {
+    if (empty($username) || empty($pwd) || empty($email) || empty($lastname) || empty($firstname) || empty($tos)) {
         return true;
     }
     else {
@@ -38,6 +38,6 @@ function is_email_registeres(object $pdo, string $email) {
     }
 }
 
-function create_user(object $pdo, string $username,string $pwd,string $email,string $firstname, string $lastname) {
-    set_user($pdo, $username, $pwd, $email, $firstname, $lastname);
+function create_user(object $pdo, string $username,string $pwd,string $email, string $lastname, string $firstname) {
+    set_user($pdo, $username, $pwd, $email, $lastname, $firstname);
 }

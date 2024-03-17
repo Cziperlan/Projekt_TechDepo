@@ -4,13 +4,14 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
     $email = $_POST["email"];
-    $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
+    $firstname = $_POST["firstname"];
     $tos = $_POST["tos"];
 
     try {
         require_once 'dbhandler.inc.php';
         require_once 'signup_model.inc.php';
+        require_once 'signup_view.inc.php';
         require_once 'signup_control.inc.php;';
 
         /*Error Handlers */
@@ -35,8 +36,8 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
             $signupData = [
                 "username" => $username,
                 "email" => $email,
-                "firstname" => $firstname,
                 "lastname" => $lastname,
+                "firstname" => $firstname,
             ];
 
             $_SESSION["signup_data"] = $signupData;
@@ -45,7 +46,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
             die();
         }
 
-        create_user($username, $pwd, $email, $firstname, $lastname);
+        create_user($username, $pwd, $email, $lastname, $firstname);
         header("Location: ../pages/account.php?signup=success");
         $pdo = null;
         $stmt = null;
