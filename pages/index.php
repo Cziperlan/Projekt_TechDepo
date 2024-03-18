@@ -40,7 +40,7 @@ require_once '../includes/config.session.inc.php';
                             <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont">
                                     <a href="../products/towers.html"> - Számítógépek</a>
-                                    <a href=""> - Laptopok</a>
+                                    <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href=""> - Monitorok</a>
                                     <a href=""> - Perifériák</a>
                                 </div>
@@ -78,8 +78,8 @@ require_once '../includes/config.session.inc.php';
                             <div class="subdown">
                                 <button class="subbtn">Laptopok</button>
                                     <div class="subdown-content subdown-second">
-                                        <a href="">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
+                                        
+                                        <a href="../products/notebooks.php">Notebookok</a>
                                     </div>
                             </div>
                             <div class="subdown">

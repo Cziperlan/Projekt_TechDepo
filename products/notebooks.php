@@ -318,7 +318,7 @@
 
                                                 // Displaying laptop information
                                                 ?>
-                                                <div class="col-md-3 mbb-2">
+                                                <div class="col-md-3 mb-2">
                                                     <div class="cars-deck">
                                                         <div class="card border-secondary">
                                                             <img src="<?= $image_path ?>" class="card-img-top">
