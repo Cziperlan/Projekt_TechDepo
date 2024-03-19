@@ -136,7 +136,7 @@
     <footer>
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
-                <h1 class="footer-title">Regisztrálj a hírlevelünre!</h1>
+                <h1 class="footer-title">Regisztrálj a hírlevelünkre!</h1>
                 <form class="f-form" action="" method="post">
                     <label for="email">Értesülj mindig a legújabb akcióinkról!</label>
                     <br>
