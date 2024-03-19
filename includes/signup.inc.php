@@ -6,6 +6,8 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $lastname = $_POST["lastname"];
     $firstname = $_POST["firstname"];
+    $defaddress = $_POST["defaddress"];
+    $tel = $_POST["tel"];
     $tos = $_POST["tos"];
 
     try {
@@ -40,6 +42,8 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
                 "email" => $email,
                 "lastname" => $lastname,
                 "firstname" => $firstname,
+                "defaddress" => $defaddress,
+                "tel" => $tel,
             ];
 
             $_SESSION["signup_data"] = $signupData;
@@ -48,7 +52,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
             die();
         }
 
-        create_user($pdo, $username, $pwd, $email, $lastname, $firstname);
+        create_user($pdo, $username, $pwd, $email, $lastname, $firstname, $defaddress, $tel);
         header("Location: ../pages/account.php?signup=success");
 
         $pdo = null;

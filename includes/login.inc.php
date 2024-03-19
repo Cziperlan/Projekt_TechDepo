@@ -7,10 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         require_once 'dbhandler.inc.php';    
         require_once 'login_model.inc.php';
-        require_once 'login_view.inc.php'; 
         require_once 'login_control.inc.php';
 
-    $errors = [];
+        $errors = [];
         
         if (is_input_empty($username, $pwd)) {
             $errors["empty_input"] = "Kérjük tölse ki az összes mezőt!";

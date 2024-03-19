@@ -68,23 +68,11 @@
                 <div class="dropdown topnav-dis">
                     <button class="dropbtn">Termékeink</button>
                         <div class="dropdown-content">
-                            <div class="subdown">
-                                <button class="subbtn">Számítógépek</button>
-                                    <div class="subdown-content">
-                                        <a href="../products/towers.html">Gamer PC</a>
-                                        <a href="">Irodai PC</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Laptopok</button>
-                                    <div class="subdown-content subdown-second">
-                                        <a href="">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
-                                    </div>
-                            </div>
+                            <a href="">Számítógépek</a>
+                            <a href="">Laptopok</a>
                             <div class="subdown">
                                 <button class="subbtn">Kiegészítők</button>
-                            <div class="subdown-content subdown-third">
+                            <div class="subdown-content subdown">
                                         <a href="">Fejhallgatók</a>
                                         <a href="">Monitorok</a>
                                         <a href="">Perifériák</a>
@@ -126,7 +114,9 @@
         }   else {
         ?>
             <!--Az oldal bejelentkezés után megjelenő tartalma.-->
-        
+            <form action="../includes/logout.inc.php" method="POST" >
+                <button>Kijelentkezés</button>
+            </form>
         <?php
         }
         

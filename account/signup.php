@@ -106,7 +106,7 @@
         <form action="../includes/signup.inc.php" method="POST" class="bigbox-inner">  
                 <h1>Regisztráció</h1>
                 <?php
-                signupInput();
+                signup_inputs();
                 ?>
                 <span>
                     <input type="checkbox" name="tos" required>

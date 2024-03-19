@@ -44,7 +44,6 @@ require_once '../includes/config.session.inc.php';
                                     <a href=""> - Monitorok</a>
                                     <a href=""> - Perifériák</a>
                                 </div>
-                            <a href="">Brandek</a>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
                                     <a href=""> - Cégünkről</a>
@@ -65,44 +64,24 @@ require_once '../includes/config.session.inc.php';
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
-                <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topnav-dis">
-                    <button class="dropbtn">Kiegészítők</button>
-                        <div class="dropdown-content">
-<<<<<<< Updated upstream
-                            <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../products/monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Perifériák</a>
-=======
-                            <div class="subdown">
-                                <button class="subbtn">Számítógépek</button>
-                                    <div class="subdown-content">
-                                        <a href="../products/towers.html">Gamer PC</a>
-                                        <a href="">Irodai PC</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Laptopok</button>
-                                    <div class="subdown-content subdown-second">
-                                        <a href="../products/notebooks.php">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
-                                    </div>
-                            </div>
+                    <button class="dropbtn">Termékeink</button>
+                    <div class="dropdown-content">
+                            <a href="../products/towers.php">Számítógépek</a>
+                            <a href="../products/notebooks.php">Laptopok</a>
                             <div class="subdown">
                                 <button class="subbtn">Kiegészítők</button>
-                            <div class="subdown-content subdown-third">
+                                    <div class="subdown-content subdown">
                                         <a href="">Fejhallgatók</a>
                                         <a href="">Monitorok</a>
                                         <a href="">Perifériák</a>
                                     </div>
                             </div>
->>>>>>> Stashed changes
-                        </div>
+                    </div>
                 </div>
-                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn">Rólunk</button>
+                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
                             <a href="../pages/about.html">Cégünkről</a>
                             <a href="">Az oldal használata</a>
@@ -170,68 +149,6 @@ require_once '../includes/config.session.inc.php';
         <span class="dind" onclick="NowShow(5)"></span>
     </div>
     <span id="jump"></span>
-    <!--
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="carousel carousel-showmanymoveone slide" id="itemslider">
-                    <div class="carousel-inner">
-
-                        <div class="item active">
-                            <div class="col-xs-12 col-sm-6 col-md-2">
-                                <a href="#">
-                                    <img src="" class="img-responsive center-block"></a>
-                                <h4 class="text-center"></h4>
-                                <h5 class="text-center"></h5>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-2">
-                                <a href="#">
-                                    <img src="" class="img-responsive center-block">
-                                </a>
-                                <h4 class="text-center"></h4>
-                                <h5 class="text-center"></h5>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-2">
-                                <a href="#">
-                                    <img src="" class="img-responsive center-block">
-                                </a>
-                                <span class="badge"></span>
-                                <h4 class="text-center"></h4>
-                                <h5 class="text-center"></h5>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="col-xs-12 col-sm-6 col-md-2">
-                                <a href="#">
-                                    <img src="" class="img-responsive center-block">
-                                </a>
-                                <h4 class="text-center"></h4>
-                                <h5 class="text-center"></h5>
-                            </div>
-                        </div>
-                    </div>
-                        <div id="slider-control">
-                            <a class="left carousel-control" href="#itemslider" data-slide="prev">
-                                <img src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png"
-                                    alt="Left" class="img-responsive">
-                            </a>
-                            <a class="right carousel-control" href="#itemslider" data-slide="next">
-                                <img src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right"
-                                    class="img-responsive">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
     <div id="topgin" class="product-title">
         <h1>Laptopok</h1>
     </div>

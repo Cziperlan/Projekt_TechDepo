@@ -20,7 +20,7 @@ function check_signup_errors() {
     }
 }
 
-function signupInput() {
+function signup_inputs() {
 
     if(isset($_SESSION["signup_data"]["username"]) && !isset($_SESSION["errors_signup"]["username_taken"])) {
         echo '<input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév" value="' .$_SESSION["signup_data"]["username"].'">';
@@ -35,8 +35,29 @@ function signupInput() {
     } else {
         echo '<input class="bigbox-input" type="text" name="email" placeholder="E-Mail cím">';
     }
+    if(isset($_SESSION["signup_data"]["lastname"])) {
+        echo '<input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév" value="' .$_SESSION["signup_data"]["lastname"].'">';
+    }
+    else {
+        echo '<input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">';
+    }
+    if(isset($_SESSION["signup_data"]["firstname"])) {
+        echo '<input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév" value="' .$_SESSION["signup_data"]["firstname"].'">';
+    }
+    else {
+        echo '<input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">';
+    }
 
-    echo '<input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">';
-
-    echo '<input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">';
-}
+    if(isset($_SESSION["signup_data"]["defaddress"])) {
+        echo '<input class="bigbox-input" type="text" name="defaddress" placeholder="Lakcím" value="' .$_SESSION["signup_data"]["defaddress"].'">';
+    }
+    else {
+        echo '<input class="bigbox-input" type="text" name="defaddress" placeholder="Lakcím">';
+    }
+    if(isset($_SESSION["signup_data"]["tel"])) {
+        echo '<input class="bigbox-input" type="tel" name="tel" placeholder="Telefonszám" value="' .$_SESSION["signup_data"]["tel"].'">';
+    }
+    else {
+        echo '<input class="bigbox-input" type="tel" name="tel" placeholder="Telefonszám">';
+    }
+}  
