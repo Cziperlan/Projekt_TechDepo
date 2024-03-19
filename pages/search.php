@@ -24,7 +24,7 @@
             
         
 } else {
-     header("Location: ../account/signup.php");
+     header("Location: ../pages/index.php");
 }
 ?>
 
