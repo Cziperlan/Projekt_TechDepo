@@ -70,34 +70,9 @@ require_once '../includes/config.session.inc.php';
                 <div class="dropdown topnav-dis">
                     <button class="dropbtn">Kiegészítők</button>
                         <div class="dropdown-content">
-<<<<<<< Updated upstream
                             <a href="../products/headphones.php">Fejhallgatók</a>
                             <a href="../products/monitors.php">Monitorok</a>
                             <a href="../products/accessories.php">Perifériák</a>
-=======
-                            <div class="subdown">
-                                <button class="subbtn">Számítógépek</button>
-                                    <div class="subdown-content">
-                                        <a href="../products/towers.html">Gamer PC</a>
-                                        <a href="">Irodai PC</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Laptopok</button>
-                                    <div class="subdown-content subdown-second">
-                                        <a href="../products/notebooks.php">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Kiegészítők</button>
-                            <div class="subdown-content subdown-third">
-                                        <a href="">Fejhallgatók</a>
-                                        <a href="">Monitorok</a>
-                                        <a href="">Perifériák</a>
-                                    </div>
-                            </div>
->>>>>>> Stashed changes
                         </div>
                 </div>
                 <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
@@ -118,7 +93,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_PC2.png" alt="Számítógépek">
                 <div class="overlayer">
                     <p class="overlayer_text">Számítógépek</p>
-                    <a href="../products/towers.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/towers.html"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -127,7 +102,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_laptop2.jpg" alt="Laptopok">
                 <div class="overlayer">
                     <p class="overlayer_text">Laptopok</p>
-                    <a href="../products/notebooks.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/notebooks.html"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -136,7 +111,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_headphones2.webp" alt="Fejhallgatók">
                 <div class="overlayer">
                     <p class="overlayer_text">Fejhallgatók</p>
-                    <a href="../products/headphones.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/headphones.html"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -145,7 +120,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_monitors2.jpg" alt="monitors">
                 <div class="overlayer">
                     <p class="overlayer_text">Monitorok</p>
-                    <a href="../products/monitors.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/monitors.html"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -154,7 +129,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_peripherals.webp" alt="peripherals">
                 <div class="overlayer">
                     <p class="overlayer_text">Perifériák</p>
-                    <a href="../products/accessoires.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/monitors.html"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>

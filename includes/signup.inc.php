@@ -11,6 +11,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     try {
         require_once 'dbhandler.inc.php';
         require_once 'signup_model.inc.php';
+        require_once 'signup_view.inc.php';
         require_once 'signup_control.inc.php;';
 
         /*Error Handlers */
@@ -32,9 +33,6 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
         require_once 'config.session.inc.php';
 
         if ($errors) {
-
-            $_SESSION["errors_signup"] = $errors;
-
             $signupData = [
                 "username" => $username,
                 "email" => $email,
@@ -48,9 +46,8 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
             die();
         }
 
-        create_user($pdo, $username, $pwd, $email, $lastname, $firstname);
+        create_user($username, $pwd, $email, $lastname, $firstname);
         header("Location: ../pages/account.php?signup=success");
-
         $pdo = null;
         $stmt = null;
         
@@ -61,5 +58,4 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     }
 } else {
     header("Location: ../account/signup.php");
-    die();
 }

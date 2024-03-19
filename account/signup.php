@@ -110,9 +110,8 @@
                 ?>
                 <span>
                     <input type="checkbox" name="tos" required>
-                    <label for="tos">Elfogadom a <a href="../policies/terms-of-service.html">Szolgáltatási felételeket</a></label>
+                    <label for="tos">Elfogadom a <a href="">Szolgáltatási felételeket</a></label>
                 </span>
-                <span>Már regisztráltál?<a href="../pages/account.php"> Jeletkezz be!</a></span>
                 <button type="submit">Regisztráció</button>
                 <?php
                     check_signup_errors();
