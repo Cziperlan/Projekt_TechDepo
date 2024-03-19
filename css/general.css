@@ -15,11 +15,6 @@
   justify-content: space-between;
   flex-wrap: nowrap;
 }
-/*
-.header-right {
-  display: flex;
-  margin-left: auto;
-} */
 
 .header img {
   display: flex;
@@ -77,11 +72,6 @@
   }
 }
 
-/* @media screen and (max-width: 374px) {
-  .header input {
-    width: 70%;
-  }
-} */
 
 .header button {
   color: white;
@@ -130,31 +120,17 @@
   padding: 30px;
 }
 
-.dropdown-content .subbtn {
-  background-color: black;
-  font-size: larger;  
-  border: none;
-  color: white;
-  padding: 30px;
-  width: 100%;
-  display: block;
-}
 
 .dropbtn:hover {
   background-color: #1a1818;
   text-decoration: underline;
 }
 
-.subbtn:hover {
-  background-color: #1a1818;
-  text-decoration: underline;
-}
-
 .dropdown-content {
   position: absolute;
-  display: none;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 5;
+  display: none;
   text-align: center;
   vertical-align: middle;
 }
@@ -163,40 +139,20 @@
   color: white;
   background-color: black;
   text-decoration: none;
-  display: block;
   font-size: larger;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 30px;
+  overflow: hidden;
+  text-align: center;
+  display: block;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.subdown:hover .subdown-content {
-  display: block;
-}
-.subdown-content{
-  display: none;
-  position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 2;
-  left: 11em;
-  top: 0;
-  font-size: medium;
-}
-
 .dropdown-content a:hover {
   background-color: #1a1818;
   text-decoration: underline;
-}
-
-.subdown-second {
-top: 5.2em;
-}
-
-.subdown-third {
-top: 11em;
 }
 
 /*Reszponzív navi*/
@@ -436,8 +392,8 @@ top: 11em;
   position: absolute;
   text-align: center;
   top: 56%;
-  left: 47%;
-  right: 47%;
+  left: 46%;
+  right: 46%;
   scale: 1.00;
 }
 
