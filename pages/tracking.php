@@ -15,15 +15,15 @@
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
-                    <form action="" method="get">
-                        <input type="text" id="search" name="search" placeholder="Keresés...">
+                    <form action="search.php" method="get">
+                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
                 </div>
                 <div>  
-                    <a  class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
@@ -34,12 +34,17 @@
                             <a href="">Ajánlataink</a>
                             <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont">
-                                    <a href=""> - Számítógépek</a>
-                                    <a href=""> - Laptopok</a>
+                                    <a href="../products/towers.html"> - Számítógépek</a>
+                                    <a href="../products/notebooks.php"> - Laptopok</a>
+                                    <a href=""> - Monitorok</a>
+                                    <a href=""> - Perifériák</a>
                                 </div>
-                            <a href="">Brandek</a>
-                            <a href="">Rólunk</a>
-                            <a href="../pages/forum.php">Fórum</a>
+                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sidecont2">
+                                    <a href=""> - Cégünkről</a>
+                                    <a href=""> - Az oldal használata</a>
+                                    <a href="../pages/forum.php"> - Fórum</a>
+                                </div>
                         </div>
         <div class="topnav">
                     <div class="menu">
@@ -47,47 +52,28 @@
                         <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
                         <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
-                    <button class="sandwitch dropbtn"  onclick="openNav()">
+                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="">Ajánlataink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topnav-dis">
-                    <button class="dropbtn">Termékeink</button>
-                        <div class="dropdown-content">
-                            <div class="subdown">
-                                <button class="subbtn">Számítógépek</button>
-                                    <div class="subdown-content">
-                                        <a href="">Gamer PC</a>
-                                        <a href="">Irodai PC</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Laptopok</button>
-                                    <div class="subdown-content subdown-second">
-                                        <a href="">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Kiegészítők</button>
-                            <div class="subdown-content subdown-third">
-                                        <a href="">Fejhallgatók</a>
-                                        <a href="">Monitorok</a>
-                                        <a href="">Perifériák</a>
-                                    </div>
-                            </div>
-                        </div>
+                <button class="dropbtn">Termékeink</button>
+                    <div class="dropdown-content">
+                            <a href="../products/towers.php">Számítógépek</a>
+                            <a href="../products/notebooks.php">Laptopok</a>
+                            <a href="../products/headphones.php">Fejhallgatók</a>
+                            <a href="../monitors.php">Monitorok</a>
+                            <a href="../products/accessories.php">Kiegészítők</a>
+                    </div>
                 </div>
-            
-                <a class="topnav-dis" href="">Brandek</a>
-                <a class="topnav-dis" href="">Akciós Termékeink</a>
                 <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn">Rólunk</button>
+                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
-                            <a href="">Cégünkről</a>
+                            <a href="../pages/about.html">Cégünkről</a>
                             <a href="">Az oldal használata</a>
                             <a href="../pages/forum.php">TechDepo fórum</a>
                         </div>

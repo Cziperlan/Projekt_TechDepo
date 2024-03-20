@@ -66,18 +66,13 @@ require_once '../includes/config.session.inc.php';
                 <a class="topnav-dis" href="">Ajánlataink</a>
                 <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topnav-dis">
-                    <button class="dropbtn">Termékeink</button>
+                <button class="dropbtn">Termékeink</button>
                     <div class="dropdown-content">
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
-                            <div class="subdown">
-                                <button class="subbtn">Kiegészítők</button>
-                                    <div class="subdown-content subdown">
-                                        <a href="">Fejhallgatók</a>
-                                        <a href="">Monitorok</a>
-                                        <a href="">Perifériák</a>
-                                    </div>
-                            </div>
+                            <a href="../products/headphones.php">Fejhallgatók</a>
+                            <a href="../monitors.php">Monitorok</a>
+                            <a href="../products/accessories.php">Kiegészítők</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">
