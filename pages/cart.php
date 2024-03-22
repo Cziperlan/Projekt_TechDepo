@@ -1,6 +1,5 @@
 <?php 
     require_once '../includes/config.session.inc.php';
-    require_once '../includes/login_view.inc.php'
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>TechDepo - Fiók</title>
+    <title>TechDepo - Kosár</title>
 </head>
 <body>
     <header>
@@ -86,31 +85,22 @@
         </div>
     </header>
     <div>
-    <?php
-    if (!isset($_SESSION["user_id"])) { ?>
-        <div class="bigbox">
-            <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
-                <h1><?php output_username(); ?></h1>
-                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
-                <span><a href="../account/signup.php">Ha még nincs fiókod, itt csinálhatsz magadnak!</a></span>
-                <button>Bejelentkezés</button>
-            </form>
-
-            <?php check_login_errors(); ?>
-            <form action="../includes/logout.inc.php" method="POST">
-                <button>Kijelentkezés</button>
-            </form>
-        </div>
-    <?php } else { ?>
-        <!-- Az oldal bejelentkezés után megjelenő tartalma. -->
-        <div>
-            Üdv újra, <?php echo $_SESSION["user_username"]; ?>!<br>
-            <form action="../includes/logout.inc.php" method="POST">
-                <button>Kijelentkezés</button>
-            </form>
-        </div>
-    <?php } ?>
+        <?php
+            if (!isset($_SESSION["user_id"])) {
+        ?>
+           <div>
+                <h1>A kosár használatához <a href="account.php">jelentkezz be</a>!</h1>
+           </div>
+        <?php
+        }   else {
+        ?>
+            <!--Az oldal bejelentkezés után megjelenő tartalma.-->
+            
+        <?php
+        }
+        
+        
+        ?>
     </div>
     <footer>
         <div class="footer row mx-0">
