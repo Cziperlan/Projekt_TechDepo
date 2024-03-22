@@ -22,8 +22,9 @@ function get_email(object $pdo, string $email) {
     return $result;
 }
 
-function set_user(object $pdo, string $username,string $pwd,string $email, string $lastname,string $firstname, string $defaddress, string $tel) {
-    $query = "INSERT INTO users (username, pwd, email, lastname, firstname, defaddress, tel) VALUES (:username, :pwd, :email, :lastname, :firstname, :defaddress, :tel);";
+function set_user(object $pdo, string $username,string $pwd,string $email, string $lastname,string $firstname, string $defaddress, string $tel, bool $tos) {
+    $query = "INSERT INTO webshop.users (username, lastname, firstname, email, pwd, defaddress, tel, tos) VALUES (:username, :lastname, :firstname, :email, :pwd, :defaddress, :tel, :tos);";
+
     $options = [
         'cost' => 12
     ];
@@ -31,12 +32,13 @@ function set_user(object $pdo, string $username,string $pwd,string $email, strin
     $hashPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
 
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":username",$username);
-    $stmt->bindParam(":pwd",$hashPwd);
-    $stmt->bindParam(":email",$email);
-    $stmt->bindParam(":lastname",$lastname);
-    $stmt->bindParam(":firstname",$firstname);
-    $stmt->bindParam(":defaddress",$defaddress);
-    $stmt->bindParam(":tel",$tel);
+    $stmt->bindParam(':username',$username);
+    $stmt->bindParam(':pwd',$hashPwd);
+    $stmt->bindParam(':email',$email);
+    $stmt->bindParam(':lastname',$lastname);
+    $stmt->bindParam(':firstname',$firstname);
+    $stmt->bindParam(':defaddress',$defaddress);
+    $stmt->bindParam(':tel',$tel);
+    $stmt->bindParam(':tos',$tos);
     $stmt->execute();
 }

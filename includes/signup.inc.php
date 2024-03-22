@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         /*Error Handlers */
         $errors = [];
         
-        if (is_input_empty($username, $pwd, $email, $firstname, $lastname, $tos)) {
+        if (is_input_empty($username, $pwd, $email, $lastname, $firstname, $defaddress, $tel, $tos)) {
             $errors["empty_input"] = "Kérjük tölse ki az összes mezőt!";
         }
         if (is_email_invalid($email)) {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die();
         }
 
-        create_user($pdo, $username, $pwd, $email, $lastname, $firstname, $defaddress, $tel);
+        create_user($pdo, $username, $pwd, $email, $lastname, $firstname, $defaddress, $tel, $tos);
         header("Location: ../pages/account.php?signup=success");
 
         $pdo = null;
