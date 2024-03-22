@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'config.session.inc.php';
 
         if ($errors) {
-        $_SESSION["errors_login"] = $errors;
+            $_SESSION["errors_login"] = $errors;
             header("Location: ../pages/account.php");
 
             die();
@@ -46,9 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt = null;
         
         die();
-    } 
-
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
 

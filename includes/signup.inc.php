@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER["REQEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
     $email = $_POST["email"];
@@ -13,7 +13,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     try {
         require_once 'dbhandler.inc.php';
         require_once 'signup_model.inc.php';
-        require_once 'signup_control.inc.php;';
+        require_once 'signup_control.inc.php';
 
         /*Error Handlers */
         $errors = [];

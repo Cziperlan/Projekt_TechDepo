@@ -23,8 +23,7 @@ function get_email(object $pdo, string $email) {
 }
 
 function set_user(object $pdo, string $username,string $pwd,string $email, string $lastname,string $firstname, string $defaddress, string $tel) {
-    $query = "INSERT INTO users (username, pwd, email, lastname, firstname, defaddress, tel) VALUES (:username, :pwd, :email, :lastname, :firstname :defaddress :tel);";
-
+    $query = "INSERT INTO users (username, pwd, email, lastname, firstname, defaddress, tel) VALUES (:username, :pwd, :email, :lastname, :firstname, :defaddress, :tel);";
     $options = [
         'cost' => 12
     ];
