@@ -21,8 +21,8 @@ function check_login_errors() {
 }
 function output_username() {
     if (isset($_SESSION["user_id"])) {
-       echo "Üdv újra, ". $_SESSION["user_username"];
+       echo '<h1>Üdv újra, '. $_SESSION["user_username"]. '!</h1>';
     } else {
-        echo "Bejelentkezés";
+        echo "<h1>Bejelentkezés</h1>";
     }
 }

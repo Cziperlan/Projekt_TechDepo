@@ -9,6 +9,6 @@
 
 SET NAMES 'utf8';
 
-INSERT INTO webshop.users(Felhasználószám, username, lastname, firstname, email, pwd, defaddress, Szállítási_cím, tel, Bankkártya_szám, CVC, lejárat, Regisztráció_ideje, admin, tos) VALUES
+INSERT INTO webshop.users(felhasznalo_id, username, lastname, firstname, email, pwd, defaddress, Szállítási_cím, tel, Bankkártya_szám, CVC, lejárat, Regisztráció_ideje, admin, tos) VALUES
 (1, 'Testing', 'Doe', 'John', 'asdasd@gmail.com', '$2a$12$jhFTJO4kIP77chUm0V.GzOlG.E5Y1sShuuY4p.2mYb5dCJskRcNn2', '9021, Győr Valami utca', NULL, '+36905683237', NULL, NULL, NULL, '2024-03-21 16:29:12', 0, 0),
 (5, 'Cziperlan', 'Czipri', 'Gergő', 'czippgergo@gmail.com', '$2y$12$keYHNueLxnkru5hjhJrd1ud4iaFba.om2wkcHkJWZiFg/hUddIfbC', '9021, Győr Igen Igen', NULL, '+36 40 783 2849', NULL, NULL, NULL, '2024-03-22 20:27:33', 0, 1);

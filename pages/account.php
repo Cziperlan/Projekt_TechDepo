@@ -90,23 +90,20 @@
     if (!isset($_SESSION["user_id"])) { ?>
         <div class="bigbox">
             <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
-                <h1><?php output_username(); ?></h1>
+                <?php output_username(); ?>
                 <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
                 <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
                 <span><a href="../account/signup.php">Ha még nincs fiókod, itt csinálhatsz magadnak!</a></span>
                 <button>Bejelentkezés</button>
             </form>
 
-            <?php check_login_errors(); ?>
-            <form action="../includes/logout.inc.php" method="POST">
-                <button>Kijelentkezés</button>
-            </form>
+            <?php check_login_errors();?>
         </div>
     <?php } else { ?>
         <!-- Az oldal bejelentkezés után megjelenő tartalma. -->
-        <div>
-            Üdv újra, <?php echo $_SESSION["user_username"]; ?>!<br>
-            <form action="../includes/logout.inc.php" method="POST">
+        <div class="bigbox">
+            <form action="../includes/logout.inc.php" method="POST" class="bigbox-inner">
+                <?php output_username(); ?>
                 <button>Kijelentkezés</button>
             </form>
         </div>
