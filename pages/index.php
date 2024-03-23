@@ -11,6 +11,7 @@ require_once '../includes/config.session.inc.php';
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
     <title>TechDepo - Főoldal</title>
 </head>
 <body id="body" onload="NowShow(1)">
@@ -29,7 +30,7 @@ require_once '../includes/config.session.inc.php';
                 </div>
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>

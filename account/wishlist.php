@@ -1,6 +1,10 @@
+<?php
+require_once '../includes/config.session.inc.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +12,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
-    <title>TechDepo - Ajánlataink</title>
+    <title>TechDepo - Kívánságlista</title>
 </head>
 <body>
     <header>
@@ -173,3 +177,4 @@
             </div>
     </footer>
 </body>
+</html>

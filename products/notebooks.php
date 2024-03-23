@@ -12,58 +12,56 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <title>TechDepo - Számítógépek</title>
+    <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
+    <title>TechDepo - Laptopok</title>
 </head>
-
+    <body>
     <header>
         <div class="header">
                     <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
-                    <form action="" method="get">
-                        <input type="text" id="search" name="search" placeholder="Keresés...">
+                    <form action="search.php" method="get">
+                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
                 </div>
                 <div>  
-                    <a  class="header-dis" href="../account/signup.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
         <div class="sidenav" id="navSide">
                             <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="">Ajánlataink</a>
+                            <a href="../products/featured.php">Ajánlataink</a>
                             <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont">
-                                    <a href=""> - Számítógépek</a>
-                                    <a href=""> - Laptopok</a>
+                                    <a href="../products/towers.php"> - Számítógépek</a>
+                                    <a href="../products/notebooks.php"> - Laptopok</a>
+                                    <a href="../products/monitors.php"> - Monitorok</a>
+                                    <a href="../products/accessories.php"> - Perifériák</a>
                                 </div>
-                            <a href="">Brandek</a>
-                            <a href="">Rólunk</a>
-                            <a href="../pages/forum.php">Fórum</a>
+                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sidecont2">
+                                    <a href="../pages/about.html"> - Cégünkről</a>
+                                    <a href=""> - Az oldal használata</a>
+                                    <a href="../pages/forum.php"> - Fórum</a>
+                                </div>
                         </div>
         <div class="topnav">
                     <div class="menu">
                         <a href="../pages/index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
+                        <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
                     <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>
@@ -71,60 +69,28 @@
                         <div class="bar3"></div>
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="">Ajánlataink</a>
+                <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topnav-dis">
-                    <button class="dropbtn">Termékeink</button>
-                        <div class="dropdown-content">
-                            <div class="subdown">
-                                <button class="subbtn">Számítógépek</button>
-                                    <div class="subdown-content">
-                                        <a href="">Gamer PC</a>
-                                        <a href="">Irodai PC</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Laptopok</button>
-                                    <div class="subdown-content subdown-second">
-                                        <a href="">Gamer Laptopok</a>
-                                        <a href="">Notebookok</a>
-                                    </div>
-                            </div>
-                            <div class="subdown">
-                                <button class="subbtn">Kiegészítők</button>
-                            <div class="subdown-content subdown-third">
-                                        <a href="">Fejhallgatók</a>
-                                        <a href="">Monitorok</a>
-                                        <a href="">Perifériák</a>
-                                    </div>
-                            </div>
-                        </div>
+                <button class="dropbtn">Termékeink</button>
+                    <div class="dropdown-content">
+                            <a href="../products/towers.php">Számítógépek</a>
+                            <a href="../products/notebooks.php">Laptopok</a>
+                            <a href="../products/headphones.php">Fejhallgatók</a>
+                            <a href="../monitors.php">Monitorok</a>
+                            <a href="../products/accessories.php">Kiegészítők</a>
+                    </div>
                 </div>
-            
-                <a class="topnav-dis" href="">Brandek</a>
-                <a class="topnav-dis" href="">Akciós Termékeink</a>
                 <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn">Rólunk</button>
+                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
-                            <a href="">Cégünkről</a>
+                            <a href="../pages/about.html">Cégünkről</a>
                             <a href="">Az oldal használata</a>
                             <a href="../pages/forum.php">TechDepo fórum</a>
                         </div>
                 </div>
         </div>
     </header>
-
-
-
-
-
-
-
-   
-
-
-
-    <body>
-        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
@@ -346,70 +312,9 @@
                                     </div>
                                 </div>
                 </div>
-            </div>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                
-                $(".product_check").click(function(){
-                    $("#loader").show();
-
-                    var action = 'data';
-                    var Márka = get_filter_text('Márka');
-                    var RAM_típusa = get_filter_text('RAM_típusa');
-                    var RAM_mérete = get_filter_text('RAM_mérete');
-                    var Processzor = get_filter_text('Processzor');
-                    var Merevlemez_típusa = get_filter_text('Merevlemez_típusa');
-                    var Merevlemez_mérete = get_filter_text('Merevlemez_mérete');
-                    var Felbontás = get_filter_text('Felbontás');
-                    var Képfrissítés = get_filter_text('Képfrissítés');
-                    var Videókártya = get_filter_text('Videókártya');
-
-                    $.ajax({
-                        url:'action.php',
-                        method:'POST',
-                        data:{action:action,Márka:Márka,RAM_típusa:RAM_típusa,RAM_mérete:RAM_mérete,Processzor:Processzor,Merevlemez_típusa:Merevlemez_típusa,Merevlemez_mérete:Merevlemez_mérete,Felbontás:Felbontás,Képfrissítés:Képfrissítés,Videókártya:Videókártya},
-
-                        success: function(response)
-                        { 
-                        $("#result").html(response);
-                        $("#loader").hide();
-                        $("#textChange").text("Filtered Products");
-                        }
-                            
-                    });
-
-
-                });
-
-                function get_filter_text(text_id){
-                    var filterData = [];
-                    $('#'+text_id+':checked').each(function(){
-                        filterData.push($(this).val());
-                    });
-                    return filterData;
-                }
-
-            });
-        </script>
-    </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
+        </div>
+        <footer>
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Regisztrálj a hírlevelünkre!</h1>
@@ -471,7 +376,7 @@
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="térkép"></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt=""></a></span>
                     </li>
                 </ul>
             </div>
@@ -495,10 +400,55 @@
             <div>
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
-    </footer>
-    <script src="../js/slideshow.js"></script>
-    <script src="../js/sandwitch.js"></script>
-    <script src="../js/carousel.js"></script>
-    <script src="../js/range-slider.js"></script>
+        </footer>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                $(".product_check").click(function(){
+                    $("#loader").show();
+
+                    var action = 'data';
+                    var Márka = get_filter_text('Márka');
+                    var RAM_típusa = get_filter_text('RAM_típusa');
+                    var RAM_mérete = get_filter_text('RAM_mérete');
+                    var Processzor = get_filter_text('Processzor');
+                    var Merevlemez_típusa = get_filter_text('Merevlemez_típusa');
+                    var Merevlemez_mérete = get_filter_text('Merevlemez_mérete');
+                    var Felbontás = get_filter_text('Felbontás');
+                    var Képfrissítés = get_filter_text('Képfrissítés');
+                    var Videókártya = get_filter_text('Videókártya');
+
+                    $.ajax({
+                        url:'action.php',
+                        method:'POST',
+                        data:{action:action,Márka:Márka,RAM_típusa:RAM_típusa,RAM_mérete:RAM_mérete,Processzor:Processzor,Merevlemez_típusa:Merevlemez_típusa,Merevlemez_mérete:Merevlemez_mérete,Felbontás:Felbontás,Képfrissítés:Képfrissítés,Videókártya:Videókártya},
+
+                        success: function(response)
+                        { 
+                        $("#result").html(response);
+                        $("#loader").hide();
+                        $("#textChange").text("Filtered Products");
+                        }
+                            
+                    });
+
+
+                });
+
+                function get_filter_text(text_id){
+                    var filterData = [];
+                    $('#'+text_id+':checked').each(function(){
+                        filterData.push($(this).val());
+                    });
+                    return filterData;
+                }
+
+            });
+        </script>
+        <script src="../js/slideshow.js"></script>
+        <script src="../js/sandwitch.js"></script>
+        <script src="../js/carousel.js"></script>
+        <script src="../js/range-slider.js"></script>
+    </body>
 
 </html>
