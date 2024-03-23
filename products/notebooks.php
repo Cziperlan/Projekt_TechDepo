@@ -376,7 +376,7 @@
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt=""></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt="" class="f-ikon"></a></span>
                     </li>
                 </ul>
             </div>
@@ -400,7 +400,7 @@
             <div>
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
-        </footer>
+    </footer>
         <script type="text/javascript">
             $(document).ready(function(){
                 
