@@ -88,8 +88,10 @@
         <?php
             if (!isset($_SESSION["user_id"])) {
         ?>
-           <div>
-                <h1>A kosár használatához <a href="account.php">jelentkezz be</a>!</h1>
+           <div class="bigbox">
+                <div class="bigbox-inner">
+                    <a href="account.php"><h1>A kosár használatához jelentkezz be!</h1></a>
+                </div>
            </div>
         <?php
         }   else {

@@ -36,17 +36,17 @@ require_once '../includes/config.session.inc.php';
         </div>
         <div class="sidenav" id="navSide">
                             <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="">Ajánlataink</a>
+                            <a href="../products/featured.php">Ajánlataink</a>
                             <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont">
-                                    <a href="../products/towers.html"> - Számítógépek</a>
+                                    <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
-                                    <a href=""> - Monitorok</a>
-                                    <a href=""> - Perifériák</a>
+                                    <a href="../products/monitors.php"> - Monitorok</a>
+                                    <a href="../products/accessories.php"> - Perifériák</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
-                                    <a href=""> - Cégünkről</a>
+                                    <a href="../pages/about.html"> - Cégünkről</a>
                                     <a href=""> - Az oldal használata</a>
                                     <a href="../pages/forum.php"> - Fórum</a>
                                 </div>
@@ -54,8 +54,8 @@ require_once '../includes/config.session.inc.php';
         <div class="topnav">
                     <div class="menu">
                         <a href="../pages/index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-star" aria-hidden="true"></i></a>
+                        <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
                     <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>
@@ -63,7 +63,7 @@ require_once '../includes/config.session.inc.php';
                         <div class="bar3"></div>
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="">Ajánlataink</a>
+                <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
                 <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
                 <div class="dropdown topnav-dis">
                 <button class="dropbtn">Termékeink</button>
@@ -128,7 +128,7 @@ require_once '../includes/config.session.inc.php';
                 <img class="Spic" src="../gallery/index_S_peripherals.webp" alt="peripherals">
                 <div class="overlayer">
                     <p class="overlayer_text">Perifériák</p>
-                    <a href="../products/accessoires.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="../products/accessories.php"><button class="ov_button" >- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -691,7 +691,7 @@ require_once '../includes/config.session.inc.php';
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="térkép"></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt=""></a></span>
                     </li>
                 </ul>
             </div>

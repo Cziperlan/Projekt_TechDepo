@@ -81,6 +81,7 @@
   padding: 10px 12px 10px 12px;
 }
 
+
 /*topnav*/
 
 .topnav {
@@ -106,6 +107,11 @@
   text-decoration: underline;
   background-color: #1a1818;
   transition-duration: 0.5ms ease;
+}
+
+.topnav a.active {
+  text-decoration: underline;
+  color: #8a8383;
 }
 
 .topnav.act {

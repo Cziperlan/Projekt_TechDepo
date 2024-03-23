@@ -28,10 +28,11 @@
                     </form>
                 </div>
                 <div>  
-                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                    <a class="header-dis active" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.html"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="../pages/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
+
                 </div>
         </div>
         <div class="sidenav" id="navSide">
