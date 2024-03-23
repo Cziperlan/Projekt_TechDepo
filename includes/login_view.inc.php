@@ -9,14 +9,14 @@ function check_login_errors() {
         echo '<br>';
 
         foreach ($errors as $error) {
-            echo "<p>". $error . "</p>";
+            echo '<p style="color:red;">'. $error . '</p>';
         }
 
         unset($_SESSION['errors_login']);
     }
     else if (isset($_GET["login"]) && $_GET["login"] === "success") {
         echo '<br>';
-        echo '<p>Belépés sikeres!</p>';
+        echo '<p style="color:green;">Belépés sikeres!</p>';
     }
 }
 function output_username() {

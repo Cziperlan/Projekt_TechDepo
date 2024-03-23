@@ -1,35 +1,20 @@
-
-<?php
-$conn = mysqli_connect("localhost", "root", "", "webshop");
-
-if(isset($_POST["submit"])){
-  $name = $_POST["name"];
-  $comment = $_POST["comment"];
-  $date = date('F d Y, h:i:s A');
-  $reply_id = $_POST["reply_id"];
-
-  $query = "INSERT INTO tb_dataforum VALUES('', '$name', '$comment', '$date', '$reply_id')";
-  mysqli_query($conn, $query);
-}
+<?php 
+    require_once '../includes/config.session.inc.php';
 ?>
 
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/forum.css">
-    <script src="../js/index.js"></script>
-    <script src="../js/slideshow.js"></script>
-    <script src="../js/sandwitch.js"></script>
-    <script src="../js/carousel.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
-    <title>TechDepo - Fórum</title>
+    <title>TechDepo - Kosár</title>
 </head>
-<body id="body" onload="NowShow(1)">
-<header>
+<body>
+    <header>
         <div class="header">
                     <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
@@ -100,20 +85,25 @@ if(isset($_POST["submit"])){
                 </div>
         </div>
     </header>
-    <div class="container forum">
-      <?php
-      $datas = mysqli_query($conn, "SELECT * FROM tb_dataforum WHERE reply_id = 0"); 
-      foreach($datas as $data) {
-        require 'comment.php';
-      }
-      ?>
-      <form action = "" method = "post">
-        <h3 id = "title">Üdvözlünk a fórumon!</h3>
-        <input type="hidden" name="reply_id" id="reply_id">
-        <input class="név" type="text" name="name" placeholder="A neved">
-        <textarea name="comment" placeholder="Tegyél fel egy kérdést!"></textarea>
-        <button class = "submit" type="submit" name="submit">Közzétesz</button>
-      </form>
+    <div>
+        <?php
+            if (isset($_SESSION["user_id"])) {
+                header("Location: ../pages/account.php");
+        }   else {
+        ?>
+            <div class="bigbox">
+                <div class="bigbox-inner">
+                <h1>Elfelejtett jelszó</h1>
+                <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
+                    <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
+                    <input class="bigbox-input" type="email" name="email" placeholder="E-Mail cím">
+                    <span>Mégis eszedbe jutott? <a href="../pages/account.php">Katt ide!</a></span>
+                <button>Új jelszó igénylése</button>
+            </form>
+                </div>
+           </div>
+            
+        <?php } ?>
     </div>
     <footer>
         <div class="footer row mx-0">
@@ -202,15 +192,5 @@ if(isset($_POST["submit"])){
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
     </footer>
-    <script>
-      function reply(id, name){
-        title = document.getElementById('title');
-        title.innerHTML = "Válasz " + name + "-nak";
-        document.getElementById('reply_id').value = id;
-      }
-    </script>
-    <script src="../js/slideshow.js"></script>
-    <script src="../js/sandwitch.js"></script>
-    <script src="../js/carousel.js"></script>
-  </body>
+</body>
 </html>
