@@ -404,7 +404,8 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 
-                $(".product_check").click(function(){
+                $(".product-check").click(function(){
+
                     $("#loader").show();
 
                     var action = 'data';
