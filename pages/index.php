@@ -686,7 +686,7 @@ require_once '../includes/config.session.inc.php';
                         <span>+36 20 468 8923</span>
                     </li>
                     <li>
-                        <span>techdepo@nincsmail.hu</span>
+                        <span>techdepo.hungary@gmail.com</span>
                     </li>
                     <li>
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
