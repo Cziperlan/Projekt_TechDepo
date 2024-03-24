@@ -1,6 +1,7 @@
 
 <?php
-    require_once 'includes/config.session.inc.php'
+    require_once './includes/config.session.inc.php';
+    require './products/action.php';
 ?>
 
 
@@ -146,492 +147,194 @@
         <span class="dind" onclick="NowShow(5)"></span>
     </div>
     <span id="jump"></span>
-    <div id="topgin" class="product-title">
-        <h1>Laptopok</h1>
-    </div>
-    <div class="product-box"> 
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
+    <div class="container-fluid">
+        <div class="row topgin">
+                <div class="col-lg-12">
+                                    <h1 class="text-center bottomgin" id="textChange">Laptopok</h1>
+                                    <hr>
+                                    <div class="text-center">
+                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
+                                    </div>
+                                    <div class="row" id="result">
+                                            <?php
+                                            $sql = "SELECT l.*, r.Ár
+                                                    FROM webshop.laptopok l
+                                                    JOIN webshop.raktár r ON l.LaptopID = r.TermékID LIMIT 4;";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $image_name = $row["LaptopID"];
+                                                    $image_path = "./Képek/" . $image_name . ".png";
+                                                    ?>
+                                                    <div class="col-md-3 mb-2">
+                                                        <div class="cars-deck">
+                                                            <div class="card border-secondary">
+                                                                <img src="<?= $image_path ?>" class="card-img-top">
+                                                                <div class="card-img-overlay">
+                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
+                                                                    <p>
+                                                                        RAM : <?= $row['RAM_mérete']; ?> Gb<br>
+                                                                        Processzor : <?= $row['Processzor']; ?><br>
+                                                                        Merevlemez_mérete : <?= $row['Merevlemez_mérete']; ?><br>
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "Nincs találat";
+                                            }
+                                                    ?>
+                                        </div>
                 </div>
-            </div>
         </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
+        <div class="row topgin">
+                    <div class="col-lg-12">
+                                    <h1 class="text-center bottomgin" id="textChange">Számítógépek</h1>
+                                    <hr>
+                                    <div class="text-center">
+                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
+                                    </div>
+                                    <div class="row" id="result">
+                                            <?php
+                                            $sql = "SELECT l.*, r.Ár
+                                                    FROM webshop.pc  l
+                                                    JOIN webshop.raktár r ON l.PCID = r.TermékID LIMIT 4;";
+                                                    
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $image_name = $row["PCID"];
+                                                    $image_path = "./Képek/" . $image_name . ".png";
+                                                    ?>
+                                                    <div class="col-md-3 mb-2">
+                                                        <div class="cars-deck">
+                                                            <div class="card border-secondary">
+                                                                <img src="<?= $image_path ?>" class="card-img-top">
+                                                                <div class="card-img-overlay">
+                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
+                                                                    <p>
+                                                                        Márka : <?= $row['Márka']; ?><br>
+                                                                        Processzor típusa : <?= $row['Processzor_típusa']; ?><br>
+                                                                        Videókártya : <?= $row['Videókártya']; ?><br>
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "Nincs találat";
+                                            }
+                                                    ?>
+                                    </div>
+                                </div>
+        </div>
+        <div class="row topgin">
+                <div class="col-lg-12 bottomgin">
+                                    <h1 class="text-center bottomgin" id="textChange">Monitorok</h1>
+                                    <hr>
+                                    <div class="text-center">
+                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
+                                    </div>
+                                    <div class="row" id="result">
+                                            <?php
+                                            $sql = "SELECT l.*, r.Ár
+                                                    FROM webshop.monitorok  l
+                                                    JOIN webshop.raktár r ON l.MonitorID = r.TermékID LIMIT 4;";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $image_name = $row["MonitorID"];
+                                                    $image_path = "./Képek/" . $image_name . ".png";
+                                                    ?>
+                                                    <div class="col-md-3 mb-2">
+                                                        <div class="cars-deck">
+                                                            <div class="card border-secondary">
+                                                                <img src="<?= $image_path ?>" class="card-img-top">
+                                                                <div class="card-img-overlay">
+                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
+                                                                    <p>
+                                                                        Márka : <?= $row['Márka']; ?><br>
+                                                                        Felbontás : <?= $row['Felbontás']; ?><br>
+                                                                        Képfrissítés: <?= $row['Képfrissítés']; ?><br>
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "Nincs találat";
+                                            }
+                                                    ?>
+                                        </div>
                     </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
         </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
+        <div class="row topgin">
+                <div class="col-lg-12 bottomgin">
+                                    <h1 class="text-center bottomgin" id="textChange">Fejhallgatók</h1>
+                                    <hr>
+                                    <div class="text-center">
+                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
+                                    </div>
+                                    <div class="row" id="result">
+                                            <?php
+                                            $sql = "SELECT l.*, r.Ár
+                                                    FROM webshop.fejhallgatók  l
+                                                    JOIN webshop.raktár r ON l.FejID = r.TermékID LIMIT 4;";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $image_name = $row["FejID"];
+                                                    $image_path = "./Képek/" . $image_name . ".png";
+                                                    ?>
+                                                    <div class="col-md-3 mb-2">
+                                                        <div class="cars-deck">
+                                                            <div class="card border-secondary">
+                                                                <img src="<?= $image_path ?>" class="card-img-top">
+                                                                <div class="card-img-overlay">
+                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
+                                                                    <p>
+                                                                        Márka : <?= $row['Márka']; ?><br>
+                                                                        Típus : <?= $row['Típusa']; ?><br>
+                                                                        Frekvencia átvitel : <?= $row['Frekvenciátvitel']; ?><br>
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "Nincs találat";
+                                            }
+                                                    ?>
+                                        </div>
                     </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
         </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-title">
-        <h1>Számítógépek</h1>
-    </div>
-    <div class="product-box"> 
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic2.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic2.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic2.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic2.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-title">
-        <h1>Gamer Fejhallgatók</h1>
-    </div>
-    <div class="product-box"> 
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic3.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic3.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic3.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic3.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-title">
-        <h1>Monitorok</h1>
-    </div>
-    <div class="product-box"> 
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic4.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic4.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic4.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic4.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-title">
-        <h1>Gamer Perifériák</h1>
-    </div>
-    <div class="product-box"> 
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic5.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic5.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic5.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-        <div class="product-inner">
-            <div class="inner-cont">
-                <a href="">
-                    <span class="product-link">
-                        <img src="./gallery/test_pic5.jpg" alt="">
-                    </span>
-                    <div class="product-overlay">
-                        <p class="poverlay-title"><i class="fas fa-eye"></i></p>
-                    </div>
-                </a>
-                <div>
-                    <a href=""><h3>Lorem Ipsum</h3></a>
-                    <span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <span>999$</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
+    </div>  
+    <footer class="topgin">
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Regisztrálj a hírlevelünkre!</h1>
