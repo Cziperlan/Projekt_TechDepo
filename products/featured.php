@@ -98,8 +98,9 @@
                                         <?php
                                         require 'action.php';
                                         $sql = "SELECT l.*, r.Ár
-                                                FROM webshop.monitorok  l
+                                                FROM webshop.monitorok  l 
                                                 JOIN webshop.raktár r ON l.MonitorID = r.TermékID";
+                                                
                                         $result = $conn->query($sql);
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
@@ -183,15 +184,17 @@
         </div>
         <div class="row">
                 <div class="col-lg-12">
+                                <h1 class="text-center" id="textChange">Számítógépek</h1>
+                                <hr>
                                 <div class="text-center">
                                     <img src="../images/loader.gif" if="loader" width="200" style="display: none;">
                                 </div>
                                 <div class="row" id="result">
                                         <?php
-                                        require 'action.php';
                                         $sql = "SELECT l.*, r.Ár
                                                 FROM webshop.pc  l
-                                                JOIN webshop.raktár r ON l.PCID = r.TermékID";
+                                                JOIN webshop.raktár r ON l.PCID = r.TermékID LIMIT 4;";
+                                                
                                         $result = $conn->query($sql);
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
@@ -223,9 +226,9 @@
                                             echo "Nincs találat";
                                         }
                                                  ?>
-                                    </div>
                                 </div>
-            </div>
+                            </div>
+        </div>
     </div>
     <footer>
         <div class="footer row mx-0">
