@@ -171,7 +171,7 @@ if(isset($_POST["submit"])){
                         <span>+36 20 468 8923</span>
                     </li>
                     <li>
-                        <span>techdepo.hungary@gmail.com</span>
+                        <span><a href="mailto:techdepo.hungary@gmail.com">techdepo.hungary@gmail.com</a></span>
                     </li>
                     <li>
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
