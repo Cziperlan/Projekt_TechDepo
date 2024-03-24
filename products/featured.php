@@ -317,4 +317,5 @@
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
     </footer>
+    <script src="../js/sandwitch.js"></script>
 </body>
