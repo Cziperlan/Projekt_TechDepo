@@ -89,7 +89,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                                <h5 class="text-center" id="textChange">Termékek</h5>
+                                <h1 class="text-center topgin bottomgin" id="textChange">Ajánlott termékeink</h1>
                                 <hr>
                                 <div class="text-center">
                                     <img src="../images/loader.gif" if="loader" width="200" style="display: none;">
