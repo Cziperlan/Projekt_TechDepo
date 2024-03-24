@@ -6,34 +6,42 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
+    $user_id = $_SESSION["user_id"];
 
     try {
         require_once 'dnhandler.inc.php';
 
-        $query = "UPDATE users SET username = :username, pwd =:pwd, email = :email, firstname = :firstname, lastname = :lastname, WHERE id=1; ";
+        $query = 'UPDATE webshop.users SET username = :username, pwd =:pwd, email = :email, firstname = :firstname, lastname = :lastname, WHERE felhasznalo_id=:user_id; ';
 
         $stmt = $pdo->prepare($query);
 
+        $options = [
+            'cost' => 12
+        ];
+    
+        $hashPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
+
         $stmt->bindParam(":username", $username);
-        $stmt->bindParam(":pwd", $pwd);
+        $stmt->bindParam(":pwd", $hashPwd);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":firstname", $firstname);
         $stmt->bindParam(":lastname", $lastname);
+        $stmt->bindParam(":user_id",$user_id);
 
         $stmt->execute([]);
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../pages/index.php");
+        header("Location: ../pages/account.php");
 
         die();
 
-    } catch (PDOException $exep) {
-        die("Query failed" . $exep->getMessage());
+    } catch (PDOException $e) {
+        die("Query failed" . $e->getMessage());
         }
         
     
 } else {
-    header("Location: ../account/signup.php");
+    header("Location: ../pages/account.php");
         }

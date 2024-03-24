@@ -87,34 +87,21 @@
     </header>
     <div>
     <?php
-    if (!isset($_SESSION["user_id"])) { ?>
-        <div class="bigbox">
-            <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
-                <?php output_username(); ?>
-                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
-                <span>Nincs még fiókod?</span>
-                <span><a href="../account/signup.php"> Készíts egyet!</a></span>
-                <span>Elfelejtetted a jelszavad?</span>
-                <span><a href="../account/recovery.php"> Kattints ide!</a></span>
-                <button>Bejelentkezés</button>
-                <?php
-                    check_login_errors();
-                ?>
-            </form>
-        </div>
-    <?php } else { ?>
+    if (!isset($_SESSION["user_id"])) { 
+        header("Location: ../pages/account.php");
+    } else { ?>
         <!-- Az oldal bejelentkezés után megjelenő tartalma. -->
         <div class="bigbox">
-            <form action="../includes/logout.inc.php" method="POST" class="bigbox-inner">
+            <form action="../includes/userdel.inc.php" method="POST" class="bigbox-inner">
                 <?php output_username(); ?>
                 <div class="bigbox-inner-navi">
-                    <a href="account.php">Fiókinformáció</a>
+                    <a href="../pages/account.php">Fiókinformáció</a>
                     <a href="../account/modify.php">Fiókbeállítások</a>
-                    <a class="last" href="../account/wishlist.php">Kívánságlista</a>
+                    <a class="last" href="../account/delete.php">Fióktörlés</a>
                 </div>
-                <?php output_userdata()?>
-                <button>Kijelentkezés</button>
+                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
+                <input class="bigbox-input" type="text" name="pwd" placeholder="Jelszó">
+                <button>Fiók törlése</button>
             </form>
         </div>
     <?php } ?>

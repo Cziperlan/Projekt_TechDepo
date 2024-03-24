@@ -680,7 +680,7 @@
 .bigbox-inner button {
   display: flex;
   align-self: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 10px;
   color: white;
   padding: 20px;
@@ -691,9 +691,32 @@
 }
 
 .bigbox-inner-navi {
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
+
+.bigbox-inner-navi a {
+  text-decoration: none;
+  color: black;
+  border-right: black 1px solid;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 10px;
+}
+.bigbox-inner-navi .last {
+  border-right: none;
+}
+
+.bigbox-output {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
 
 .bigbox-inner button:hover {
   background-color: #1a1818;
