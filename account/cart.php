@@ -1,3 +1,7 @@
+<?php 
+    require_once '../includes/config.session.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -6,9 +10,8 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="">
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
-    <title>TechDepo - Kiegészítők</title>
+    <title>TechDepo - Kosár</title>
 </head>
 <body>
     <header>
@@ -27,7 +30,7 @@
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
@@ -39,7 +42,7 @@
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -61,15 +64,14 @@
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
                 <div class="dropdown topnav-dis">
                 <button class="dropbtn">Termékeink</button>
                     <div class="dropdown-content">
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">
@@ -83,7 +85,26 @@
         </div>
     </header>
     <div>
-
+        <?php
+            if (!isset($_SESSION["user_id"])) {
+        ?>
+           <div class="bigbox">
+                <div class="bigbox-inner">
+                    <h1>A kosár használatához</h1>
+                    <h1><a href="../pages/account.php">jelentkezz be!</a></h1>
+                </div>
+           </div>
+        <?php
+        }   else {
+        ?>
+            <div class="bigbox">
+                <div class="bigbox-inner">
+                    <h1>A kosarad üres!</h1>
+                    <p><a href="../pages/index.php">Térj vissza a vásárláshoz!</a></p>
+                </div>
+           </div>
+            
+        <?php } ?>
     </div>
     <footer>
         <div class="footer row mx-0">

@@ -5,8 +5,8 @@
     font-size: 300%;
     background-color: white;
     color: black;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .t2 {
@@ -15,8 +15,8 @@
     font-size: 120%;
     background-color: white;
     color: black;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .t3 {
@@ -42,8 +42,8 @@
   font-size: 300%;
   background-color: black;
   color: white;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 
@@ -53,8 +53,8 @@
     font-size: 120%;
     background-color: black;
     color: white;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .d1 .t2 a {
@@ -72,7 +72,7 @@
 
 .fc-flex {
     display: flex;
-    width: 100%;
+    width: 70%;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;

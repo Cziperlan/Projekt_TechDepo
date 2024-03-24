@@ -1,5 +1,5 @@
 <?php
-        require 'config.php'
+        require 'config.php';
   ?>
 
 
@@ -10,16 +10,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general.css">
     <title>TechDepo - Laptopok</title>
 </head>
-    <body>
+<body>
     <header>
         <div class="header">
                     <a href="../pages/index.php">
@@ -36,7 +36,7 @@
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
@@ -48,7 +48,7 @@
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -70,15 +70,14 @@
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
                 <div class="dropdown topnav-dis">
                 <button class="dropbtn">Termékeink</button>
                     <div class="dropdown-content">
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">
@@ -91,7 +90,7 @@
                 </div>
         </div>
     </header>
-        <div class="container-fluid">
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
                     <h5>Szűrők</h5>
@@ -100,7 +99,7 @@
                     <h6 class="text-info">Márka</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Márka from laptopok ORDER BY Márka";
+                            $sql="SELECT DISTINCT Márka from webshop.laptopok ORDER BY Márka;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -119,7 +118,7 @@
                     <h6 class="text-info">RAM típusa</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT RAM_típusa from laptopok ORDER BY RAM_típusa";
+                            $sql="SELECT DISTINCT RAM_típusa from webshop.laptopok ORDER BY RAM_típusa;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -137,7 +136,7 @@
                     <h6 class="text-info">RAM méret(Gb)</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT RAM_mérete from laptopok ORDER BY RAM_mérete";
+                            $sql="SELECT DISTINCT RAM_mérete from webshop.laptopok ORDER BY RAM_mérete;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -154,7 +153,7 @@
                     <h6 class="text-info">Processzor</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Processzor from laptopok ORDER BY Processzor";
+                            $sql="SELECT DISTINCT Processzor from webshop.laptopok ORDER BY Processzor;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -171,7 +170,7 @@
                          <h6 class="text-info">Merevlemez típusa</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Merevlemez_típusa from laptopok ORDER BY Merevlemez_típusa";
+                            $sql="SELECT DISTINCT Merevlemez_típusa from webshop.laptopok ORDER BY Merevlemez_típusa;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -188,7 +187,7 @@
                     <h6 class="text-info">Merevlemez mérete(Gb)</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Merevlemez_mérete from laptopok ORDER BY Merevlemez_mérete";
+                            $sql="SELECT DISTINCT Merevlemez_mérete from webshop.laptopok ORDER BY Merevlemez_mérete;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -205,7 +204,7 @@
                     <h6 class="text-info">Felbontás</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Felbontás from laptopok ORDER BY Felbontás";
+                            $sql="SELECT DISTINCT Felbontás from webshop.laptopok ORDER BY Felbontás;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -222,7 +221,7 @@
                     <h6 class="text-info">Képfrissítés</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Képfrissítés from laptopok ORDER BY Képfrissítés";
+                            $sql="SELECT DISTINCT Képfrissítés from webshop.laptopok ORDER BY Képfrissítés;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -239,7 +238,7 @@
                     <h6 class="text-info">Videókártya</h6>
                     <ul class="list-group">
                         <?php
-                            $sql="SELECT DISTINCT Videókártya from laptopok ORDER BY Videókártya";
+                            $sql="SELECT DISTINCT Videókártya from webshop.laptopok ORDER BY Videókártya;";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc()){
                         ?>
@@ -264,10 +263,11 @@
                                 
                                 <div class="row" id="result">
                                         <?php
+                                        require 'action.php';
                                         // Query to fetch data from both tables using JOIN
                                         $sql = "SELECT l.*, r.Ár
-                                                FROM laptopok l
-                                                JOIN raktár r ON l.LaptopID = r.TermékID";
+                                                FROM webshop.laptopok l
+                                                JOIN webshop.raktár r ON l.LaptopID = r.TermékID";
                                         
                                         // Execute the query
                                         $result = $conn->query($sql);
@@ -312,9 +312,8 @@
                                     </div>
                                 </div>
                 </div>
-        </div>
-        </div>
-        <footer>
+    </div>
+    <footer>
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Regisztrálj a hírlevelünkre!</h1>

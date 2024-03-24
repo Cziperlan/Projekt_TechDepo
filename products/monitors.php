@@ -1,3 +1,7 @@
+<?php
+        require 'config.php';
+  ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -26,7 +30,7 @@
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="/account/cart.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                     <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
@@ -38,7 +42,7 @@
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -60,15 +64,14 @@
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
                 <div class="dropdown topnav-dis">
                 <button class="dropbtn">Termékeink</button>
                     <div class="dropdown-content">
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">
@@ -81,8 +84,196 @@
                 </div>
         </div>
     </header>
-    <div>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h5>Szűrők</h5>
+                    <hr>
+                    <h6 class="text-info">Márka</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Márka from webshop.monitorok ORDER BY Márka;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Márka']?>" id="Márka"><?=$row['Márka']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Paneltípus</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Paneltípus from webshop.monitorok ORDER BY Paneltípus;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Paneltípus']?>" id="Paneltípus"><?=$row['Paneltípus']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Képernyőméret</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Képernyőméret from webshop.monitorok ORDER BY Képernyőméret;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Képernyőméret']?>" id="Képernyőméret"><?=$row['Képernyőméret']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Képarány</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Képarány from webshop.monitorok  ORDER BY Képarány;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item ">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Képarány']?>" id="Képarány"><?=$row['Képarány']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Felbontás</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Felbontás from webshop.monitorok ORDER BY Felbontás;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item ">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Felbontás']?>" id="Felbontás"><?=$row['Felbontás']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Képfrissítés</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Képfrissítés from webshop.monitorok ORDER BY Képfrissítés;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item ">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Képfrissítés']?>" id="Képfrissítés"><?=$row['Képfrissítés']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Csatlakozók</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Csatlakozók from webshop.monitorok  ORDER BY Csatlakozók;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item ">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Csatlakozók']?>" id="Csatlakozók"><?=$row['Csatlakozók']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                    <h6 class="text-info">Támogatott funkciók</h6>
+                    <ul class="list-group">
+                        <?php
+                            $sql="SELECT DISTINCT Támogatott_funkciók from webshop.monitorok  ORDER BY Támogatott_funkciók;";
+                            $result=$conn->query($sql);
+                            while($row=$result->fetch_assoc()){
+                        ?>
+                        <li class="list-group-item ">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Támogatott_funkciók']?>" id="Támogatott_funkciók"><?=$row['Támogatott_funkciók']?>
+                                </label>
+                            </div>
+                        </li>
+                        <?php }?>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                                <h5 class="text-center" id="textChange">Termékek</h5>
+                                <hr>
+                                <div class="text-center">
+                                    <img src="../images/loader.gif" if="loader" width="200" style="display: none;">
+                                </div>
+                                <div class="row" id="result">
+                                        <?php
+                                        require 'action.php';
+                                        $sql = "SELECT l.*, r.Ár
+                                                FROM webshop.monitorok  l
+                                                JOIN webshop.raktár r ON l.MonitorID = r.TermékID";
+                                        
+                                        // Execute the query
+                                        $result = $conn->query($sql);
 
+                                        // Check if there are any results
+                                        if ($result->num_rows > 0) {
+                                            // Fetching data row by row
+                                            while ($row = $result->fetch_assoc()) {
+                                                // Retrieve image path for the current laptop
+                                                $image_name = $row["MonitorID"];
+                                                $image_path = "../Képek/" . $image_name . ".png";
+
+
+
+                                                // Displaying laptop information
+                                                ?>
+                                                <div class="col-md-3 mb-2">
+                                                    <div class="cars-deck">
+                                                        <div class="card border-secondary">
+                                                            <img src="<?= $image_path ?>" class="card-img-top">
+                                                            <div class="card-img-overlay">
+                                                                <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
+                                                                <p>
+                                                                    Márka : <?= $row['Márka']; ?><br>
+                                                                    Felbontás : <?= $row['Felbontás']; ?><br>
+                                                                    Képfrissítés: <?= $row['Képfrissítés']; ?><br>
+                                                                </p>
+                                                                <a href="#" class="btn btn-success btn-block">Kosárba</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                            }
+                                        } else {
+                                            echo "Nincs találat";
+                                        }
+                                                 ?>
+                                    </div>
+                                </div>
+                </div>
     </div>
     <footer>
         <div class="footer row mx-0">
