@@ -1,6 +1,10 @@
 <?php
 
+
+
 require 'config.php';
+
+
 if(isset($_POST['action'])){
     $sql = "SELECT * FROM laptopok WHERE Márka !=''";
 
@@ -17,6 +21,9 @@ if(isset($_POST['action'])){
         $result = $conn->query($sql);
         $output='';
 
+        // Retrieve image path for the current laptop
+$image_name = $row["LaptopID"];
+$image_path = "../Képek/" . $image_name . ".png";
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -49,4 +56,3 @@ if(isset($_POST['action'])){
     }
     
 ?>
-
