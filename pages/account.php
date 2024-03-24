@@ -106,6 +106,7 @@
         <div class="bigbox">
             <form action="../includes/logout.inc.php" method="POST" class="bigbox-inner">
                 <?php output_username(); ?>
+                <?php output_userdata()?>
                 <button>Kijelentkezés</button>
             </form>
         </div>

@@ -39,6 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $_SESSION["user_id"] = $result["felhasznalo_id"];
         $_SESSION["user_username"] = htmlspecialchars($result["username"]);
+        $_SESSION["lastname"] = htmlspecialchars($result["lastname"]);
+        $_SESSION["firstname"] = htmlspecialchars($result["firstname"]);
+        $_SESSION["email"] = htmlspecialchars($result["email"]);
+        $_SESSION["homeaddress"] = htmlspecialchars($result["defaddress"]);
+        $_SESSION["delivery_address"] = htmlspecialchars($result["Szállítási_cím"]);
+        $_SESSION["tel"] = htmlspecialchars($result["tel"]);
+        $_SESSION["join_date"] = htmlspecialchars($result["Regisztráció_ideje"]);
 
         $_SESSION["last_regeneration"] = time();
 
