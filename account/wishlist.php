@@ -43,7 +43,7 @@ require_once '../includes/config.session.inc.php';
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -65,15 +65,14 @@ require_once '../includes/config.session.inc.php';
                     </button>
                 <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akciós Termékeink</a>
+                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
                 <div class="dropdown topnav-dis">
                 <button class="dropbtn">Termékeink</button>
                     <div class="dropdown-content">
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">

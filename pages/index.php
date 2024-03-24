@@ -43,7 +43,7 @@ require_once '../includes/config.session.inc.php';
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -72,8 +72,7 @@ require_once '../includes/config.session.inc.php';
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">

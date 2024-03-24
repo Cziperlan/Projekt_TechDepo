@@ -16,7 +16,7 @@
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
-                    <form action="../pages/search.php" method="get">
+                    <form action="search.php" method="get">
                         <input type="text" id="search" name="product-search" placeholder="Keresés...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
@@ -38,7 +38,7 @@
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -67,8 +67,7 @@
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">
@@ -81,9 +80,12 @@
                 </div>
         </div>
     </header>
-    <div>
-
-    </div>
+    <div class="bigbox">
+                <div class="bigbox-inner">
+                    <h1>Egyenlőre nincsenek még akcióink!</h1>
+                    <span><a href="../pages/index.php">Gyere vissza később!</a></span>
+                </div>
+           </div>
     <footer>
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">

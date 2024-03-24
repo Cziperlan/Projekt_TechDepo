@@ -29,13 +29,13 @@ if(isset($_POST["submit"])){
     <title>TechDepo - Fórum</title>
 </head>
 <body id="body" onload="NowShow(1)">
-<header>
+    <header>
         <div class="header">
                     <a href="../pages/index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
-                    <form action="../pages/search.php" method="get">
+                    <form action="search.php" method="get">
                         <input type="text" id="search" name="product-search" placeholder="Keresés...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
@@ -57,7 +57,7 @@ if(isset($_POST["submit"])){
                                     <a href="../products/towers.php"> - Számítógépek</a>
                                     <a href="../products/notebooks.php"> - Laptopok</a>
                                     <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/accessories.php"> - Perifériák</a>
+                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
@@ -86,8 +86,7 @@ if(isset($_POST["submit"])){
                             <a href="../products/towers.php">Számítógépek</a>
                             <a href="../products/notebooks.php">Laptopok</a>
                             <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../monitors.php">Monitorok</a>
-                            <a href="../products/accessories.php">Kiegészítők</a>
+                            <a href="../products/monitors.php">Monitorok</a>
                     </div>
                 </div>
                 <div class="dropdown topright topnav-dis">

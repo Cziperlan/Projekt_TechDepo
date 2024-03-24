@@ -2,7 +2,7 @@
 
 require 'config.php';
 if(isset($_POST['action'])){
-    $sql = "SELECT * FROM laptopok WHERE Márka !=''";
+    $sql = "SELECT * FROM webshop.laptopok WHERE Márka !='';";
 
 
         if(isset($_POST['Márka'])){
