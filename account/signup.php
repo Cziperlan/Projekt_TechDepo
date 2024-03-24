@@ -193,9 +193,7 @@
                 <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
             </div>
     </footer>
-    <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
-    <script src="../js/carousel.js"></script>
 </body>
 
 </html>

@@ -605,9 +605,14 @@
   transition-duration: 0.5s ease;
 }
 
-#topgin {
-  margin-top: 7%;
+.topgin {
+  margin-top: 3%;
 }
+
+.bottomgin {
+  margin-bottom: 1.5%;
+}
+
 
 /*Signup és Account flexbox*/
 
