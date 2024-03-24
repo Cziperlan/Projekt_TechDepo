@@ -101,7 +101,7 @@ require_once '../includes/config.session.inc.php';
           <div class="bigbox">
                 <div class="bigbox-inner">
                     <h1>A kívánságlistád üres!</h1>
-                    <p><a href="../pages/index.php">Térj vissza a vásárláshoz!</a></p>
+                    <p><a href="../index.php">Térj vissza a vásárláshoz!</a></p>
                 </div>
            </div>
             

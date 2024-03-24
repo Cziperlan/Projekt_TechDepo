@@ -14,7 +14,7 @@
     <title>TechDepo - Kosár</title>
 </head>
 <body>
-<header>
+    <header>
         <div class="header">
                     <a href="../index.php">
                          <img src="../logo.png" alt="TechDepo logó">
@@ -100,7 +100,7 @@
             <div class="bigbox">
                 <div class="bigbox-inner">
                     <h1>A kosarad üres!</h1>
-                    <p><a href="../pages/index.php">Térj vissza a vásárláshoz!</a></p>
+                    <p><a href="../index.php">Térj vissza a vásárláshoz!</a></p>
                 </div>
            </div>
             

@@ -199,21 +199,11 @@
                                         $sql = "SELECT l.*, r.Ár
                                                 FROM webshop.fejhallgatók l
                                                 JOIN webshop.raktár r ON l.FejID = r.TermékID";
-                                        
-                                        // Execute the query
                                         $result = $conn->query($sql);
-
-                                        // Check if there are any results
                                         if ($result->num_rows > 0) {
-                                            // Fetching data row by row
                                             while ($row = $result->fetch_assoc()) {
-                                                // Retrieve image path for the current laptop
                                                 $image_name = $row["FejID"];
                                                 $image_path = "../Képek/" . $image_name . ".png";
-
-
-
-                                                // Displaying laptop information
                                                 ?>
                                                 <div class="col-md-3 mb-2">
                                                     <div class="cars-deck">
@@ -227,7 +217,7 @@
                                                                 <p>
                                                                     Márka : <?= $row['Márka']; ?><br>
                                                                     Típus : <?= $row['Típusa']; ?><br>
-                                                                    Frekvencia átvitel : <?= $row['Frekvencia_átvitel']; ?><br>
+                                                                    Frekvencia átvitel : <?= $row['Frekvenciátvitel']; ?><br>
                                                                 </p>
                                                                 <a href="#" class="btn btn-success btn-block">Kosárba</a>
                                                             </div>
@@ -241,8 +231,8 @@
                                         }
                                                  ?>
                                     </div>
-                                </div>
                 </div>
+            </div>
     </div>
     <footer>
         <div class="footer row mx-0">
