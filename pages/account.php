@@ -93,8 +93,10 @@
                 <?php output_username(); ?>
                 <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
                 <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
-                <span>Nincs még fiókod? <a href="../account/signup.php"> Készíts egyet!</a></span>
-                <span>Elfelejtetted a jelszavad? <a href="../account/recovery.php"> Kattints ide!</a></span>
+                <span>Nincs még fiókod?</span>
+                <span><a href="../account/signup.php"> Készíts egyet!</a></span>
+                <span>Elfelejtetted a jelszavad?</span>
+                <span><a href="../account/recovery.php"> Kattints ide!</a></span>
                 <button>Bejelentkezés</button>
                 <?php
                     check_login_errors();

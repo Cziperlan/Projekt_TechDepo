@@ -96,7 +96,8 @@
                 <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
                     <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
                     <input class="bigbox-input" type="email" name="email" placeholder="E-Mail cím">
-                    <span>Mégis eszedbe jutott? <a href="../pages/account.php">Katt ide!</a></span>
+                    <span>Mégis eszedbe jutott?</span>
+                    <span><a href="../pages/account.php">Kattints ide!</a></span>
                 <button>Új jelszó igénylése</button>
             </form>
                 </div>

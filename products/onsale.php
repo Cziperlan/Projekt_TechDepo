@@ -83,7 +83,7 @@
     <div class="bigbox">
                 <div class="bigbox-inner">
                     <h1>Egyenlőre nincsenek még akcióink!</h1>
-                    <span><a href="../pages/index.php">Gyere vissza később!</a></span>
+                    <span><a href="../index.php">Gyere vissza később!</a></span>
                 </div>
            </div>
     <footer>
