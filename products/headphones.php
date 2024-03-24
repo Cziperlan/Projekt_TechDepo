@@ -48,7 +48,7 @@
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
                                     <a href="../pages/about.html"> - Cégünkről</a>
-                                    <a href=""> - Az oldal használata</a>
+                                    <a href="https://youtu.be/qydY-wmmyDk"> - Az oldal használata</a>
                                     <a href="../pages/forum.php"> - Fórum</a>
                                 </div>
                         </div>
@@ -79,7 +79,7 @@
                     <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
                             <a href="../pages/about.html">Cégünkről</a>
-                            <a href="">Az oldal használata</a>
+                            <a href="https://youtu.be/qydY-wmmyDk">Az oldal használata</a>
                             <a href="../pages/forum.php">TechDepo fórum</a>
                         </div>
                 </div>
@@ -313,6 +313,9 @@
                                 </a>
                                 <a href="https://twitter.com/?lang=hu" target="_blank">
                                     <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCxvMRBWbv2OgefAjoq_0ZBQ" target="_blank">
+                                    <img src="../images/icon4.png" alt="Youtube" class="f-ikon">
                                 </a>
                         </ul>
                 </div>
