@@ -43,7 +43,7 @@
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
                                     <a href="../pages/about.html"> - Cégünkről</a>
-                                    <a href="https://youtu.be/qydY-wmmyDk"> - Az oldal használata</a>
+                                    <a href="https://youtu.be/qydY-wmmyDk" target="_blank"> - Az oldal használata</a>
                                     <a href="../pages/forum.php"> - Fórum</a>
                                 </div>
                         </div>
@@ -74,7 +74,7 @@
                     <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
                             <a href="../pages/about.html">Cégünkről</a>
-                            <a href="https://youtu.be/qydY-wmmyDk">Az oldal használata</a>
+                            <a href="https://youtu.be/qydY-wmmyDk" target="_blank">Az oldal használata</a>
                             <a href="../pages/forum.php">TechDepo fórum</a>
                         </div>
                 </div>
