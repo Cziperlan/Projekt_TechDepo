@@ -100,7 +100,7 @@
                     <a class="last" href="../account/delete.php">Fióktörlés</a>
                 </div>
                 <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="text" name="pwd" placeholder="Jelszó">
+                <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
                 <input class="bigbox-input" type="text" name="email" placeholder="E-Mail cím">
                 <input class="bigbox-input" type="text" name="lastname" placeholder="Vezetéknév">
                 <input class="bigbox-input" type="text" name="firstname" placeholder="Keresztnév">

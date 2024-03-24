@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER["REQEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $pwd = $_POST["pwd"];
     $email = $_POST["email"];
@@ -9,9 +9,9 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     $user_id = $_SESSION["user_id"];
 
     try {
-        require_once 'dnhandler.inc.php';
+        require_once 'dbhandler.inc.php';
 
-        $query = 'UPDATE webshop.users SET username = :username, pwd =:pwd, email = :email, firstname = :firstname, lastname = :lastname, WHERE felhasznalo_id=:user_id; ';
+        $query = 'UPDATE webshop.users SET username = :username, pwd =:pwd, email = :email, firstname = :firstname, lastname = :lastname WHERE felhasznalo_id=:user_id; ';
 
         $stmt = $pdo->prepare($query);
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
         $stmt->bindParam(":lastname", $lastname);
         $stmt->bindParam(":user_id",$user_id);
 
-        $stmt->execute([]);
+        $stmt->execute();
 
         $pdo = null;
         $stmt = null;
@@ -44,4 +44,4 @@ if ($_SERVER["REQEST_METHOD"] == "POST") {
     
 } else {
     header("Location: ../pages/account.php");
-        }
+}

@@ -28,7 +28,7 @@ function signup_inputs() {
         echo '<input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">';
     }
 
-    echo '<input class="bigbox-input" type="text" name="pwd" placeholder="Jelszó">';
+    echo '<input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">';
 
     if(isset($_SESSION["signup_data"]["email"]) && !isset($_SESSION["errors_signup"]["email_used"]) && !isset($_SESSION["errors_signup"]["invalid_email"])) {
         echo '<input class="bigbox-input" type="text" name="email" placeholder="E-Mail" value="' .$_SESSION["signup_data"]["email"].'">';

@@ -111,7 +111,7 @@
                 <div class="bigbox-inner-navi">
                     <a href="account.php">Fiókinformáció</a>
                     <a href="../account/modify.php">Fiókbeállítások</a>
-                    <a class="last" href="../account/wishlist.php">Kívánságlista</a>
+                    <a class="last" href="../account/delete.php">Fióktörlés</a>
                 </div>
                 <?php output_userdata()?>
                 <button>Kijelentkezés</button>
