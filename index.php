@@ -377,6 +377,7 @@
     </footer>
     <script src="./js/slideshow.js"></script>
     <script src="./js/sandwitch.js"></script>
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>

@@ -208,6 +208,8 @@ if(isset($_POST["submit"])){
         document.getElementById('reply_id').value = id;
       }
     </script>
+    <script src="../js/slideshow.js"></script>
     <script src="../js/sandwitch.js"></script>
+    <script src="../js/carousel.js"></script>
   </body>
 </html>
