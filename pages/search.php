@@ -39,7 +39,7 @@
 <body>
     <header>
         <div class="header">
-                    <a href="../pages/index.php">
+                    <a href="../index.php">
                          <img src="../logo.png" alt="TechDepo logó">
                     </a> 
                 <div>
@@ -76,7 +76,7 @@
                         </div>
         <div class="topnav">
                     <div class="menu">
-                        <a href="../pages/index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                         <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
                         <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
@@ -85,7 +85,7 @@
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </button>
-                <a class="topnav-dis" href="../pages/index.php">Kezdőlap</a>
+                <a class="topnav-dis" href="../index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
                 <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
                 <div class="dropdown topnav-dis">
