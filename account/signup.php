@@ -88,6 +88,9 @@
                 </div>
         </div>
     </header>
+    <div class="topgin">
+            <h1 class="product-title"></h1>
+    </div>
     <div class="bigbox">
         <form action="../includes/signup.inc.php" method="POST" class="bigbox-inner">  
                 <h1>Regisztráció</h1>
@@ -98,13 +101,15 @@
                     <input type="checkbox" name="tos" required>
                     <label for="tos">Elfogadom a <a href="../policies/terms-of-service.html">Szolgáltatási felételeket</a></label>
                 </span>
-                <span>Már regisztráltál?</span>
-                <span><a href="../pages/account.php"> Jelentkezz be!</a></span>
+                <span><a href="../pages/account.php">Már regisztráltál?</a></span>
                 <button type="submit">Regisztráció</button>
                 <?php
                     check_signup_errors();
                 ?>
         </form>
+    </div>
+    <div class="topgin">
+            <h1 class="product-title"></h1>
     </div>
     <footer>
         <div class="footer row mx-0">

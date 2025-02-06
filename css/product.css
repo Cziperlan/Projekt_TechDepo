@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Slideshow Section */
+.slideshow-section {
+    flex: 1 1 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slideshow {
+    width: 100%;
+    position: relative;
+}
+
+.slideshow img {
+    display: none;
+    margin-left: 10%;
+}
+
+.slideshow img.active {
+    display: block;
+}
+
+.slideshow-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.slideshow-controls button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slideshow-controls button:hover {
+    background-color: #0056b3;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.thumbnail.active {
+    border-color: #007bff;
+}
+
+/* Details Section */
+.details-section {
+    flex: 1 1 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.details-section h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+.details-section .price {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.details-section .description {
+    font-size: 16px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.details-section .options {
+    margin: 20px 0;
+}
+
+.details-section .options label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.details-section .options select,
+.details-section .options input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.details-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Tabs Section */
+.tabs {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-buttons button {
+    flex: 1;
+    padding: 15px;
+    background: #f9f9f9;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-buttons button.active {
+    background: #fff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}

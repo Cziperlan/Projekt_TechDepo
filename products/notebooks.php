@@ -1,317 +1,270 @@
 <?php
-        require 'config.php';
-  ?>
+require_once '../includes/config.session.inc.php';
+require 'config.php';
 
+$makers = $conn->query("SELECT DISTINCT maker FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$cpu_types = $conn->query("SELECT DISTINCT cpu_type FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$ram_sizes = $conn->query("SELECT DISTINCT ram_size FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$gpus = $conn->query("SELECT DISTINCT gpu FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$resolutions = $conn->query("SELECT DISTINCT resolution FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$refresh_rates = $conn->query("SELECT DISTINCT refresh_rate FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$screen_sizes = $conn->query("SELECT DISTINCT screen_size FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$drive_sizes = $conn->query("SELECT DISTINCT drive_size FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$drive_types = $conn->query("SELECT DISTINCT drive_type FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$bluetooth_versions = $conn->query("SELECT DISTINCT bluetooth_version FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$batterys = $conn->query("SELECT DISTINCT battery FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
+$colors = $conn->query("SELECT DISTINCT color FROM webshop.notebooks WHERE ProID IN (SELECT ProID FROM webshop.products)");
 
+$price_range = $conn->query("SELECT MIN(CAST(REPLACE(price, '.', '') AS UNSIGNED)) as min_price, MAX(CAST(REPLACE(price, '.', '') AS UNSIGNED)) as max_price FROM webshop.products WHERE ProID IN (SELECT ProID FROM webshop.notebooks)");
+$price = $price_range->fetch_assoc();
+$min_price = $price['min_price'];
+$max_price = $price['max_price'];
+?>
 
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/general.css">
-    <title>TechDepo - Laptopok</title>
+    <link rel="stylesheet" href="../css/prod-card.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Level PC - Laptopok</title>
+    <style>
+        /*Filter*/
+        .filter-container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .filter-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .filter-container select,
+        .filter-container input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        .filter-button {
+            display: block;
+            width: 100%;
+            padding:13px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius:16px;
+            cursor: pointer;
+            font-size:x-large;
+            margin-top:10px;
+        }
+
+        .filter-button:hover {
+            background-color:#1a1818;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="header">
-                    <a href="../index.php">
-                         <img src="../logo.png" alt="TechDepo logó">
-                    </a> 
-                <div>
-                    <form action="search.php" method="get">
-                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
-                        <button type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div>  
-                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                    <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
-                </div>
+            <a href="../index.php">
+                <img src="../logo.png" alt="ZeroPC logó">
+            </a>
+            <div>
+                <form action="search.php" method="get">
+                    <input type="text" id="search" name="product-search" placeholder="Keresés...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
+                <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
         </div>
         <div class="sidenav" id="navSide">
-                            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="../products/featured.php">Ajánlataink</a>
-                            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont">
-                                    <a href="../products/towers.php"> - Számítógépek</a>
-                                    <a href="../products/notebooks.php"> - Laptopok</a>
-                                    <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
-                                </div>
-                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont2">
-                                    <a href="../pages/about.html"> - Cégünkről</a>
-                                    <a href="https://youtu.be/qydY-wmmyDk" target="_blank"> - Az oldal használata</a>
-                                    <a href="../pages/forum.php"> - Fórum</a>
-                                </div>
-                        </div>
+            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
+            <a href="./products/featured.php">Ajánlataink</a>
+            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sidecont">
+                <a href="towers.php"> - Számítógépek</a>
+                <a href="notebooks.php"> - Laptopok</a>
+            </div>
+        </div>
         <div class="topnav">
-                    <div class="menu">
-                        <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
-                    </div>
-                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </button>
-                <a class="topnav-dis" href="../index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
-                <div class="dropdown topnav-dis">
-                <button class="dropbtn">Termékeink</button>
-                    <div class="dropdown-content">
-                            <a href="../products/towers.php">Számítógépek</a>
-                            <a href="../products/notebooks.php">Laptopok</a>
-                            <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../products/monitors.php">Monitorok</a>
-                    </div>
-                </div>
-                <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
-                        <div class="dropdown-content">
-                            <a href="../pages/about.html">Cégünkről</a>
-                            <a href="https://youtu.be/qydY-wmmyDk" target="_blank">Az oldal használata</a>
-                            <a href="../pages/forum.php">TechDepo fórum</a>
-                        </div>
-                </div>
+            <div class="menu">
+                <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
+            </div>
+            <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+            <a class="topnav-dis" href="../index.php">Kezdőlap</a>
+            <a class="topnav-dis" href="featured.php">Ajánlataink</a>
+            <a class="topnav-dis" href="towers.php">Számítógépek</a>
+            <a class="topnav-dis" href="notebooks.php">Laptopok</a>
         </div>
     </header>
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                    <h5>Szűrők</h5>
-                    <hr>
-                        <!--Márkák-->
-                    <h6 class="text-info">Márka</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Márka from webshop.laptopok ORDER BY Márka;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Márka']?>" id="Márka"><?=$row['Márka']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
+    <div class="split-box">
+        <div class="split-left">
+            <div class="filter-container">
+                <h1>Szűrők</h1>
+                <form id="filter-form" class="filter-container">
 
-                                <!--RAM típusa-->
+                    <label>Ár szerinti rendezés:</label>
+                    <select name="price_order" id="price_order">
+                        <option value="">Nincs</option>
+                        <option value="asc">Ár szerint növekvő</option>
+                        <option value="desc">Ár szerint csökkenő</option>
+                    </select>
 
-                    <h6 class="text-info">RAM típusa</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT RAM_típusa from webshop.laptopok ORDER BY RAM_típusa;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['RAM_típusa']?>" id="RAM_típusa"><?=$row['RAM_típusa']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                                <!--RAM Mérete-->
+                    <label>Gyártó:</label>
+                    <select name="maker" id="maker">
+                        <option value="">Mind</option>
+                        <?php while ($row = $makers->fetch_assoc()) {
+                            echo "<option value='{$row['maker']}'>{$row['maker']}</option>";
+                        } ?>
+                    </select>
 
-                    <h6 class="text-info">RAM méret(Gb)</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT RAM_mérete from webshop.laptopok ORDER BY RAM_mérete;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['RAM_mérete']?>" id="RAM_mérete"><?=$row['RAM_mérete']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                                 <!--Processzor-->
-                    <h6 class="text-info">Processzor</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Processzor from webshop.laptopok ORDER BY Processzor;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Processzor']?>" id="Processzor"><?=$row['Processzor']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                         <!--Merevlemez_típusa-->
-                         <h6 class="text-info">Merevlemez típusa</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Merevlemez_típusa from webshop.laptopok ORDER BY Merevlemez_típusa;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Merevlemez_típusa']?>" id="Merevlemez_típusa"><?=$row['Merevlemez_típusa']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                                <!--Merevlemez_mérete-->
-                    <h6 class="text-info">Merevlemez mérete(Gb)</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Merevlemez_mérete from webshop.laptopok ORDER BY Merevlemez_mérete;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Merevlemez_mérete']?>" id="Merevlemez_mérete"><?=$row['Merevlemez_mérete']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                                <!--Felbontás-->
-                    <h6 class="text-info">Felbontás</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Felbontás from webshop.laptopok ORDER BY Felbontás;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Felbontás']?>" id="Felbontás"><?=$row['Felbontás']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                                <!--Képfrissítés-->
-                    <h6 class="text-info">Képfrissítés</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Képfrissítés from webshop.laptopok ORDER BY Képfrissítés;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Képfrissítés']?>" id="Képfrissítés"><?=$row['Képfrissítés']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
-                            <!--Videókártya-->
-                    <h6 class="text-info">Videókártya</h6>
-                    <ul class="list-group">
-                        <?php
-                            $sql="SELECT DISTINCT Videókártya from webshop.laptopok ORDER BY Videókártya;";
-                            $result=$conn->query($sql);
-                            while($row=$result->fetch_assoc()){
-                        ?>
-                        <li class="list-group-item ">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input product-check" value="<?=$row['Videókártya']?>" id="Videókártya"><?=$row['Videókártya']?>
-                                </label>
-                            </div>
-                        </li>
-                        <?php }?>
-                    </ul>
+                    <label>Felbontás:</label>
+                    <select name="resolution" id="resolution">
+                        <option value="">Mind</option>
+                        <?php while ($row = $resolutions->fetch_assoc()) {
+                            echo "<option value='{$row['resolution']}'>{$row['resolution']}</option>";
+                        } ?>
+                    </select>
 
-                </div>
-                <div class="col-lg-9">
-                                <h5 class="text-center" id="textChange"> Termékek</h5>
-                                <hr>
-                                <div class="text-center">
-                                    <img src="../images/loader.gif" if="loader" width="200" style="display: none;">
-                                </div>
+                    <label>Képfrissítés:</label>
+                    <select name="refresh_rate" id="refresh_rate">
+                        <option value="">Mind</option>
+                        <?php while ($row = $refresh_rates->fetch_assoc()) {
+                            echo "<option value='{$row['refresh_rate']}'>{$row['refresh_rate']}</option>";
+                        } ?>
+                    </select>
 
-                                
-                                <div class="row" id="result">
-                                        <?php
-                                        require 'action.php';
-                                        // Query to fetch data from both tables using JOIN
-                                        $sql = "SELECT l.*, r.Ár
-                                                FROM webshop.laptopok l
-                                                JOIN webshop.raktár r ON l.LaptopID = r.TermékID";
-                                        
-                                        // Execute the query
-                                        $result = $conn->query($sql);
+                    <label>Képernyő átmérő:</label>
+                    <select name="screen_size" id="screen_size">
+                        <option value="">Mind</option>
+                        <?php while ($row = $screen_sizes->fetch_assoc()) {
+                            echo "<option value='{$row['screen_size']}'>{$row['screen_size']}</option>";
+                        } ?>
+                    </select>
 
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Fetching data row by row
-                                            while ($row = $result->fetch_assoc()) {
-                                                // Retrieve image path for the current laptop
-                                                $image_name = $row["LaptopID"];
-                                                $image_path = "../Képek/" . $image_name . ".png";
+                    <label>Processzor:</label>
+                    <select name="cpu_type" id="cpu_type">
+                        <option value="">Mind</option>
+                        <?php while ($row = $cpu_types->fetch_assoc()) {
+                            echo "<option value='{$row['cpu_type']}'>{$row['cpu_type']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Memória méret:</label>
+                    <select name="ram_size" id="ram_size">
+                        <option value="">Mind</option>
+                        <?php while ($row = $ram_sizes->fetch_assoc()) {
+                            echo "<option value='{$row['ram_size']}'>{$row['ram_size']} GB</option>";
+                        } ?>
+                    </select>
+
+                    <label>GPU:</label>
+                    <select name="gpu" id="gpu">
+                        <option value="">Mind</option>
+                        <?php while ($row = $gpus->fetch_assoc()) {
+                            echo "<option value='{$row['gpu']}'>{$row['gpu']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Háttértár mérete:</label>
+                    <select name="drive_size" id="drive_size">
+                        <option value="">Mind</option>
+                        <?php while ($row = $drive_sizes->fetch_assoc()) {
+                            echo "<option value='{$row['drive_size']}'>{$row['drive_size']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Háttértár típusa:</label>
+                    <select name="drive_type" id="drive_type">
+                        <option value="">Mind</option>
+                        <?php while ($row = $drive_types->fetch_assoc()) {
+                            echo "<option value='{$row['drive_type']}'>{$row['drive_type']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Bluetooth verzió:</label>
+                    <select name="bluetooth_version" id="bluetooth_version">
+                        <option value="">Mind</option>
+                        <?php while ($row = $bluetooth_versions->fetch_assoc()) {
+                            echo "<option value='{$row['bluetooth_version']}'>{$row['bluetooth_version']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Akkumulátor kapacitás:</label>
+                    <select name="battery" id="battery">
+                        <option value="">Mind</option>
+                        <?php while ($row = $batterys->fetch_assoc()) {
+                            echo "<option value='{$row['battery']}'>{$row['battery']}</option>";
+                        } ?>
+                    </select>
+
+                    <label>Szín: </label>
+                    <select name="color" id="color">
+                        <option value="">Mind</option>
+                        <?php while ($row = $colors->fetch_assoc()) {
+                            echo "<option value='{$row['color']}'>{$row['color']}</option>";
+                        } ?>
+                    </select>
 
 
-
-                                                // Displaying laptop information
-                                                ?>
-                                                <div class="col-md-3 mb-2">
-                                                    <div class="cars-deck">
-                                                        <div class="card border-secondary">
-                                                            <img src="<?= $image_path ?>" class="card-img-top">
-                                                            <div class="card-img-overlay">
-                                                                <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
-                                                            </div>
-                                                            <div class="card-body">
-                                                                <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
-                                                                <p>
-                                                                    RAM : <?= $row['RAM_mérete']; ?> Gb<br>
-                                                                    Processzor : <?= $row['Processzor']; ?><br>
-                                                                    Merevlemez_mérete : <?= $row['Merevlemez_mérete']; ?><br>
-                                                                </p>
-                                                                <a href="#" class="btn btn-success btn-block">Kosárba</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php
-                                            }
-                                        } else {
-                                            echo "Nincs találat";
-                                        }
-                                                 ?>
-                                    </div>
-                                </div>
-                </div>
+                    <button type="button" class="filter-button" id="apply-filters">Szűrés indítása</button>
+                </form>
+            </div>
+        </div>
+        <div class="split-right" id="product-list">
+            <?php
+            $sql = "SELECT l.*, r.price FROM webshop.notebooks l JOIN webshop.products r ON l.ProID = r.ProID WHERE r.visible = 1";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $image_name = $row["ProID"];
+                    $image_path = "../Képek/1/" . $image_name . ".jpg";
+                    ?>
+                    <div class="product-card">
+                        <span class="product-badge">Top Deal</span>
+                        <a href="laptop.php?id=<?= urlencode($row['ProID']); ?>">
+                            <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                            <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                        </a>
+                        <p class="product-price"><?= $row['price']; ?> FT</p>
+                        <a href="../account/cart.php?id=<?= urlencode($row['ProID']); ?>">
+                            <button class="add-to-cart">Kosárba</button>
+                        </a>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "Nincs találat";
+            }
+            ?>
+        </div>
     </div>
     <footer>
         <div class="footer row mx-0">
@@ -348,12 +301,6 @@
                         <a href="../pages/about.html">Cégünkről</a>
                     </li>
                     <li>
-                        <a href="">Az oldal használata</a>
-                    </li>
-                    <li>
-                        <a href="../pages/forum.php">A TechDepo fórum</a>
-                    </li>
-                    <li>
                         <a href="../policies/terms-of-service.html">Szolgáltatási feltételek</a>
                     </li>
                 </ul>
@@ -369,86 +316,43 @@
                         <span>+36 20 468 8923</span>
                     </li>
                     <li>
-                        <span>techdepo@nincsmail.hu</span>
+                        <span>level-tech@nincsmail.hu</span>
                     </li>
                     <li>
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt="" class="f-ikon"></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png"
+                                    alt="" class="f-ikon"></a></span>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <div class="social-links">
-                        <ul class="f-ul">
-                            <p>Az alábbi linkeken megteheted:</p>
-                                <a href="https://www.instagram.com" target="_blank">
-                                    <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
-                                </a>
-                                <a href="https://www.facebook.com" target="_blank">
-                                    <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
-                                </a>
-                                <a href="https://twitter.com/?lang=hu" target="_blank">
-                                    <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCxvMRBWbv2OgefAjoq_0ZBQ" target="_blank">
-                                    <img src="../images/icon4.png" alt="Youtube" class="f-ikon">
-                                </a>
-                        </ul>
+                    <ul class="f-ul">
+                        <p>Az alábbi linkeken megteheted:</p>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
+                        </a>
+                        <a href="https://twitter.com/?lang=hu" target="_blank">
+                            <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="../images/icon4.png" alt="Youtube" class="f-ikon">
+                        </a>
+                    </ul>
                 </div>
             </div>
             <div>
-                <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
+                <p class="f-center">@ 2024-2024 level-tech.domain-expansion.vip Minden jog fenntartva</p>
             </div>
     </footer>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                
-                $(".product-check").click(function(){
-
-                    $("#loader").show();
-
-                    var action = 'data';
-                    var Márka = get_filter_text('Márka');
-                    var RAM_típusa = get_filter_text('RAM_típusa');
-                    var RAM_mérete = get_filter_text('RAM_mérete');
-                    var Processzor = get_filter_text('Processzor');
-                    var Merevlemez_típusa = get_filter_text('Merevlemez_típusa');
-                    var Merevlemez_mérete = get_filter_text('Merevlemez_mérete');
-                    var Felbontás = get_filter_text('Felbontás');
-                    var Képfrissítés = get_filter_text('Képfrissítés');
-                    var Videókártya = get_filter_text('Videókártya');
-
-                    $.ajax({
-                        url:'action.php',
-                        method:'POST',
-                        data:{action:action,Márka:Márka,RAM_típusa:RAM_típusa,RAM_mérete:RAM_mérete,Processzor:Processzor,Merevlemez_típusa:Merevlemez_típusa,Merevlemez_mérete:Merevlemez_mérete,Felbontás:Felbontás,Képfrissítés:Képfrissítés,Videókártya:Videókártya},
-
-                        success: function(response)
-                        { 
-                        $("#result").html(response);
-                        $("#loader").hide();
-                        $("#textChange").text("Filtered Products");
-                        }
-                            
-                    });
-
-
-                });
-
-                function get_filter_text(text_id){
-                    var filterData = [];
-                    $('#'+text_id+':checked').each(function(){
-                        filterData.push($(this).val());
-                    });
-                    return filterData;
-                }
-
-            });
-        </script>
-        <script src="../js/sandwitch.js"></script>
-    </body>
+    <script src="../js/sandwitch.js"></script>
+    <script src="../js/filter2.js"></script>
+</body>
 
 </html>

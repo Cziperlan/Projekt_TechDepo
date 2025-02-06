@@ -9,7 +9,7 @@
 /*header*/
 
 .header {
-  background-color: white; 
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,9 +18,10 @@
 
 .header img {
   display: flex;
-  width: 110px;
+  width: 120px;
   height: auto;
-  padding: 5px;
+  padding: 2px;
+  margin-left: 30px;
 }
 
 .header a {
@@ -29,7 +30,7 @@
   padding-right: 10px;
 }
 
-.header input{
+.header input {
   width: 800px;
   border-radius: 16px;
   border: 3px solid black;
@@ -49,12 +50,13 @@
 
 @media (max-width: 992px) {
   .header input {
-    width: 300px ;
+    width: 300px;
   }
 
   .header-dis {
     display: none;
   }
+
   .header-dis2 {
     display: none;
   }
@@ -64,9 +66,11 @@
   .header input {
     width: 70%;
   }
+
   .header-dis {
     display: none;
   }
+
   .header-dis2 {
     display: none;
   }
@@ -120,7 +124,7 @@
 
 .dropbtn {
   background-color: black;
-  font-size: x-large;  
+  font-size: x-large;
   border: none;
   color: white;
   padding: 30px;
@@ -133,7 +137,7 @@
 
 .dropdown-content {
   position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 8;
   display: none;
   text-align: center;
@@ -157,7 +161,7 @@
 
 .dropdown-content .subbtn {
   background-color: black;
-  font-size: larger;  
+  font-size: larger;
   border: none;
   color: white;
   padding: 30px;
@@ -170,10 +174,10 @@
   text-decoration: underline;
 }
 
-.subdown-content{
+.subdown-content {
   display: none;
   position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 9;
   font-size: large;
   left: 11em;
@@ -187,7 +191,7 @@
   background-color: #1a1818;
   text-decoration: underline;
 }
-  
+
 
 
 /*Reszponzív navi*/
@@ -195,11 +199,11 @@
   display: none;
 }
 
-.sandwitch{
+.sandwitch {
   display: none;
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
 
   .topnav-dis {
     display: none;
@@ -212,6 +216,7 @@
     background-color: black;
     color: white;
   }
+
   .menu a {
     padding: 30px;
   }
@@ -226,11 +231,14 @@
     background-color: black;
     margin-right: 10px;
   }
+
   .sandwitch:hover {
     background-color: #1a1818;
   }
-  
-  .bar1, .bar2, .bar3 {
+
+  .bar1,
+  .bar2,
+  .bar3 {
     border: black 0.1px solid;
     border-radius: 4px;
     width: 50px;
@@ -239,17 +247,19 @@
     margin: 6px 0;
     transition: 0.4s;
   }
-  
+
   .change .bar1 {
     transform: translate(0, 14px) rotate(-45deg);
   }
-  
-  .change .bar2 {opacity: 0;}
-  
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
   .change .bar3 {
     transform: translate(0, -14px) rotate(45deg);
   }
-  
+
 }
 
 #dropLinks {
@@ -270,7 +280,8 @@
   border-left: white 0.1px solid;
 }
 
-.sidenav a, .sidedrop {
+.sidenav a,
+.sidedrop {
   padding: 10px 22px 10px 22px;
   text-decoration: none;
   font-size: 25px;
@@ -289,29 +300,32 @@
   left: 0;
   font-size: 36px;
 }
-.sidecont{
+
+.sidecont {
   display: none;
 }
 
-.sidecont, .sidecont a {
-  
+.sidecont,
+.sidecont a {
+
   text-decoration: none;
   font-size: 25px;
   color: white;
-  
+
   transition: 0.3s;
 }
 
-.sidecont2{
+.sidecont2 {
   display: none;
 }
 
-.sidecont2, .sidecont2 a {
-  
+.sidecont2,
+.sidecont2 a {
+
   text-decoration: none;
   font-size: 25px;
   color: white;
-  
+
   transition: 0.3s;
 }
 
@@ -379,8 +393,8 @@
 
 @media screen and (max-width: 992px) {
   .und {
-  margin-bottom: 20px;
-}
+    margin-bottom: 20px;
+  }
 
 }
 
@@ -419,7 +433,7 @@
 
 .ov_button {
   border-radius: 8px;
-  border:1px solid white ;
+  border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: medium;
@@ -526,24 +540,27 @@
 }
 
 .next:hover,
-.prev:hover{
+.prev:hover {
   transform: scale(1.3);
   color: white;
   transition-duration: 0.5s ease;
 }
 
 @media screen and (max-width:768px) {
-  .next, .prev {
+
+  .next,
+  .prev {
     display: none;
   }
-   .overlayer {
+
+  .overlayer {
     opacity: 1;
     transform: scale(1.0);
     overflow: hidden;
     transition-duration: 0, 7s;
   }
 
-  
+
 }
 
 
@@ -595,7 +612,9 @@
 @media screen and (max-width: 992px) {
   .jumper {
     display: none
-  };
+  }
+
+  ;
 }
 
 .jumper:hover {
@@ -617,19 +636,21 @@
 /*Signup és Account flexbox*/
 
 .bigbox {
-  margin-top: 100px;
-  margin-bottom: 100px;
   margin-left: 30%;
   margin-right: 30%;
   display: flex;
   align-content: center;
   justify-content: center;
   height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 40px;
 }
 
 .bigbox-inner {
   display: flex;
-  flex-flow:nowrap column;
+  flex-flow: nowrap column;
   width: 100%;
 }
 
@@ -638,12 +659,13 @@
   color: black;
 }
 
-.bigbox h1 {  
+.bigbox h1 {
   display: flex;
   align-self: center;
   margin-bottom: 30px;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   text-align: center;
+  margin-top: 100px;
 }
 
 .bigbox p {
@@ -663,12 +685,11 @@
 .bigbox-input {
   display: flex;
   align-self: center;
-  border-radius: 16px;
+  border-radius: 8px;
   margin-bottom: 12px;
   width: 55%;
-  padding: 20px;
-  border: 2px solid black;
-  padding: 0.5em;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 @media screen and (max-width: 992px) {
@@ -684,10 +705,12 @@
   margin-top: 10px;
   color: white;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 14px;
   background-color: black;
   border: 1px black solid;
-  font-size: xx-large;
+  font-size: x-large;
+  margin-bottom: 100px;
+  margin-top: 20px;
 }
 
 .bigbox-inner-navi {
@@ -707,6 +730,11 @@
   font-weight: bold;
   padding: 10px;
 }
+
+.bigbox-inner-navi .activee {
+  color: #ff0000;
+}
+
 .bigbox-inner-navi .last {
   border-right: none;
 }
@@ -722,7 +750,7 @@
   background-color: #1a1818;
   transition-duration: 0.5s ease;
   transform: scale(1.01);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 /*Product Flex*/
@@ -751,103 +779,6 @@
   width: 100%;
 }
 
-.product-inner {
-  display: flex;
-  flex-direction: column;
-  width: 21%;
-  border-radius: 30px;
-  background-color: white;
-  color: black;
-  margin-bottom: 50px;
-  border: 3px solid black;
-}
-
-@media screen and (max-width:768px) {
-  .product-inner {
-    width: 47%;
-  }
-}
-
-.product-inner a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: x-large;
-}
-
-.product-inner a:hover {
-  text-decoration: underline;
-}
-
-.product-inner span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: black;
-  font-size: large;
-  padding: 10px;
-}
-
-.inner-cont {
-  border: none;
-  padding: none;
-  margin: none;
-  overflow: hidden;
-  transition-duration: 0.5s;
-  transform: scale(1.0);
-}
-
-.product-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 30px;
-}
-
-
-.product-inner img {
-  display: block;
-  overflow: hidden;
-  transition-duration: 0.7s;
-  border-radius: 30px;
-  align-self: center;
-  width: 100%;
-  height: auto;
-}
-
-.inner-cont:hover .product-overlay {
-  opacity: 0.72;
-  transform: scale(1.0);
-  overflow: hidden;
-  transition-duration: 0, 7s;
-}
-
-.inner-cont:hover img {
-  transform: scale(1.02);
-  transition-duration: 0.7s;
-  overflow: hidden;
-}
-
-.poverlay-title {
-  color: white;
-  font-size: 3rem;
-  position: absolute;
-  text-align: center;
-  top: 42%;
-  left: 25%;
-  right: 25%;
-}
 
 /*Split box*/
 
@@ -919,7 +850,7 @@
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #C6C6C6;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .split-slider input[type=range]::-webkit-slider-thumb:hover {
@@ -939,9 +870,9 @@
   border: none;
 }
 
-.split-form input[type=number]::-webkit-inner-spin-button, 
-.split-form input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
+.split-form input[type=number]::-webkit-inner-spin-button,
+.split-form input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
 }
 
 .split-slider input[type="range"] {
@@ -960,3 +891,4 @@
   margin-top: 1%;
   z-index: 1;
 }
+

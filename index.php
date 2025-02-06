@@ -1,7 +1,6 @@
 
 <?php
     require_once './includes/config.session.inc.php';
-    require './products/action.php';
 ?>
 
 
@@ -13,15 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/prod-card.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="images/favicon_white.ico" type="image/x-icon">
-    <title>TechDepo - Főoldal</title>
+    <title>LeveL PC - Főoldal</title>
 </head>
 <body id="body" onload="NowShow(1)">
     <header>
         <div class="header">
                     <a href="index.php">
-                         <img src="logo.png" alt="TechDepo logó">
+                        <img src="logo.png" alt="Level PC logó">
                     </a> 
                 <div>
                     <form action="search.php" method="get">
@@ -35,7 +35,6 @@
                     <a  class="header-dis" href="./pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
                     <a class="header-dis" href="./account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="./account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                    <a class="header-dis2" href="./pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
         <div class="sidenav" id="navSide">
@@ -45,15 +44,10 @@
                                 <div class="sidecont">
                                     <a href="./products/towers.php"> - Számítógépek</a>
                                     <a href="./products/notebooks.php"> - Laptopok</a>
-                                    <a href="./products/monitors.php"> - Monitorok</a>
-                                    <a href="./products/headphones.php"> - Fejhallgatók</a>
                                 </div>
                             <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <div class="sidecont2">
                                     <a href="./pages/about.html"> - Cégünkről</a>
-                                    <a href="https://youtu.be/qydY-wmmyDk" target="_blank"> - Az oldal használata</a>
-                                    <a href="./pages/forum.php"> - Fórum</a>
-
                                 </div>
                         </div>
         <div class="topnav">
@@ -69,16 +63,8 @@
                     </button>
                 <a class="topnav-dis" href="index.php">Kezdőlap</a>
                 <a class="topnav-dis" href="./products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="./products/onsale.php">Akcióink</a>
-                <div class="dropdown topnav-dis">
-                <button class="dropbtn">Termékeink</button>
-                    <div class="dropdown-content">
-                            <a href="./products/towers.php">Számítógépek</a>
-                            <a href="./products/notebooks.php">Laptopok</a>
-                            <a href="./products/headphones.php">Fejhallgatók</a>
-                            <a href="./products/monitors.php">Monitorok</a>
-                    </div>
-                </div>
+                <a class="topnav-dis" href="./products/towers.php">Számítógépek</a>
+                <a class="topnav-dis" href="./products/notebooks.php">Laptopok</a>
                 <div class="dropdown topright topnav-dis">
                     <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
                         <div class="dropdown-content">
@@ -109,33 +95,6 @@
                 </div>
             </div>
         </div>
-        <div class="S">
-            <div class="Scont">
-                <img class="Spic" src="./gallery/index_S_headphones2.webp" alt="Fejhallgatók">
-                <div class="overlayer">
-                    <p class="overlayer_text">Fejhallgatók</p>
-                    <a href="./products/headphones.php"><button class="ov_button" >- megtekint -</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="S">
-            <div class="Scont">
-                <img class="Spic" src="./gallery/index_S_monitors2.jpg" alt="monitors">
-                <div class="overlayer">
-                    <p class="overlayer_text">Monitorok</p>
-                    <a href="./products/monitors.php"><button class="ov_button" >- megtekint -</button></a>
-                </div>
-            </div>
-        </div>
-        <div class="S">
-            <div class="Scont">
-                <img class="Spic" src="./gallery/index_S_peripherals.webp" alt="peripherals">
-                <div class="overlayer">
-                    <p class="overlayer_text">Perifériák</p>
-                    <a href="./products/accessories.php"><button class="ov_button" >- megtekint -</button></a>
-                </div>
-            </div>
-        </div>
         <a class="prev" onclick="Skip(-1)">❮</a>
         <a class="next" onclick="Skip(1)">❯</a>
     </div>
@@ -143,196 +102,70 @@
     <div style="text-align:center">
         <span class="dind activus" onclick="NowShow(1)"></span>
         <span class="dind" onclick="NowShow(2)"></span>
-        <span class="dind" onclick="NowShow(3)"></span>
-        <span class="dind" onclick="NowShow(4)"></span>
-        <span class="dind" onclick="NowShow(5)"></span>
     </div>
     <span id="jump"></span>
-    <div class="container-fluid">
-        <div class="row topgin">
-                <div class="col-lg-12">
-                                    <h1 class="text-center bottomgin" id="textChange">Laptopok</h1>
-                                    <hr>
-                                    <div class="text-center">
-                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
-                                    </div>
-                                    <div class="row" id="result">
-                                            <?php
-                                            $sql = "SELECT l.*, r.Ár
-                                                    FROM webshop.laptopok l
-                                                    JOIN webshop.raktár r ON l.LaptopID = r.TermékID LIMIT 4;";
-                                            $result = $conn->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $image_name = $row["LaptopID"];
-                                                    $image_path = "./Képek/" . $image_name . ".png";
-                                                    ?>
-                                                    <div class="col-md-3 mb-2">
-                                                        <div class="cars-deck">
-                                                            <div class="card border-secondary">
-                                                                <img src="<?= $image_path ?>" class="card-img-top">
-                                                                <div class="card-img-overlay">
-                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
-                                                                    <p>
-                                                                        RAM : <?= $row['RAM_mérete']; ?> Gb<br>
-                                                                        Processzor : <?= $row['Processzor']; ?><br>
-                                                                        Merevlemez_mérete : <?= $row['Merevlemez_mérete']; ?><br>
-                                                                    </p>
-                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                            } else {
-                                                echo "Nincs találat";
-                                            }
-                                                    ?>
-                                        </div>
+    <div>
+        <div class="topgin">
+            <div class="product-title"><h1>Számítógépek</h1></div>
+                <div class="product-box">
+                    <?php
+                    require './products/config.php';
+                    $sql = "SELECT l.*, r.price
+                        FROM webshop.npc l
+                        JOIN webshop.products r ON l.ProID = r.ProID LIMIT 12;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $image_name = $row["ProID"];
+                            $image_path = "./Képek/" . $image_name . ".jpg";
+                            ?>
+                            <div class="product-card">
+                                <span class="product-badge">Top Deal</span>
+                                <a href="./products/pc.php?id=<?= urlencode($row['ProID']); ?>"> 
+                                    <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                                    <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                                </a>
+                                <p class="product-price"><?= $row['price']; ?> FT</p>
+                                <button class="add-to-cart">Kosárba</button>
+                            </div>
+                    <?php
+                        }
+                        } else {
+                            echo "Nincs találat";
+                        }
+                    ?>
                 </div>
         </div>
-        <div class="row topgin">
-                    <div class="col-lg-12">
-                                    <h1 class="text-center bottomgin" id="textChange">Számítógépek</h1>
-                                    <hr>
-                                    <div class="text-center">
-                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
-                                    </div>
-                                    <div class="row" id="result">
-                                            <?php
-                                            $sql = "SELECT l.*, r.Ár
-                                                    FROM webshop.pc  l
-                                                    JOIN webshop.raktár r ON l.PCID = r.TermékID LIMIT 4;";
-                                                    
-                                            $result = $conn->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $image_name = $row["PCID"];
-                                                    $image_path = "./Képek/" . $image_name . ".png";
-                                                    ?>
-                                                    <div class="col-md-3 mb-2">
-                                                        <div class="cars-deck">
-                                                            <div class="card border-secondary">
-                                                                <img src="<?= $image_path ?>" class="card-img-top">
-                                                                <div class="card-img-overlay">
-                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
-                                                                    <p>
-                                                                        Márka : <?= $row['Márka']; ?><br>
-                                                                        Processzor típusa : <?= $row['Processzor_típusa']; ?><br>
-                                                                        Videókártya : <?= $row['Videókártya']; ?><br>
-                                                                    </p>
-                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                            } else {
-                                                echo "Nincs találat";
-                                            }
-                                                    ?>
-                                    </div>
-                                </div>
-        </div>
-        <div class="row topgin">
-                <div class="col-lg-12 bottomgin">
-                                    <h1 class="text-center bottomgin" id="textChange">Monitorok</h1>
-                                    <hr>
-                                    <div class="text-center">
-                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
-                                    </div>
-                                    <div class="row" id="result">
-                                            <?php
-                                            $sql = "SELECT l.*, r.Ár
-                                                    FROM webshop.monitorok  l
-                                                    JOIN webshop.raktár r ON l.MonitorID = r.TermékID LIMIT 4;";
-                                            $result = $conn->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $image_name = $row["MonitorID"];
-                                                    $image_path = "./Képek/" . $image_name . ".png";
-                                                    ?>
-                                                    <div class="col-md-3 mb-2">
-                                                        <div class="cars-deck">
-                                                            <div class="card border-secondary">
-                                                                <img src="<?= $image_path ?>" class="card-img-top">
-                                                                <div class="card-img-overlay">
-                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
-                                                                    <p>
-                                                                        Márka : <?= $row['Márka']; ?><br>
-                                                                        Felbontás : <?= $row['Felbontás']; ?><br>
-                                                                        Képfrissítés: <?= $row['Képfrissítés']; ?><br>
-                                                                    </p>
-                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                            } else {
-                                                echo "Nincs találat";
-                                            }
-                                                    ?>
-                                        </div>
-                    </div>
-        </div>
-        <div class="row topgin">
-                <div class="col-lg-12 bottomgin">
-                                    <h1 class="text-center bottomgin" id="textChange">Fejhallgatók</h1>
-                                    <hr>
-                                    <div class="text-center">
-                                        <img src="./images/loader.gif" if="loader" width="200" style="display: none;">
-                                    </div>
-                                    <div class="row" id="result">
-                                            <?php
-                                            $sql = "SELECT l.*, r.Ár
-                                                    FROM webshop.fejhallgatók  l
-                                                    JOIN webshop.raktár r ON l.FejID = r.TermékID LIMIT 4;";
-                                            $result = $conn->query($sql);
-                                            if ($result->num_rows > 0) {
-                                                while ($row = $result->fetch_assoc()) {
-                                                    $image_name = $row["FejID"];
-                                                    $image_path = "./Képek/" . $image_name . ".png";
-                                                    ?>
-                                                    <div class="col-md-3 mb-2">
-                                                        <div class="cars-deck">
-                                                            <div class="card border-secondary">
-                                                                <img src="<?= $image_path ?>" class="card-img-top">
-                                                                <div class="card-img-overlay">
-                                                                    <h6 style="margin-top:175px;" class="text-light bg-info text-center rounded p-1 "><?= $row['Név']; ?></h6>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <h4 class="card-title text-danger">Ár : <?= number_format($row['Ár']); ?>/-</h4>
-                                                                    <p>
-                                                                        Márka : <?= $row['Márka']; ?><br>
-                                                                        Típus : <?= $row['Típusa']; ?><br>
-                                                                        Frekvencia átvitel : <?= $row['Frekvenciátvitel']; ?><br>
-                                                                    </p>
-                                                                    <a href="#" class="btn btn-success btn-block">Kosárba</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                            } else {
-                                                echo "Nincs találat";
-                                            }
-                                                    ?>
-                                        </div>
-                    </div>
+        <div class="topgin">
+            <div class="product-title"><h1>Laptopok</h1></div>
+            <div class="product-box">
+                    <?php
+                    require './products/config.php';
+                    $sql = "SELECT l.*, r.price
+                        FROM webshop.notebooks l
+                        JOIN webshop.products r ON l.ProID = r.ProID LIMIT 12;";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $image_name = $row["ProID"];
+                            $image_path = "./Képek/1/" . $image_name . ".jpg";
+                            ?>
+                            <div class="product-card">
+                                <span class="product-badge">Top Deal</span>
+                                <a href="./products/laptop.php?id=<?= urlencode($row['ProID']); ?>"> 
+                                    <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                                    <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                                </a>
+                                <p class="product-price"><?= $row['price']; ?> Ft</p>
+                                <button class="add-to-cart">Kosárba</button>
+                            </div>
+                    <?php
+                        }
+                        } else {
+                            echo "Nincs találat";
+                        }
+                    ?>
+                </div>
         </div>
     </div>  
     <footer class="topgin">
@@ -370,12 +203,6 @@
                         <a href="./pages/about.html">Cégünkről</a>
                     </li>
                     <li>
-                        <a href="">Az oldal használata</a>
-                    </li>
-                    <li>
-                        <a href="./pages/forum.php">A TechDepo fórum</a>
-                    </li>
-                    <li>
                         <a href="./policies/terms-of-service.html">Szolgáltatási feltételek</a>
                     </li>
                 </ul>
@@ -391,7 +218,7 @@
                         <span>+36 20 468 8923</span>
                     </li>
                     <li>
-                        <span><a href="mailto:techdepo.hungary@gmail.com">techdepo.hungary@gmail.com</a></span>
+                        <span><a href="mailto:level-tech.hungary@gmail.com">techdepo.hungary@gmail.com</a></span>
                     </li>
                     <li>
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
@@ -422,12 +249,11 @@
                 </div>
             </div>
             <div>
-                <p class="f-center">@ 2024-2024 www.techdepo.hu Minden jog fenntartva</p>
+                <p class="f-center">@ 2024-2024 level-pc.domain-expansion.vip Minden jog fenntartva</p>
             </div>
     </footer>
     <script src="./js/slideshow.js"></script>
     <script src="./js/sandwitch.js"></script>
     <script src="./js/carousel.js"></script>
 </body>
-
 </html>

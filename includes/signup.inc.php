@@ -6,8 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $lastname = $_POST["lastname"];
     $firstname = $_POST["firstname"];
-    $defaddress = $_POST["defaddress"];
-    $tel = $_POST["tel"];
     $tos = $_POST["tos"];
 
     try {
@@ -18,8 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         /*Error Handlers */
         $errors = [];
         
-        if (is_input_empty($username, $pwd, $email, $lastname, $firstname, $defaddress, $tel, $tos)) {
+        if (is_input_empty($username, $pwd, $email, $lastname, $firstname, $tos)) {
             $errors["empty_input"] = "Kérjük tölse ki az összes mezőt!";
+        }
+        if (!is_pwd_secure($pwd)) { 
+            $errors["pwd_unsecure"] = "Ez a jelszó nem tartalmaz kisbetűt, nagybetűt, számot és speciális karaktert.";
         }
         if (is_email_invalid($email)) {
             $errors["invalid_email"] = "Ez az email cím nem megfelelő.";
@@ -42,8 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 "email" => $email,
                 "lastname" => $lastname,
                 "firstname" => $firstname,
-                "defaddress" => $defaddress,
-                "tel" => $tel,
             ];
 
             $_SESSION["signup_data"] = $signupData;
@@ -52,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die();
         }
 
-        create_user($pdo, $username, $pwd, $email, $lastname, $firstname, $defaddress, $tel, $tos);
+        create_user($pdo, $username, $pwd, $email, $lastname, $firstname, $tos);
         header("Location: ../pages/account.php?signup=success");
 
         $pdo = null;

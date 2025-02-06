@@ -21,9 +21,9 @@ function check_login_errors() {
 }
 function output_username() {
     if (isset($_SESSION["user_id"])) {
-       echo '<h1>Üdv újra, '. $_SESSION["user_username"]. '!</h1>';
+       echo '<h1>Üdv, '. $_SESSION["user_username"]. '!</h1>';
     } else {
-        echo "<h1>Bejelentkezés</h1>";
+        echo "<h1>Jelentkezz be!</h1>";
     }
 }
 
@@ -33,10 +33,7 @@ function output_userdata() {
         echo '<p>Megadott email címed: '. $_SESSION["email"]. '</p>';
         echo '<p>Vezeték neved: '. $_SESSION["lastname"] . '</p>';
         echo '<p>Vezeték neved: '. $_SESSION["firstname"] . '</p>';
-        echo '<p>Telefonszámod: '. $_SESSION["tel"]. '</p>';
-        echo '<p>Otthoni címed: '. $_SESSION["homeaddress"]. '</p>';
-        echo '<p>Szállítási címed: '. $_SESSION["delivery_address"]. '</p>';
-        echo '<p>Regisztráció időpontja: '. $_SESSION["join_date"]. '</p>';
+        echo '<p>Regisztráció időpontja: '. $_SESSION["signup_date"]. '</p>';
         echo '</div>';
     }
     else {

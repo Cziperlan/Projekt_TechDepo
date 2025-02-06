@@ -22,8 +22,13 @@ function get_email(object $pdo, string $email) {
     return $result;
 }
 
-function set_user(object $pdo, string $username,string $pwd,string $email, string $lastname,string $firstname, string $defaddress, string $tel, bool $tos) {
-    $query = "INSERT INTO webshop.users (username, lastname, firstname, email, pwd, defaddress, tel, tos) VALUES (:username, :lastname, :firstname, :email, :pwd, :defaddress, :tel, :tos);";
+function check_pwd(string $password): bool {
+    $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
+    return (bool) preg_match($pattern, $password);
+}
+
+function set_user(object $pdo, string $username,string $pwd,string $email, string $lastname,string $firstname, bool $tos) {
+    $query = "INSERT INTO webshop.users (username, lastname, firstname, email, pwd, tos) VALUES (:username, :lastname, :firstname, :email, :pwd, :tos);";
 
     $options = [
         'cost' => 12
@@ -37,8 +42,6 @@ function set_user(object $pdo, string $username,string $pwd,string $email, strin
     $stmt->bindParam(':email',$email);
     $stmt->bindParam(':lastname',$lastname);
     $stmt->bindParam(':firstname',$firstname);
-    $stmt->bindParam(':defaddress',$defaddress);
-    $stmt->bindParam(':tel',$tel);
     $stmt->bindParam(':tos',$tos);
     $stmt->execute();
 }
