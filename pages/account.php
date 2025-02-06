@@ -1,21 +1,24 @@
-<?php 
+<?php
 
 require_once '../includes/config.session.inc.php';
 require_once '../includes/login_view.inc.php';
+require '../products/config.php';
 ?>
 
 
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general.css">
     <title>Level PC - Fiók</title>
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -32,7 +35,6 @@ require_once '../includes/login_view.inc.php';
             </div>
             <div>
                 <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                 <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -63,44 +65,88 @@ require_once '../includes/login_view.inc.php';
         </div>
     </header>
     <div>
-    <?php
-    if (!isset($_SESSION["user_id"])) { 
-        ?>
-        <div class="product-box topgin">
-            <h1 class="product-title"></h1>
-        </div>
-        <div class="bigbox">
-            <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
-                <?php output_username(); ?>
-                <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
-                <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
-                <span><a href="../account/signup.php">Nincs még fiókod?</a></span>
-                <span><a href="../account/recovery.php">Elfelejtetted a jelszavad?</a></span>
-                <button>Bejelentkezés</button>
-                <?php
+        <?php
+        if (!isset($_SESSION["user_id"])) {
+            ?>
+            <div class="product-box topgin">
+                <h1 class="product-title"></h1>
+            </div>
+            <div class="bigbox">
+                <form action="../includes/login.inc.php" method="POST" class="bigbox-inner">
+                    <?php output_username(); ?>
+                    <input class="bigbox-input" type="text" name="username" placeholder="Felhasználónév">
+                    <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
+                    <span><a href="../account/signup.php">Nincs még fiókod?</a></span>
+                    <span><a href="../account/recovery.php">Elfelejtetted a jelszavad?</a></span>
+                    <button>Bejelentkezés</button>
+                    <?php
                     check_login_errors();
-                ?>
-            </form>
-        </div>
-        <div class="topgin">
-            <h1 class="product-title"></h1>
-        </div>
-        
-    <?php } else { ?>
-        <div class="product-box topgin">
-            <h1 class="product-title"></h1>
-        </div>
-        <div class="bigbox">
-            <form action="../includes/logout.inc.php" method="POST" class="bigbox-inner">
-                <?php output_username(); ?>
-                <div class="bigbox-inner-navi">
-                    <a href="account.php" class="activee">Fiókinformáció</a>
-                    <a href="../account/modify.php">Fiókbeállítások</a>
-                    <a href="../account/orders.php">Rendelések</a>
-                    <a class="last" href="../account/delete.php">Fióktörlés</a>
-                </div>
-                <?php output_userdata()?>
-                <button>Kijelentkezés</button>
+                    ?>
+                </form>
+            </div>
+            <div class="topgin">
+                <h1 class="product-title"></h1>
+            </div>
+
+        <?php } else { ?>
+            <div class="product-box topgin">
+                <h1 class="product-title"></h1>
+            </div>
+            <div class="bigbox">
+                <form action="../includes/logout.inc.php" method="POST" class="bigbox-inner">
+                    <?php output_username(); ?>
+                    <div class="bigbox-inner-navi">
+                        <a href="account.php" class="activee">Fiókinformáció</a>
+                        <a href="../account/modify.php">Fiókbeállítások</a>
+                        <a href="../account/orders.php">Rendelések</a>
+                        <a class="last" href="../account/delete.php">Fióktörlés</a>
+                    </div>
+
+                    <?php
+                    $sql = "SELECT * FROM webshop.users";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            ?>
+                            <div class="flex-table">
+                                <div class="table-row">
+                                    <div class="table-bcell">E-Mail cím:</div>
+                                    <div class="table-cell"><?= $row['email']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Keresztnév:</div>
+                                    <div class="table-cell"><?= $row['firstname']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Vezetéknév:</div>
+                                    <div class="table-cell"><?= $row['lastname']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Számlázási cím:</div>
+                                    <div class="table-cell"><?= $row['defaddress']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Szállítási cím:</div>
+                                    <div class="table-cell"><?= $row['delivery']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Telefonszám:</div>
+                                    <div class="table-cell"><?= $row['phone']; ?></div>
+                                </div>
+                                <div class="table-row">
+                                    <div class="table-bcell">Regisztráció ideje:</div>
+                                    <div class="table-cell"><?= $row['signup_date']; ?></div>
+                                </div>
+                            </div>
+                            <?php
+
+                        }
+                    } else {
+                        echo "Nincs találat";
+                    }
+                    ?>
+                    <button>Kijelentkezés</button>
+            </div>
             </form>
         </div>
         <div class="product-box topgin">
@@ -195,4 +241,5 @@ require_once '../includes/login_view.inc.php';
     </footer>
     <script src="../js/sandwitch.js"></script>
 </body>
+
 </html>

@@ -1,13 +1,12 @@
 <?php
     require_once '../includes/config.session.inc.php';
     require_once '../includes/config.session.inc.php';
+    require '../products/config.php';
 
     if ($_SERVER["REQEST_METHOD"] == "POST") {
         $productSearch = $_GET["product-search"];
     
         try {
-            require_once '../products/config.php';
-    
             $query = "SELECT * FROM products WHERE ProID = ':product-search'; ";
     
             $stmt = $pdo->prepare($query);

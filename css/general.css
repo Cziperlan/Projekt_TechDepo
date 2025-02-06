@@ -745,6 +745,11 @@
   padding: 20px;
 }
 
+.bigbox-output .text {
+  text-align: left;
+
+}
+
 
 .bigbox-inner button:hover {
   background-color: #1a1818;
@@ -892,3 +897,37 @@
   z-index: 1;
 }
 
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.table-row {
+  display: flex;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+  font-size: large;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.table-bcell {
+  font-weight: bold;
+  font-size: large;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}

@@ -47,7 +47,6 @@
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>

@@ -10,7 +10,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             FROM webshop.notebooks l 
             JOIN webshop.products r ON l.ProID = r.ProID 
             WHERE l.ProID = ?";
-    
+
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $productID); // Bind as string
     $stmt->execute();
@@ -29,6 +29,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,79 +40,78 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
     <title><?= htmlspecialchars($product['name']); ?></title>
 </head>
+
 <body>
     <header>
         <div class="header">
-                    <a href="../index.php">
-                        <img src="../logo.png" alt="ZeroPC logó">
-                    </a> 
-                <div>
-                    <form action="search.php" method="get">
-                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
-                        <button type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div>  
-                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
-                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                </div>
+            <a href="../index.php">
+                <img src="../logo.png" alt="ZeroPC logó">
+            </a>
+            <div>
+                <form action="search.php" method="get">
+                    <input type="text" id="search" name="product-search" placeholder="Keresés...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
         </div>
         <div class="sidenav" id="navSide">
-                            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="./products/featured.php">Ajánlataink</a>
-                            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont">
-                                    <a href="towers.php"> - Számítógépek</a>
-                                    <a href="notebooks.php"> - Laptopok</a>
-                                </div>
-                        </div>
+            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
+            <a href="./products/featured.php">Ajánlataink</a>
+            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sidecont">
+                <a href="towers.php"> - Számítógépek</a>
+                <a href="notebooks.php"> - Laptopok</a>
+            </div>
+        </div>
         <div class="topnav">
-                    <div class="menu">
-                        <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
-                    </div>
-                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </button>
-                <a class="topnav-dis" href="../index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="towers.php">Számítógépek</a>
-                <a class="topnav-dis" href="notebooks.php">Laptopok</a>
+            <div class="menu">
+                <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
+            </div>
+            <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+            <a class="topnav-dis" href="../index.php">Kezdőlap</a>
+            <a class="topnav-dis" href="featured.php">Ajánlataink</a>
+            <a class="topnav-dis" href="towers.php">Számítógépek</a>
+            <a class="topnav-dis" href="notebooks.php">Laptopok</a>
         </div>
     </header>
     <div class="product-page">
         <div class="product-container">
-            <!-- Slideshow Section -->
+
             <div class="slideshow-section">
                 <div class="slideshow">
                     <img src="../Képek/1/<?= urlencode($product['ProID']); ?>.jpg" alt="Product Image 1" class="active">
                     <img src="../Képek/1/<?= urlencode($product['ProID']); ?>-1.jpg" alt="Product Image 2">
                 </div>
                 <div class="thumbnails">
-                <div class="thumbnail active" data-index="0">
-                    <img src="../Képek/1/<?= urlencode($product['ProID']); ?>.jpg" alt="Thumbnail 1">
+                    <div class="thumbnail active" data-index="0">
+                        <img src="../Képek/1/<?= urlencode($product['ProID']); ?>.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-index="1">
+                        <img src="../Képek/1/<?= urlencode($product['ProID']); ?>-1.jpg" alt="Thumbnail 2">
+                    </div>
                 </div>
-                <div class="thumbnail" data-index="1">
-                    <img src="../Képek/1/<?= urlencode($product['ProID']); ?>-1.jpg" alt="Thumbnail 2">
-                </div>
-            </div>
             </div>
 
-            <!-- Details Section -->
             <div class="details-section">
                 <h1><?= htmlspecialchars($product['name']); ?></h1>
                 <p class="price"><?= htmlspecialchars($product['price']); ?> FT</p>
                 <div class="description">
-                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?></p>
-                    <p>Memória: <?= htmlspecialchars($product['ram_size']); ?> GB</p>
+                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?>, <?= $product['cpu_clock']; ?>, <?= $product['cpu_cores']; ?> mag</p>
+                    <p>Memória: <?= htmlspecialchars($product['ram_size']); ?> GB, <?= $product['ram_type']; ?></p>
                     <p>Videókártya: <?= htmlspecialchars($product['gpu']); ?></p>
-                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB</p>
+                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB, <?= $product['drive_type']; ?></p>
                     <p>Képernyő mérete: <?= htmlspecialchars($product['screen_size']); ?> col</p>
                     <p>Felbontás: <?= htmlspecialchars($product['resolution']); ?></p>
                     <p>Frissítési ráta: <?= htmlspecialchars($product['refresh_rate']); ?></p>
@@ -136,27 +136,83 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <div class="tab-buttons">
                 <button data-tab="technical">Specifikációk</button>
             </div>
-            <div class="tab-content active" id="technical">
-                <p>Gyártó: <?= htmlspecialchars($product['maker']); ?></p>
-                <p>Képernyő méret: <?= htmlspecialchars($product['screen_size']); ?></p>
-                <p>Felbontás: <?= htmlspecialchars($product['resolution']); ?></p>
-                <p>Képarány: <?= htmlspecialchars($product['aspect_ratio']); ?></p>
-                <p>Frissítési ráta: <?= htmlspecialchars($product['refresh_rate']); ?></p>
-                <p>Processzor típusa: <?= htmlspecialchars($product['cpu_type']); ?></p>
-                <p>Processzor órajele: <?= htmlspecialchars($product['cpu_clock']); ?></p>
-                <p>Processzor magok: <?= htmlspecialchars($product['cpu_cores']); ?></p>
-                <p>Memória mérete: <?= htmlspecialchars($product['ram_size']); ?> GB</p>
-                <p>Memória típusa: <?= htmlspecialchars($product['ram_type']); ?></p>
-                <p>Videókártya: <?= htmlspecialchars($product['gpu']); ?></p>
-                <p>Háttértár mérete: <?= htmlspecialchars($product['drive_size']); ?> GB</p>
-                <p>Háttértár típusa: <?= htmlspecialchars($product['drive_type']); ?></p>
-                <p>Optikai meghajtó: <?= htmlspecialchars($product['optical_drive']); ?></p>
-                <p>Csatlakozók: <?= htmlspecialchars($product['ports']); ?></p>
-                <p>Wlan képesítés: <?= htmlspecialchars($product['wlan']); ?></p>
-                <p>Wlan szabvány: <?= htmlspecialchars($product['wlan_version']); ?></p>
-                <p>Bluetooth funkció: <?= htmlspecialchars($product['bluetooth']); ?></p>
-                <p>Bluetooth verzió: <?= htmlspecialchars($product['bluetooth_version']); ?></p>
-                <p>Akkumulátor kapacitás: <?= htmlspecialchars($product['battery']); ?></p>
+            <div class="flex-table">
+                <div class="table-row">
+                    <div class="table-bcell">Gyártó:</div>
+                    <div class="table-cell"><?= $product['maker']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Képernyő méret:</div>
+                    <div class="table-cell"><?= $product['screen_size']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Felbontás:</div>
+                    <div class="table-cell"><?= $product['resolution']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Képarány:</div>
+                    <div class="table-cell"><?= $product['aspect_ratio']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Frissítési ráta:</div>
+                    <div class="table-cell"><?= $product['refresh_rate']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor típusa:</div>
+                    <div class="table-cell"><?= $product['cpu_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor órajele:</div>
+                    <div class="table-cell"><?= $product['cpu_clock']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor magok:</div>
+                    <div class="table-cell"><?= $product['cpu_cores']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Memória mérete:</div>
+                    <div class="table-cell"><?= $product['ram_size']; ?> GB</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Memória típusa:</div>
+                    <div class="table-cell"><?= $product['ram_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Videókártya:</div>
+                    <div class="table-cell"><?= $product['gpu']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Háttértár mérete:</div>
+                    <div class="table-cell"><?= $product['drive_size']; ?> GB</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Háttértár típusa:</div>
+                    <div class="table-cell"><?= $product['drive_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Optikai meghajtó:</div>
+                    <div class="table-cell"><?= $product['optical_drive']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Csatlakozók:</div>
+                    <div class="table-cell"><?= $product['ports']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Wlan szabvány</div>
+                    <div class="table-cell"><?= $product['wlan_version']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Bluetooth:</div>
+                    <div class="table-cell"><?= $product['bluetooth']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Bluetooth verzió:</div>
+                    <div class="table-cell"><?= $product['bluetooth_version']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Akkumulátor kapacitás:</div>
+                    <div class="table-cell"><?= $product['battery']; ?></div>
+                </div>
             </div>
         </div>
     </div>
@@ -216,28 +272,29 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png" alt="" class="f-ikon"></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="../images/map1.png"
+                                    alt="" class="f-ikon"></a></span>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <div class="social-links">
-                        <ul class="f-ul">
-                            <p>Az alábbi linkeken megteheted:</p>
-                                <a href="https://www.instagram.com" target="_blank">
-                                    <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
-                                </a>
-                                <a href="https://www.facebook.com" target="_blank">
-                                    <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
-                                </a>
-                                <a href="https://twitter.com/?lang=hu" target="_blank">
-                                    <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
-                                </a>
-                                <a href="https://www.youtube.com" target="_blank">
-                                    <img src="../images/icon4.png" alt="Youtube" class="f-ikon">
-                                </a>
-                        </ul>
+                    <ul class="f-ul">
+                        <p>Az alábbi linkeken megteheted:</p>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="../images/icon1.png" alt="Instagramm" class="f-ikon">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="../images/icon2.png" alt="Facebook" class="f-ikon">
+                        </a>
+                        <a href="https://twitter.com/?lang=hu" target="_blank">
+                            <img src="../images/icon3.png" alt="Twitter" class="f-ikon">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="../images/icon4.png" alt="Youtube" class="f-ikon">
+                        </a>
+                    </ul>
                 </div>
             </div>
             <div>
@@ -293,6 +350,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             });
         });
     </script>
-     <script src="./js/sandwitch.js"></script>
+    <script src="./js/sandwitch.js"></script>
 </body>
+
 </html>

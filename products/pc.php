@@ -55,7 +55,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 </div>
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
         </div>
@@ -108,10 +107,11 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <h1><?= htmlspecialchars($product['name']); ?></h1>
                 <p class="price"><?= htmlspecialchars($product['price']); ?> FT</p>
                 <div class="description">
-                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?></p>
-                    <p>Memória: <?= htmlspecialchars($product['ram_size']); ?> GB</p>
+                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?>, <?= $product['cpu_clock']; ?>, <?= $product['cpu_cores']; ?> mag</p>
+                    <p>Memória: <?= htmlspecialchars($product['ram_size']); ?> GB, <?= $product['ram_type']; ?></p>
                     <p>Videókártya: <?= htmlspecialchars($product['gpu']); ?></p>
-                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB</p>
+                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB, <?= $product['drive_type']; ?></p>
+                    <p>Tápegység: <?= htmlspecialchars($product['power_supply']); ?></p>
                 </div>
 
                 <div class="options">
@@ -134,21 +134,68 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <button data-tab="technical">Specifikációk</button>
             </div>
             <div class="tab-content active" id="technical">
-                <p>Gyártó: <?= htmlspecialchars($product['maker']); ?></p>
-                <p>Processzor típusa: <?= htmlspecialchars($product['cpu_type']); ?></p>
-                <p>Processzor órajele: <?= htmlspecialchars($product['cpu_clock']); ?></p>
-                <p>Memória mérete: <?= htmlspecialchars($product['ram_size']); ?> GB</p>
-                <p>Memória típusa: <?= htmlspecialchars($product['ram_type']); ?></p>
-                <p>Videókártya: <?= htmlspecialchars($product['gpu']); ?></p>
-                <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?></p>
-                <p>Processzor magok: <?= htmlspecialchars($product['cpu_cores']); ?></p>
-                <p>Tápegység: <?= htmlspecialchars($product['power_supply']); ?></p>
-                <p>Optikai meghajtó: <?= htmlspecialchars($product['optical_drive']); ?></p>
-                <p>Csatlakozók: <?= htmlspecialchars($product['ports']); ?></p>
-                <p>Wlan képesítés: <?= htmlspecialchars($product['wlan']); ?></p>
-                <p>Wlan szabvány: <?= htmlspecialchars($product['wlan_version']); ?></p>
-                <p>Bluetooth funkció: <?= htmlspecialchars($product['bluetooth']); ?></p>
-                <p>Bluetooth verzió: <?= htmlspecialchars($product['bluetooth_version']); ?></p>
+                <div class="flex-table">
+                <div class="table-row">
+                    <div class="table-bcell">Gyártó:</div>
+                    <div class="table-cell"><?= $product['maker']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor típusa:</div>
+                    <div class="table-cell"><?= $product['cpu_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor órajele:</div>
+                    <div class="table-cell"><?= $product['cpu_clock']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Processzor magok:</div>
+                    <div class="table-cell"><?= $product['cpu_cores']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Memória mérete:</div>
+                    <div class="table-cell"><?= $product['ram_size']; ?> GB</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Memória típusa:</div>
+                    <div class="table-cell"><?= $product['ram_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Videókártya:</div>
+                    <div class="table-cell"><?= $product['gpu']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Háttértár mérete:</div>
+                    <div class="table-cell"><?= $product['drive_size']; ?> GB</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Háttértár típusa:</div>
+                    <div class="table-cell"><?= $product['drive_type']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Tápegység kapacitás:</div>
+                    <div class="table-cell"><?= htmlspecialchars($product['power_supply']); ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Optikai meghajtó:</div>
+                    <div class="table-cell"><?= $product['optical_drive']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Csatlakozók:</div>
+                    <div class="table-cell"><?= $product['ports']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Wlan szabvány</div>
+                    <div class="table-cell"><?= $product['wlan_version']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Bluetooth:</div>
+                    <div class="table-cell"><?= $product['bluetooth']; ?></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-bcell">Bluetooth verzió:</div>
+                    <div class="table-cell"><?= $product['bluetooth_version']; ?></div>
+                </div>
+                </div>
             </div>
         </div>
     </div>

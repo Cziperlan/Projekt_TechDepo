@@ -29,9 +29,7 @@
                 </div>
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                    <a class="header-dis2" href="../pages/tracking.php">TRACK YOUR ORDER</a>
                 </div>
         </div>
         <div class="sidenav" id="navSide">
@@ -55,7 +53,6 @@
                     <div class="menu">
                         <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                         <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
                     </div>
                     <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
                         <div class="bar1"></div>

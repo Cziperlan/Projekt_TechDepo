@@ -17,7 +17,6 @@
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
     <title>Level PC - Ajánlataink</title>
 </head>
-<>
     <header>
         <div class="header">
                     <a href="../index.php">
@@ -33,7 +32,6 @@
                 </div>
                 <div>  
                     <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
         </div>
@@ -82,7 +80,7 @@
                     <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
                     <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
                 </a>
-                <p class="product-price"><?= $row['price']; ?></p>
+                <p class="product-price"><?= $row['price']; ?> FT</p>
                 <button class="add-to-cart">Kosárba</button>
             </div>
             <?php
@@ -106,9 +104,9 @@
                             <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
                         </a>
                         <p class="product-price"><?= $row['price']; ?> FT</p>
-                        <a href="../account/cart.php?id=<?= urlencode($row['ProID']); ?>">
+                       
                             <button class="add-to-cart">Kosárba</button>
-                        </a>
+                        
                     </div>
                     <?php
                 }

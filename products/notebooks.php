@@ -94,7 +94,6 @@ $max_price = $price['max_price'];
             </div>
             <div>
                 <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                 <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -254,9 +253,9 @@ $max_price = $price['max_price'];
                             <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
                         </a>
                         <p class="product-price"><?= $row['price']; ?> FT</p>
-                        <a href="../account/cart.php?id=<?= urlencode($row['ProID']); ?>">
-                            <button class="add-to-cart">Kosárba</button>
-                        </a>
+                        
+                        <button class="add-to-cart">Kosárba</button>
+                        
                     </div>
                     <?php
                 }

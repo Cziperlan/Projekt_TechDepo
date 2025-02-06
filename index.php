@@ -33,7 +33,6 @@
                 </div>
                 <div>  
                     <a  class="header-dis" href="./pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a class="header-dis" href="./account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="./account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
                 </div>
         </div>
