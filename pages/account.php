@@ -51,7 +51,6 @@ require '../products/config.php';
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>
@@ -62,6 +61,9 @@ require '../products/config.php';
             <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
             <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div>
@@ -122,18 +124,6 @@ require '../products/config.php';
                                     <div class="table-cell"><?= $row['lastname']; ?></div>
                                 </div>
                                 <div class="table-row">
-                                    <div class="table-bcell">Számlázási cím:</div>
-                                    <div class="table-cell"><?= $row['defaddress']; ?></div>
-                                </div>
-                                <div class="table-row">
-                                    <div class="table-bcell">Szállítási cím:</div>
-                                    <div class="table-cell"><?= $row['delivery']; ?></div>
-                                </div>
-                                <div class="table-row">
-                                    <div class="table-bcell">Telefonszám:</div>
-                                    <div class="table-cell"><?= $row['phone']; ?></div>
-                                </div>
-                                <div class="table-row">
                                     <div class="table-bcell">Regisztráció ideje:</div>
                                     <div class="table-cell"><?= $row['signup_date']; ?></div>
                                 </div>
@@ -178,7 +168,7 @@ require '../products/config.php';
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

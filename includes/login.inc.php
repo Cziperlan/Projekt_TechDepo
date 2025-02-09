@@ -45,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["signup_date"] = htmlspecialchars($result["Regisztráció_ideje"]);
         $_SESSION["last_regeneration"] = time();
 
+        $redirect = isset($_GET["rec"]) ? urldecode($_GET["rec"]) : "../pages/account.php?login=success";
+
         ob_start(); 
         header("Location: ../pages/account.php?login=success");
         $pdo = null;

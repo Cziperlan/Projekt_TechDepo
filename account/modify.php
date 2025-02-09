@@ -21,7 +21,7 @@
                 <img src="../logo.png" alt="ZeroPC logó">
             </a>
             <div>
-                <form action="search.php" method="get">
+                <form action="../pages/search.php" method="get">
                     <input type="text" id="search" name="product-search" placeholder="Keresés...">
                     <button type="submit">
                         <i class="fas fa-search"></i>
@@ -30,7 +30,6 @@
             </div>
             <div>
                 <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                 <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -57,6 +56,9 @@
             <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
             <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div>
@@ -79,9 +81,6 @@
                 </div>
                 <input class="bigbox-input" type="password" name="pwd" placeholder="Jelszó">
                 <input class="bigbox-input" type="text" name="email" placeholder="E-Mail cím">
-                <input class="bigbox-input" type="text" name="defaddress" placeholder="Lakcím">
-                <input class="bigbox-input" type="text" name="delivery" placeholder="Szállítási cím">
-                <input class="bigbox-input" type="tel" name="phone" placeholder="Telefonszám">
                 <button>Változtatás</button>
             </form>
         </div>
@@ -114,7 +113,7 @@
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

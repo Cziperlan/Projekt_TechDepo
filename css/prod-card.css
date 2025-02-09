@@ -18,6 +18,11 @@
     margin-bottom: 40px;
 }
 
+.product-card a {
+    text-decoration: none;
+    color: black;
+}
+
 .product-card:hover {
     transform: scale(1.03);
 }
@@ -29,6 +34,8 @@
     text-align: center;
     height: 40px;
     overflow: hidden;
+    text-decoration: none;
+    color: #000;
 }
 
 .product-price {
@@ -48,6 +55,10 @@
     margin-bottom: 10px;
 }
 
+.product-card > form {
+    width: 100%;
+}
+
 .add-to-cart {
     width: 100%;
     background-color: black;
@@ -61,7 +72,7 @@
     transition: background-color 0.3s;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover{
     background-color:rgb(68, 66, 66);
 }
 

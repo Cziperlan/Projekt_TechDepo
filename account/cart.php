@@ -1,9 +1,10 @@
-<?php 
-    require_once '../includes/config.session.inc.php';
+<?php
+require_once '../includes/config.session.inc.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
     <title>LeveL PC - Kosár</title>
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -59,26 +61,69 @@
         </div>
     </header>
     <div>
-        <?php
-            if (!isset($_SESSION["user_id"])) {
-        ?>
-           <div class="bigbox">
-                <div class="bigbox-inner">
-                    <h1>A kosár használatához</h1>
-                    <h1><a href="../pages/account.php">jelentkezz be!</a></h1>
-                </div>
-           </div>
-        <?php
-        }   else {
-        ?>
+            <div class="product-box">
+                <h1 class="product-title"></h1>
+            </div>
+        <?php if (!isset($_SESSION["user_id"])) { ?>
+            <div class="product-box">
+                <h1 class="product-title"></h1>
+            </div>
             <div class="bigbox">
                 <div class="bigbox-inner">
-                    <h1>A kosarad üres!</h1>
-                    <p><a href="../index.php">Térj vissza a vásárláshoz!</a></p>
+                    <h1><a href="../pages/account.php">A kosár használatához <br> jelentkezz be!</a></h1>
                 </div>
-           </div>
-            
+            </div>
+            <div class="product-box topgin">
+                <h1 class="product-title"></h1>
+            </div>
+        <?php } else { ?>
+            <div class="bigbox">
+                <div class="bigbox-inner">
+                    <?php if (!empty($_SESSION["cart"])) {
+                           $totalPrice = 0; 
+                           ?>
+                        <h1 style="margin-top: 0px">A kosarad</h1>
+                        <div class="flex-table topgin">
+                        <?php foreach ($_SESSION["cart"] as $ProID => $item) {
+                            $itemTotal = $item["price"] * $item["quantity"];
+                            $totalPrice += $itemTotal; 
+
+                            if (strpos($ProID, "L") === 0) {
+                                $image_path = "../Képek/1/" . $ProID . ".jpg";
+                            } else {
+                                $image_path = "../Képek/" . $ProID . ".jpg";
+                            }
+
+                            ?>
+                            
+                            
+                                <div class="table-row-ver2 topgin">
+                                    <div class="table-bcell"><img style="width: 100px" src="<?= $image_path; ?>" alt="Product Image"> </div>
+                                    <div class="table-cell">Termék: <?= htmlspecialchars($item["name"]); ?></div>
+                                    <div class="table-cell">Mennyiség: <?= $item["quantity"]; ?></div>
+                                    <div class="table-cell">Ár: <?= $itemTotal; ?> FT</div>
+                                </div>
+
+                                <span class="topgin"><a href="../account/remove_from_cart.php?ProID=<?= $ProID ?>">Eltávolítás a kosárból</a></span>
+                                <?php } ?>
+                                <div class="table-row">
+                                    <div class="table-bcell">Összesítve </div>
+                                    <div class="table-cell"></div>
+                                    <div class="table-cell"></div>
+                                    <div class="table-cell"><?= $totalPrice; ?> FT</div>
+                                </div>
+                        </div>
+                        <a class="checkout" href="checkout.php"><button>Tovább a fizetéshez</button></a>
+                    <?php } else { ?>
+                        <h1>A kosarad üres!</h1>
+                        <p><a href="../index.php">Térj vissza a vásárláshoz!</a></p>
+                    <?php } ?>
+                </div>
+            </div>
         <?php } ?>
+        <div class="product-box">
+                <h1 class="product-title"></h1>
+        </div>
     </div>
     <footer>
         <div class="footer row mx-0">
@@ -104,7 +149,7 @@
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>
@@ -167,4 +212,5 @@
     </footer>
     <script src="../js/sandwitch.js"></script>
 </body>
+
 </html>

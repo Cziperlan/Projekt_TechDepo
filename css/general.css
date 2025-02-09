@@ -419,7 +419,7 @@
   font-size: xx-large;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 49%;
   left: 25%;
   right: 25%;
   scale: 2.0;
@@ -440,7 +440,7 @@
   font-variant: small-caps;
   position: absolute;
   text-align: center;
-  top: 56%;
+  top: 62%;
   left: 47%;
   right: 46%;
   scale: 1.00;
@@ -448,7 +448,7 @@
 
 @media screen and (max-width: 1300px) {
   .ov_button {
-    top: 59%;
+    top: 70%;
     left: 43%;
     right: 43%;
   }
@@ -456,7 +456,7 @@
 
 @media screen and (max-width: 992px) {
   .ov_button {
-    top: 62%;
+    top: 72%;
     left: 40%;
     right: 40%;
   }
@@ -464,7 +464,7 @@
 
 @media screen and (max-width: 768px) {
   .ov_button {
-    top: 62%;
+    top: 64%;
     left: 36%;
     right: 36%;
   }
@@ -546,7 +546,7 @@
   transition-duration: 0.5s ease;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:992px) {
 
   .next,
   .prev {
@@ -668,6 +668,16 @@
   margin-top: 100px;
 }
 
+.bigbox h2 {
+  display: flex;
+  align-self: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 80px;
+}
+
 .bigbox p {
   display: flex;
   align-self: center;
@@ -757,6 +767,29 @@
   transform: scale(1.01);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
+
+
+.bigbox a.checkout {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
+.bigbox a.checkout button {
+  display: flex;
+  margin-top: 0px;
+  color: white;
+  padding: 20px;
+  border-radius: 14px;
+  background-color: black;
+  border: 1px black solid;
+  font-size: x-large;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 
 /*Product Flex*/
 
@@ -907,6 +940,14 @@
 
 .table-row {
   display: flex;
+  padding: 10px;
+}
+
+.table-row-ver2 {
+  display: flex;
+  border-top: black 1px solid;
+  border-bottom: black 1px solid;
+  padding: 20px;
 }
 
 .table-row:last-child {
@@ -930,4 +971,9 @@
   flex: 1;
   padding: 10px;
   text-align: left;
+}
+
+
+.split-table {
+  display: flex;
 }

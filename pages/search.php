@@ -1,41 +1,42 @@
 <?php
-    require_once '../includes/config.session.inc.php';
-    require_once '../includes/config.session.inc.php';
-    require '../products/config.php';
+require '../products/config.php'; // Database connection
+require '../includes/config.session.inc.php';
 
-    if ($_SERVER["REQEST_METHOD"] == "POST") {
-        $productSearch = $_GET["product-search"];
-    
-        try {
-            $query = "SELECT * FROM products WHERE ProID = ':product-search'; ";
-    
-            $stmt = $pdo->prepare($query);
-    
-            $stmt->bindParam(":product-search", $productSearch);
-    
-            $stmt->execute([]);
+if (isset($_GET['product-search']) && !empty($_GET['product-search'])) {
+    $searchTerm = "%" . $_GET['product-search'] . "%"; // Add wildcards for partial matches
 
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-            $pdo = null;
-            $stmt = null;
+    // Search in notebooks (laptops) and npc (PCs)
+    $sql = "
+        SELECT l.ProID, l.name, r.price, 'notebook' AS category FROM webshop.notebooks l 
+        JOIN webshop.products r ON l.ProID = r.ProID 
+        WHERE r.visible = 1 AND (l.name LIKE ? OR l.ProID LIKE ?)
+        
+        UNION 
+        
+        SELECT n.ProID, n.name, r.price, 'npc' AS category FROM webshop.npc n 
+        JOIN webshop.products r ON n.ProID = r.ProID 
+        WHERE r.visible = 1 AND (n.name LIKE ? OR n.ProID LIKE ?)
+    ";
 
-        } catch (PDOException $exep) {
-            die("Query failed" . $exep->getMessage());
-            }
-            
-        }   
-        else {
-        header("Location: ../pages/index.php");
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssss", $searchTerm, $searchTerm, $searchTerm, $searchTerm);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    die("Invalid search query.");
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="../images/favicon_white.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/prod-card.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Level PC - Találatok</title>
 </head>
 <body>
@@ -54,7 +55,6 @@
             </div>
             <div>
                 <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                <a class="header-dis" href="../account/wishlist.php"><i class="fas fa-star" aria-hidden="true"></i></a>
                 <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -71,7 +71,6 @@
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>
@@ -82,17 +81,37 @@
             <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
             <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
-    <div>
+    <div class="product-title topgin"><h1>Keresési eredmények</h1></div>
+    <div class="product-box">
+    <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                if ($row['category'] === 'notebook') {
+                    $product_page = "laptop.php?id=" . urlencode($row['ProID']);
+                    $image_path = "../Képek/1/" . $row["ProID"] . ".jpg"; // Notebook images
+                } else {
+                    $product_page = "pc.php?id=" . urlencode($row['ProID']);
+                    $image_path = "../Képek/" . $row["ProID"] . ".jpg"; // PC images
+                }
+        ?>
+                <div class="product-card">
+                    <span class="product-badge">Top Deal</span>
+                    <a href="<?= $product_page ?>">
+                        <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                        <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                    </a>
+                    <p class="product-price"><?= $row['price']; ?> FT</p>
+                    <button class="add-to-cart">Kosárba</button>
+                </div>
         <?php
-        if (empty($results)) {
-            echo "<div>";
-            echo "<p>Nincs találat!</p>";
-            echo "</div>";
-        }
-        else {
-            var_dump($result);
+            }
+        } else {
+            echo "<p>Nincs találat.</p>";
         }
         ?>
     </div>
@@ -120,7 +139,7 @@
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

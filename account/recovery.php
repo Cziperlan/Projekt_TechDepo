@@ -16,69 +16,48 @@
 <body>
     <header>
         <div class="header">
-                    <a href="../index.php">
-                         <img src="../logo.png" alt="TechDepo logó">
-                    </a> 
-                <div>
-                    <form action="search.php" method="get">
-                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
-                        <button type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div>  
-                    <a  class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                </div>
+            <a href="../index.php">
+                <img src="../logo.png" alt="ZeroPC logó">
+            </a>
+            <div>
+                <form action="../pages/search.php" method="get">
+                    <input type="text" id="search" name="product-search" placeholder="Keresés...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a class="header-dis" href="../pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                <a href="../account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
         </div>
         <div class="sidenav" id="navSide">
-                            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="../products/featured.php">Ajánlataink</a>
-                            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont">
-                                    <a href="../products/towers.php"> - Számítógépek</a>
-                                    <a href="../products/notebooks.php"> - Laptopok</a>
-                                    <a href="../products/monitors.php"> - Monitorok</a>
-                                    <a href="../products/headphones.php"> - Fejhallgatók</a>
-                                </div>
-                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont2">
-                                    <a href="../pages/about.html"> - Cégünkről</a>
-                                    <a href="https://youtu.be/qydY-wmmyDk" target="_blank"> - Az oldal használata</a>
-                                    <a href="../pages/forum.php"> - Fórum</a>
-                                </div>
-                        </div>
+            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
+            <a href="../products/featured.php">Ajánlataink</a>
+            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sidecont">
+                <a href="../products/towers.php"> - Számítógépek</a>
+                <a href="../products/notebooks.php"> - Laptopok</a>
+            </div>
+        </div>
         <div class="topnav">
-                    <div class="menu">
-                        <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                    </div>
-                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </button>
-                <a class="topnav-dis" href="../index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="../products/onsale.php">Akcióink</a>
-                <div class="dropdown topnav-dis">
-                <button class="dropbtn">Termékeink</button>
-                    <div class="dropdown-content">
-                            <a href="../products/towers.php">Számítógépek</a>
-                            <a href="../products/notebooks.php">Laptopok</a>
-                            <a href="../products/headphones.php">Fejhallgatók</a>
-                            <a href="../products/monitors.php">Monitorok</a>
-                    </div>
-                </div>
-                <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
-                        <div class="dropdown-content">
-                            <a href="../pages/about.html">Cégünkről</a>
-                            <a href="https://youtu.be/qydY-wmmyDk" target="_blank">Az oldal használata</a>
-                            <a href="../pages/forum.php">TechDepo fórum</a>
-                        </div>
-                </div>
+            <div class="menu">
+                <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+            </div>
+            <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+            <a class="topnav-dis" href="../index.php">Kezdőlap</a>
+            <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
+            <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
+            <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div>
@@ -126,7 +105,7 @@
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

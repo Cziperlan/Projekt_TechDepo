@@ -110,7 +110,7 @@
     border-radius: 5px;
 }
 
-.details-section button {
+.details-section >form> button {
     background-color: black;
     color: #fff;
     border: none;
@@ -119,9 +119,10 @@
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
 }
 
-.details-section button:hover {
+.details-section >form>button:hover {
     background-color: #1a1818;
     transition-duration: 0.5s ease;
     transform: scale(1.01);

@@ -1,3 +1,6 @@
+<?php
+require '../includes/config.session.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -42,7 +45,6 @@
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>
@@ -53,6 +55,9 @@
             <a class="topnav-dis" href="../products/featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="../products/towers.php">Számítógépek</a>
             <a class="topnav-dis" href="../products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div class="bodydiv">
@@ -135,7 +140,7 @@
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

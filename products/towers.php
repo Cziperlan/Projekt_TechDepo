@@ -84,7 +84,7 @@ $max_price = $price['max_price'];
                 <img src="../logo.png" alt="ZeroPC logó">
             </a>
             <div>
-                <form action="search.php" method="get">
+                <form action="../pages/search.php" method="get">
                     <input type="text" id="search" name="product-search" placeholder="Keresés...">
                     <button type="submit">
                         <i class="fas fa-search"></i>
@@ -98,7 +98,7 @@ $max_price = $price['max_price'];
         </div>
         <div class="sidenav" id="navSide">
             <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-            <a href="../products/featured.php">Ajánlataink</a>
+            <a href="./products/featured.php">Ajánlataink</a>
             <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
             <div class="sidecont">
                 <a href="towers.php"> - Számítógépek</a>
@@ -109,7 +109,6 @@ $max_price = $price['max_price'];
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>
@@ -120,6 +119,9 @@ $max_price = $price['max_price'];
             <a class="topnav-dis" href="featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="towers.php">Számítógépek</a>
             <a class="topnav-dis" href="notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div class="split-box">
@@ -127,13 +129,6 @@ $max_price = $price['max_price'];
             <div class="filter-container">
                 <h1>Szűrők</h1>
                 <form id="filter-form" class="filter-container">
-
-                    <label>Ár szerinti rendezés:</label>
-                    <select name="price_order" id="price_order">
-                        <option value="">Nincs</option>
-                        <option value="asc">Ár szerint növekvő</option>
-                        <option value="desc">Ár szerint csökkenő</option>
-                    </select>
 
                     <label>Gyártó:</label>
                     <select name="maker" id="maker">
@@ -228,7 +223,14 @@ $max_price = $price['max_price'];
                             <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
                         </a>
                         <p class="product-price"><?= $row['price']; ?> FT</p>
-                        <button class="add-to-cart">Kosárba</button>
+                        <form action="../account/add_to_cart.php" method="post">
+                            <input type="hidden" name="ProID" value="<?= $row['ProID']; ?>">
+                            <input type="hidden" name="name" value="<?= htmlspecialchars($row['name']); ?>">
+                            <input type="hidden" name="price" value="<?= $row['price']; ?>">
+                            <input type="hidden" name="quantity" value="1">
+                            <button class="add-to-cart" type="submit">Kosárba</button>
+                        </form>
+
                     </div>
                     <?php
                 }
@@ -262,7 +264,7 @@ $max_price = $price['max_price'];
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

@@ -1,11 +1,9 @@
 <?php
-require 'config.php'; // Database connection
+require 'config.php';
 
-// Ensure an ID is provided
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $productID = $_GET['id']; // Since it's VARCHAR, no need for numeric check
 
-    // Fetch product details using prepared statement
     $sql = "SELECT l.*, r.price 
             FROM webshop.notebooks l 
             JOIN webshop.products r ON l.ProID = r.ProID 
@@ -48,7 +46,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <img src="../logo.png" alt="ZeroPC logó">
             </a>
             <div>
-                <form action="search.php" method="get">
+                <form action="../pages/search.php" method="get">
                     <input type="text" id="search" name="product-search" placeholder="Keresés...">
                     <button type="submit">
                         <i class="fas fa-search"></i>
@@ -73,7 +71,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <div class="menu">
                 <a href="../index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                 <a href="../pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <a href="../account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
             </div>
             <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
                 <div class="bar1"></div>
@@ -84,6 +81,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <a class="topnav-dis" href="featured.php">Ajánlataink</a>
             <a class="topnav-dis" href="towers.php">Számítógépek</a>
             <a class="topnav-dis" href="notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+                <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <div class="product-page">
@@ -108,26 +108,33 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <h1><?= htmlspecialchars($product['name']); ?></h1>
                 <p class="price"><?= htmlspecialchars($product['price']); ?> FT</p>
                 <div class="description">
-                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?>, <?= $product['cpu_clock']; ?>, <?= $product['cpu_cores']; ?> mag</p>
+                    <p>Processzor: <?= htmlspecialchars($product['cpu_type']); ?>, <?= $product['cpu_clock']; ?>,
+                        <?= $product['cpu_cores']; ?> mag
+                    </p>
                     <p>Memória: <?= htmlspecialchars($product['ram_size']); ?> GB, <?= $product['ram_type']; ?></p>
                     <p>Videókártya: <?= htmlspecialchars($product['gpu']); ?></p>
-                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB, <?= $product['drive_type']; ?></p>
+                    <p>Háttértár: <?= htmlspecialchars($product['drive_size']); ?> GB, <?= $product['drive_type']; ?>
+                    </p>
                     <p>Képernyő mérete: <?= htmlspecialchars($product['screen_size']); ?> col</p>
                     <p>Felbontás: <?= htmlspecialchars($product['resolution']); ?></p>
                     <p>Frissítési ráta: <?= htmlspecialchars($product['refresh_rate']); ?></p>
                 </div>
 
-                <div class="options">
-                    <label for="color">Select Color:</label>
-                    <select id="color">
-                        <option value="color"><?= htmlspecialchars($product['color']); ?></option>
-                    </select>
+                <form action="../account/add_to_cart.php" method="post">
+                    <input type="hidden" name="ProID" value="<?= htmlspecialchars($product['ProID']); ?>">
+                    <input type="hidden" name="name" value="<?= htmlspecialchars($product['name']); ?>">
+                    <input type="hidden" name="price" value="<?= $product['price']; ?>">
+                    <div class="options">
+                        <label for="color">Szín:</label>
+                        <select id="color">
+                            <option value="color"><?= htmlspecialchars($product['color']); ?></option>
+                        </select>
 
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" value="1" min="1">
-                </div>
-
-                <button>Add to Cart</button>
+                        <label for="quantity">Mennyiség:</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                    <button type="submit">Kosárba</button>
+                </form>
             </div>
         </div>
 
@@ -240,7 +247,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                         <a href="../policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="../pages/faq.html">GYIK</a>
+                        <a href="../pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>

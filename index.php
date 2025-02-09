@@ -1,6 +1,5 @@
-
 <?php
-    require_once './includes/config.session.inc.php';
+require_once './includes/config.session.inc.php';
 ?>
 
 
@@ -17,80 +16,75 @@
     <link rel="icon" href="images/favicon_white.ico" type="image/x-icon">
     <title>LeveL PC - Főoldal</title>
 </head>
+
 <body id="body" onload="NowShow(1)">
     <header>
         <div class="header">
-                    <a href="index.php">
-                        <img src="logo.png" alt="Level PC logó">
-                    </a> 
-                <div>
-                    <form action="search.php" method="get">
-                        <input type="text" id="search" name="product-search" placeholder="Keresés...">
-                        <button type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div>  
-                    <a  class="header-dis" href="./pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
-                    <a href="./account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-                </div>
+            <a href="index.php">
+                <img src="logo.png" alt="Level PC logó">
+            </a>
+            <div>
+                <form action="./pages/search.php" method="get">
+                    <input type="text" id="search" name="product-search" placeholder="Keresés...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a class="header-dis" href="./pages/account.php"><i class="fas fa-user" aria-hidden="true"></i></a>
+                <a href="./account/cart.php"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
         </div>
         <div class="sidenav" id="navSide">
-                            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
-                            <a href="./products/featured.php">Ajánlataink</a>
-                            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont">
-                                    <a href="./products/towers.php"> - Számítógépek</a>
-                                    <a href="./products/notebooks.php"> - Laptopok</a>
-                                </div>
-                            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <div class="sidecont2">
-                                    <a href="./pages/about.html"> - Cégünkről</a>
-                                </div>
-                        </div>
+            <a href="" class="closebtn" onclick="closeNav()"><i class="fa fa-xmark"></i></a>
+            <a href="./products/featured.php">Ajánlataink</a>
+            <a class="sidedrop" onclick="dropSide()">Termékeink <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sidecont">
+                <a href="./products/towers.php"> - Számítógépek</a>
+                <a href="./products/notebooks.php"> - Laptopok</a>
+            </div>
+            <a class="sidedrop" onclick="dropSide2()">Rólunk <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="sidecont2">
+                <a href="./pages/about.html"> - Cégünkről</a>
+            </div>
+        </div>
         <div class="topnav">
-                    <div class="menu">
-                        <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        <a href="./pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        <a href="./account/wishlist.php"><i class="fa fa-star" aria-hidden="true"></i></a>
-                    </div>
-                    <button id="hambi" class="sandwitch dropbtn"  onclick="openNav()">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </button>
-                <a class="topnav-dis" href="index.php">Kezdőlap</a>
-                <a class="topnav-dis" href="./products/featured.php">Ajánlataink</a>
-                <a class="topnav-dis" href="./products/towers.php">Számítógépek</a>
-                <a class="topnav-dis" href="./products/notebooks.php">Laptopok</a>
-                <div class="dropdown topright topnav-dis">
-                    <button class="dropbtn" style="padding-right: 50px">Rólunk</button>
-                        <div class="dropdown-content">
-                            <a href="./pages/about.html">Cégünkről</a>
-                            <a href="https://youtu.be/qydY-wmmyDk" target="_blank">Az oldal használata</a>
-                            <a href="./pages/forum.php">TechDepo fórum</a>
-                        </div>
-                </div>
+            <div class="menu">
+                <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+                <a href="./pages/account.php"><i class="fa fa-user" aria-hidden="true"></i></a>
+            </div>
+            <button id="hambi" class="sandwitch dropbtn" onclick="openNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+            <a class="topnav-dis" href="index.php">Kezdőlap</a>
+            <a class="topnav-dis" href="./products/featured.php">Ajánlataink</a>
+            <a class="topnav-dis" href="./products/towers.php">Számítógépek</a>
+            <a class="topnav-dis" href="./products/notebooks.php">Laptopok</a>
+            <div class="topright topnav-dis">
+            <a href="./pages/about.html">Cégünkről</a>
+            </div>
         </div>
     </header>
     <a class="jumper" href="#jump"><i class="fas fa-angle-double-down"></i></a>
     <div class="slideshow">
         <div class="S">
             <div class="Scont">
-                <img class="Spic" src="./gallery/index_S_PC2.png" alt="Számítógépek">
+                <img class="Spic" src="./gallery/index_S_PC.png" alt="Számítógépek">
                 <div class="overlayer">
                     <p class="overlayer_text">Számítógépek</p>
-                    <a href="./products/towers.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="./products/towers.php"><button class="ov_button">- megtekint -</button></a>
                 </div>
             </div>
         </div>
         <div class="S">
             <div class="Scont">
-                <img class="Spic" src="./gallery/index_S_laptop2.jpg" alt="Laptopok">
+                <img class="Spic" src="./gallery/index_S_laptop.jpg" alt="Laptopok">
                 <div class="overlayer">
                     <p class="overlayer_text">Laptopok</p>
-                    <a href="./products/notebooks.php"><button class="ov_button" >- megtekint -</button></a>
+                    <a href="./products/notebooks.php"><button class="ov_button">- megtekint -</button></a>
                 </div>
             </div>
         </div>
@@ -105,68 +99,78 @@
     <span id="jump"></span>
     <div>
         <div class="topgin">
-            <div class="product-title"><h1>Számítógépek</h1></div>
-                <div class="product-box">
-                    <?php
-                    require './products/config.php';
-                    $sql = "SELECT l.*, r.price
+            <div class="product-title">
+                <h1>Számítógépek</h1>
+            </div>
+            <div class="product-box">
+                <?php
+                require './products/config.php';
+                $sql = "SELECT l.*, r.price
                         FROM webshop.npc l
                         JOIN webshop.products r ON l.ProID = r.ProID LIMIT 12;";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $image_name = $row["ProID"];
-                            $image_path = "./Képek/" . $image_name . ".jpg";
-                            ?>
-                            <div class="product-card">
-                                <span class="product-badge">Top Deal</span>
-                                <a href="./products/pc.php?id=<?= urlencode($row['ProID']); ?>"> 
-                                    <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
-                                    <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
-                                </a>
-                                <p class="product-price"><?= $row['price']; ?> FT</p>
-                                <button class="add-to-cart">Kosárba</button>
-                            </div>
-                    <?php
-                        }
-                        } else {
-                            echo "Nincs találat";
-                        }
-                    ?>
-                </div>
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $image_name = $row["ProID"];
+                        $image_path = "./Képek/" . $image_name . ".jpg";
+                        ?>
+                        <div class="product-card">
+                            <span class="product-badge">Top Deal</span>
+                            <a href="./products/pc.php?id=<?= urlencode($row['ProID']); ?>">
+                                <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                                <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                            </a>
+                            <p class="product-price"><?= $row['price']; ?> FT</p>
+                            <form action="./account/add_to_cart.php" method="post">
+                            <input type="hidden" name="ProID" value="<?= $row['ProID']; ?>">
+                            <input type="hidden" name="name" value="<?= htmlspecialchars($row['name']); ?>">
+                            <input type="hidden" name="price" value="<?= $row['price']; ?>">
+                            <input type="hidden" name="quantity" value="1">
+                            <button class="add-to-cart" type="submit">Kosárba</button>
+                        </form>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "Nincs találat";
+                }
+                ?>
+            </div>
         </div>
         <div class="topgin">
-            <div class="product-title"><h1>Laptopok</h1></div>
+            <div class="product-title">
+                <h1>Laptopok</h1>
+            </div>
             <div class="product-box">
-                    <?php
-                    require './products/config.php';
-                    $sql = "SELECT l.*, r.price
+                <?php
+                require './products/config.php';
+                $sql = "SELECT l.*, r.price
                         FROM webshop.notebooks l
                         JOIN webshop.products r ON l.ProID = r.ProID LIMIT 12;";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $image_name = $row["ProID"];
-                            $image_path = "./Képek/1/" . $image_name . ".jpg";
-                            ?>
-                            <div class="product-card">
-                                <span class="product-badge">Top Deal</span>
-                                <a href="./products/laptop.php?id=<?= urlencode($row['ProID']); ?>"> 
-                                    <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
-                                    <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
-                                </a>
-                                <p class="product-price"><?= $row['price']; ?> Ft</p>
-                                <button class="add-to-cart">Kosárba</button>
-                            </div>
-                    <?php
-                        }
-                        } else {
-                            echo "Nincs találat";
-                        }
-                    ?>
-                </div>
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $image_name = $row["ProID"];
+                        $image_path = "./Képek/1/" . $image_name . ".jpg";
+                        ?>
+                        <div class="product-card">
+                            <span class="product-badge">Top Deal</span>
+                            <a href="./products/laptop.php?id=<?= urlencode($row['ProID']); ?>">
+                                <img src="<?= $image_path ?>" alt="Product Image" class="product-image">
+                                <h3 class="product-title1"><?= htmlspecialchars($row['name']); ?></h3>
+                            </a>
+                            <p class="product-price"><?= $row['price']; ?> Ft</p>
+                            <button class="add-to-cart">Kosárba</button>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "Nincs találat";
+                }
+                ?>
+            </div>
         </div>
-    </div>  
+    </div>
     <footer class="topgin">
         <div class="footer row mx-0">
             <div class="col-lg-3 col-md-6 col-sm-12 und">
@@ -191,7 +195,7 @@
                         <a href="./policies/refund-policy.html">Szállítás</a>
                     </li>
                     <li>
-                        <a href="./pages/faq.html">GYIK</a>
+                        <a href="./pages/faq.php">GYIK</a>
                     </li>
                 </ul>
             </div>
@@ -223,28 +227,29 @@
                         <span>Nyitvatartás: hétköznap 8:00 - 17:00</span>
                     </li>
                     <li>
-                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="./images/map1.png" alt="" class="f-ikon"></a></span>
+                        <span>Térkép: <a href="https://maps.app.goo.gl/fA2Jti1fcJiZY9f98"><img src="./images/map1.png"
+                                    alt="" class="f-ikon"></a></span>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 und">
                 <h1 class="footer-title">Követnél minket?</h1>
                 <div class="social-links">
-                        <ul class="f-ul">
-                            <p>Az alábbi linkeken megteheted:</p>
-                                <a href="https://www.instagram.com" target="_blank">
-                                    <img src="./images/icon1.png" alt="Instagramm" class="f-ikon">
-                                </a>
-                                <a href="https://www.facebook.com" target="_blank">
-                                    <img src="./images/icon2.png" alt="Facebook" class="f-ikon">
-                                </a>
-                                <a href="https://twitter.com/?lang=hu" target="_blank">
-                                    <img src="./images/icon3.png" alt="Twitter" class="f-ikon">
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCxvMRBWbv2OgefAjoq_0ZBQ" target="_blank">
-                                    <img src="./images/icon4.png" alt="Youtube" class="f-ikon">
-                                </a>
-                        </ul>
+                    <ul class="f-ul">
+                        <p>Az alábbi linkeken megteheted:</p>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="./images/icon1.png" alt="Instagramm" class="f-ikon">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="./images/icon2.png" alt="Facebook" class="f-ikon">
+                        </a>
+                        <a href="https://twitter.com/?lang=hu" target="_blank">
+                            <img src="./images/icon3.png" alt="Twitter" class="f-ikon">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCxvMRBWbv2OgefAjoq_0ZBQ" target="_blank">
+                            <img src="./images/icon4.png" alt="Youtube" class="f-ikon">
+                        </a>
+                    </ul>
                 </div>
             </div>
             <div>
@@ -255,4 +260,5 @@
     <script src="./js/sandwitch.js"></script>
     <script src="./js/carousel.js"></script>
 </body>
+
 </html>
